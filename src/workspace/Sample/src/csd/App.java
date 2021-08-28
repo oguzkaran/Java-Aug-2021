@@ -1,36 +1,28 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Bir metodun geri dönüş değeri return deyimi ile oluşturulur. return deyiminin genel biçimi:
-	
-	return [ifade];
-	
-	return deyiminin temel görevi metodu sonlandırmaktır. return deyimine ilişkin ifadenin değeri metodu çağıran
-	metoda aktarılır
+	Bir metodun parametrelerine değerler çağrılırken aktarılır. Metot çağrısında bir parametreye verilen ifadeye 
+	"argüman (argument)" denir. Argümanlardan parametrelere yapılan aktarımda bir atama işlemi olarak düşünülmelidir
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
-	{
-		int result;
+	{		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Birinci sayıyı giriniz:");
+		int a = Integer.parseInt(kb.nextLine());
 		
-		result = Sample.foo() * 2;
+		System.out.print("İkinci sayıyı giriniz:");
+		double b = Double.parseDouble(kb.nextLine());
 		
-		System.out.println(result);
+		Sample.foo(a, b);
 	}
 }
 
 class Sample {
-	public static int foo()
-	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		
-		System.out.print("Bir sayı giriniz:");
-		int val = Integer.parseInt(kb.nextLine());
-		
-		int result = val * val;
-		
-		return result;				
-	}
+	public static void foo(int a, double b)
+	{		
+		System.out.println(a);
+		System.out.println(b);
+	}	
+	
 }
-
-
