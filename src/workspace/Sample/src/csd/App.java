@@ -1,51 +1,43 @@
-/*----------------------------------------------------------------------------------------------------------------------
-	 
+/*----------------------------------------------------------------------------------------------------------------------	 
+	Sınıf Çalışması: Parametresi ile aldığı int türden bir sayının basamkları toplamına geri dönen sumDigits 
+	metodunu NumberUtil sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz.
+	Açıklama: Metot negatif sayılar için de basamakları toplamını pozitif olarak döndürecektir 	
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{	
-		EquationSolverApp.run();		
+		SumDigitsTest.run();
 	}
 }
 
-
-class EquationSolverApp {
+class SumDigitsTest {	
 	public static void run()
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		System.out.print("a?");
-		double a = Double.parseDouble(kb.nextLine());
+		java.util.Scanner kb = new java.util.Scanner(System.in);			
 		
-		System.out.print("b?");
-		double b = Double.parseDouble(kb.nextLine());
+		int val;
 		
-		System.out.print("c?");
-		double c = Double.parseDouble(kb.nextLine());
+		System.out.println("Bir sayı giriniz:");
+		while ((val = Integer.parseInt(kb.nextLine())) != 0) {
+			int sum = NumberUtil.sumDigits(val);
+			
+			System.out.printf("%d sayısının basamakları toplamı:%d%n", val, sum);
+			System.out.println("Bir sayı giriniz:");			
+		}
 		
-		EquationSolver.findRoots(a, b, c);		
+		
+		System.out.printf("0(sıfır) sayısının basamak sayısı:%d%n", NumberUtil.sumDigits(0));
+		System.out.println("Tekrar yapıyor musunuz?");		
 	}
 }
 
-class EquationSolver {
-	public static double getDeltaValue(double a, double b, double c)
+
+class NumberUtil {
+	public static int sumDigits(int val)
 	{
-		return b * b - 4 * a * c;
-	}
-	
-	public static void findRoots(double a, double b, double c)
-	{
-		double delta = getDeltaValue(a, b, c);
-		
-		if (delta >= 0) {
-			double sqrtDelta = Math.sqrt(delta); 
-			double x1 = (-b + sqrtDelta) / (2 * a);
-			double x2 = (-b - sqrtDelta) / (2 * a);
-			
-			System.out.printf("x1 = %f, x2 = %f%n", x1, x2);			
-		}		
-		else
-			System.out.println("Gerçek kök yok");
+						
 	}
 }
+
