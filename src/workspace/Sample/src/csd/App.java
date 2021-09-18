@@ -1,43 +1,23 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Sınıf Çalışması: Parametresi ile aldığı int türden bir sayının basamkları toplamına geri dönen sumDigits 
-	metodunu NumberUtil sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz.
-	Açıklama: Metot negatif sayılar için de basamakları toplamını pozitif olarak döndürecektir 	
+	 Aşağıdaki örnekte klavyeden sıfır girilene kadar alınan sayıların toplamı bulunmuştur
+	 
+	 011 -> 101 -> 010 + 1 = 011
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
-	{	
-		SumDigitsTest.run();
-	}
-}
-
-class SumDigitsTest {	
-	public static void run()
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);			
+		java.util.Scanner kb = new java.util.Scanner(System.in);		
 		
-		int val;
+		int sum = 0;
 		
-		System.out.println("Bir sayı giriniz:");
-		while ((val = Integer.parseInt(kb.nextLine())) != 0) {
-			int sum = NumberUtil.sumDigits(val);
-			
-			System.out.printf("%d sayısının basamakları toplamı:%d%n", val, sum);
-			System.out.println("Bir sayı giriniz:");			
-		}
+		System.out.print("Sayıları girmeye başlayınız\nBir sayı giriniz:");
 		
+		for (int val = 0; (val = Integer.parseInt(kb.nextLine())) != 0; sum += val, System.out.print("Bir sayı giriniz:"))
+			;
 		
-		System.out.printf("0(sıfır) sayısının basamak sayısı:%d%n", NumberUtil.sumDigits(0));
-		System.out.println("Tekrar yapıyor musunuz?");		
-	}
-}
-
-
-class NumberUtil {
-	public static int sumDigits(int val)
-	{
-						
+		System.out.printf("Toplam:%d%n", sum);
 	}
 }
 
