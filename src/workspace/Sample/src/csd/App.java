@@ -1,46 +1,29 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Aşağıdaki test kodunu yukarıda yazılan iki isPrime metodu için de ayrı ayrı çalıştırınız. Göreceksiniz ki
-	son yazılan isPrime ilk yazılandan çok çok daha kısa zamanda sonuca ulaşacaktır
+	Etiketli break deyiminin kullanımı
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{		
-		IsPrimeTest.run();
-	}
-}
-
-class IsPrimeTest {
-	public static void run()
-	{
-		System.out.println(NumberUtil.isPrime(1603318868174368979L));
-	}
-}
-
-class NumberUtil {
-	public static boolean isPrime(long val)	
-	{
-		if (val <= 1)
-			return false;
+		boolean flag = false;
 		
-		if (val % 2 == 0)
-			return val == 2;
+		EXIT_LOOP:
+		for (int i = 3; i < 10; ++i) 
+			EXIT_INNER_LOOP:
+			for (int j = 0; j < 100; ++j)
+				for (int k = 5; k >= 0; --k) {
+					System.out.printf("{i: %d, k: %d}%n", i, k);
+					
+					if ((i + j + k) % 6 == 0)
+						break EXIT_INNER_LOOP;
+					
+					if ((i + j + k) % 11 == 0)
+						break EXIT_LOOP;				
+					
+				}			
 		
-		if (val % 3 == 0)
-			return val == 3;
-		
-		if (val % 5 == 0)
-			return val == 5;
-		
-		if (val % 7 == 0)
-			return val == 7;
-		
-		for (int i = 11; i * i <= val; i += 2)	
-			if (val % i == 0)
-				return false;
-		
-		return true;
+		System.out.println("Tekrar yapıyor musunuz");
 	}
 }
 
