@@ -1,23 +1,46 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	 Aşağıdaki örnekte klavyeden sıfır girilene kadar alınan sayıların toplamı bulunmuştur
-	 
-	 011 -> 101 -> 010 + 1 = 011
+	Aşağıdaki test kodunu yukarıda yazılan iki isPrime metodu için de ayrı ayrı çalıştırınız. Göreceksiniz ki
+	son yazılan isPrime ilk yazılandan çok çok daha kısa zamanda sonuca ulaşacaktır
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
+	{		
+		IsPrimeTest.run();
+	}
+}
+
+class IsPrimeTest {
+	public static void run()
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);		
+		System.out.println(NumberUtil.isPrime(1603318868174368979L));
+	}
+}
+
+class NumberUtil {
+	public static boolean isPrime(long val)	
+	{
+		if (val <= 1)
+			return false;
 		
-		int sum = 0;
+		if (val % 2 == 0)
+			return val == 2;
 		
-		System.out.print("Sayıları girmeye başlayınız\nBir sayı giriniz:");
+		if (val % 3 == 0)
+			return val == 3;
 		
-		for (int val = 0; (val = Integer.parseInt(kb.nextLine())) != 0; sum += val, System.out.print("Bir sayı giriniz:"))
-			;
+		if (val % 5 == 0)
+			return val == 5;
 		
-		System.out.printf("Toplam:%d%n", sum);
+		if (val % 7 == 0)
+			return val == 7;
+		
+		for (int i = 11; i * i <= val; i += 2)	
+			if (val % i == 0)
+				return false;
+		
+		return true;
 	}
 }
 
