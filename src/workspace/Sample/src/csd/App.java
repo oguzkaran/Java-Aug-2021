@@ -1,29 +1,29 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Etiketli break deyiminin kullanımı
+	Sınıf Çalışması: Parametresi ile aldığı int türden yıl bilgisinin artık yıl olup olmadığını test eden isLeapYear
+	isimli metodu DateUtil isimli bir sınıf içerisinde yazınız ve aşağıdaki kod ile test ediniz
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{		
-		boolean flag = false;
-		
-		EXIT_LOOP:
-		for (int i = 3; i < 10; ++i) 
-			EXIT_INNER_LOOP:
-			for (int j = 0; j < 100; ++j)
-				for (int k = 5; k >= 0; --k) {
-					System.out.printf("{i: %d, k: %d}%n", i, k);
-					
-					if ((i + j + k) % 6 == 0)
-						break EXIT_INNER_LOOP;
-					
-					if ((i + j + k) % 11 == 0)
-						break EXIT_LOOP;				
-					
-				}			
-		
-		System.out.println("Tekrar yapıyor musunuz");
+		IsLeapYearTest.run();
+	}
+}
+
+class IsLeapYearTest {
+	public static void run()
+	{
+		for (int year = 1999; year <= 2104; ++year)
+			if (DateUtil.isLeapYear(year))
+				System.out.println(year);
+	}
+}
+
+class DateUtil {
+	public static boolean isLeapYear(int year)
+	{
+		return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 	}
 }
 
