@@ -1,45 +1,79 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	 Homework-002-1. sorunun bir çözümü
-	 (Not: Çözüm çalışma sorusunun verildiği tarihte görülmüş olan konulara göre yapılmıştır)	 
+	 Homework-002-4. sorunun bir çözümü
+	 (Not: İleride daha iyisi yazılacaktır)	 
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{		
-		PrintDiamondApp.run();
+		BallFallGameApp.run();
 	}
 }
 
-class PrintDiamondApp {
-	public static void printDiamond(int n)
-	{		
-		for (int i = 0; i < n; ++i) {
-			for (int k = 0; k < n - i; ++k)
-				System.out.print(' ');
-			for (int k = 0; k < 2 * i - 1; ++k)
-				System.out.print('*');
-			System.out.println();
-		}		
-		
-		for (int i = 0; i < n; ++i) {
-			for (int k = 0; k < i % n; ++k)
-				System.out.print(' ');
-			for (int k = 0; k < 2 * n - (i % n) * 2 - 1; ++k)
-				System.out.print('*');
-			
-			System.out.println();
-		}		
-	}
-	
+class BallFallGameApp {
 	public static void run()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
-		System.out.print("Bir sayı giriniz:");
-		int n = Integer.parseInt(kb.nextLine());
 		
-		printDiamond(n);					
+		for (;;) {
+			System.out.print("Width?");
+			int width = Integer.parseInt(kb.nextLine());
+			
+			if (width == 0)
+				break;
+			
+			System.out.print("Height?");
+			int height = Integer.parseInt(kb.nextLine());
+			
+			BallFall.play(width, height);		
+		}
+	}
+}
+
+class BallFall {
+	public static void fillSpace(int begin, int end) //[begin, end)
+	{
+		for (int i = begin; i < end; ++i)
+			System.out.print(' ');
+	}
+	
+	public static void fillBall(int ballIndex, int end)
+	{
+		fillSpace(0, ballIndex);
+		System.out.print('*');
+		fillSpace(ballIndex + 1, end);
+	}
+	public static boolean updateRightFlag(boolean isRight, int ballIndex, int width)
+	{
+		if (ballIndex == 0)
+			isRight = true;
+		else if (ballIndex == width - 1)
+			isRight = false;
+		
+		return isRight; 
+	}
+	
+	public static int updateBallIndex(int ballIndex, boolean isRight, int width)
+	{
+		return isRight ? ballIndex + 1 : ballIndex - 1;				
+	}
+	
+	public static void play(int width, int height)
+	{
+		int ballIndex = 0;
+		boolean isRight = false;
+		
+		for (int i = 1; i <= height; ++i) {
+			System.out.print('|');
+			fillBall(ballIndex, width);
+			if (width != 1) {
+				isRight = updateRightFlag(isRight, ballIndex, width);
+				ballIndex = updateBallIndex(ballIndex, isRight, width);
+			}
+			System.out.println('|');
+		}
 	}
 }
 
