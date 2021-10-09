@@ -1,79 +1,64 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	 Homework-002-4. sorunun bir çözümü
-	 (Not: İleride daha iyisi yazılacaktır)	 
+	 1. Aday metotlar: 1, 2, 3, 4, 5, 6, 7, 8
+	 2. Uygun metotlar: 4, 8
+	 3. En uygun metot: 4 
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{		
-		BallFallGameApp.run();
+		float a = 10.3F;
+		short b = 345;
+		
+		Sample.foo(a, b); //#4
 	}
 }
 
-class BallFallGameApp {
-	public static void run()
+class Sample {
+	public static void foo() //#1
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		
-		
-		for (;;) {
-			System.out.print("Width?");
-			int width = Integer.parseInt(kb.nextLine());
-			
-			if (width == 0)
-				break;
-			
-			System.out.print("Height?");
-			int height = Integer.parseInt(kb.nextLine());
-			
-			BallFall.play(width, height);		
-		}
+		System.out.println("foo");
 	}
-}
+	
+	public static void foo(int a) //#2
+	{
+		System.out.println("foo, int");
+	}
+	
+	public static void foo(int a, int b) //#3
+	{
+		System.out.println("foo, int, int");	
+	}
 
-class BallFall {
-	public static void fillSpace(int begin, int end) //[begin, end)
+	public static void foo(double a, int b) //#4
 	{
-		for (int i = begin; i < end; ++i)
-			System.out.print(' ');
+		System.out.println("foo, double, int");	
 	}
 	
-	public static void fillBall(int ballIndex, int end)
+	public static void foo(int a, long b) //#5
 	{
-		fillSpace(0, ballIndex);
-		System.out.print('*');
-		fillSpace(ballIndex + 1, end);
-	}
-	public static boolean updateRightFlag(boolean isRight, int ballIndex, int width)
-	{
-		if (ballIndex == 0)
-			isRight = true;
-		else if (ballIndex == width - 1)
-			isRight = false;
-		
-		return isRight; 
+		System.out.println("foo, int, long");	
 	}
 	
-	public static int updateBallIndex(int ballIndex, boolean isRight, int width)
+	public static void foo(int a, double b) //#6
 	{
-		return isRight ? ballIndex + 1 : ballIndex - 1;				
+		System.out.println("foo, int, double");	
 	}
 	
-	public static void play(int width, int height)
+	public static void foo(int a, char b) //#7
 	{
-		int ballIndex = 0;
-		boolean isRight = false;
-		
-		for (int i = 1; i <= height; ++i) {
-			System.out.print('|');
-			fillBall(ballIndex, width);
-			if (width != 1) {
-				isRight = updateRightFlag(isRight, ballIndex, width);
-				ballIndex = updateBallIndex(ballIndex, isRight, width);
-			}
-			System.out.println('|');
-		}
+		System.out.println("foo, int, char");	
+	}
+	
+	public static void foo(double a, long b) //#8
+	{
+		System.out.println("foo, double, long");	
+	}
+	
+	public static void bar(double a) //#9
+	{
+		System.out.println("bar, double");
 	}
 }
 
