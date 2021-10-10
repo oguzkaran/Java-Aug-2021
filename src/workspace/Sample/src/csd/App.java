@@ -1,51 +1,23 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	 Aşağıdaki örnekte Math sınıfının abs metotları simüle edilmiştir. Kodu çalıştırarak hangi metodun hangi durumda
-	 çağrıldığını gözlemleyiniz
+	Sınıf türünden bellekte ayrılan alanlara nesne (object) denir. Nesneler heap'te yaratılır. Java'da stack'te nesne
+	yaratılamaz. Java'da bir nesnenin ismi yoktur. Nesnenin adresi vardır ve bu adres uygun bir referans değişkende 
+	tutulur. Bir nesne yaratmak için new operatörü kullanılır. new operatörü özel amaçlı, tek operandlı ve araek
+	durumunda bir operatördür. new operatörü heap'de yaratılmış olan nesnenin adresini (referansını) üretir. Operatörün
+	genel biçimi:
+		new <referans tür ismi>([argümanlar]);
+	
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
-	{		
-		{
-			int i; //
-			int a;
-			
-			
-		}
-		i = 10;
-		a = 10;
+	{			
+		Sample s;
+		
+		s = new Sample();
 	}
 }
 
-class MyMath {
-	public static double abs(double a)
-	{
-		System.out.println("abs, double");
-		
-		return a < 0 ? -a : a;	
-	}
+class Sample {
 	
-	public static float abs(float a)
-	{
-		System.out.println("abs, float");
-		
-		return a < 0 ? -a : a;	
-	}
-	
-	public static long abs(long a)
-	{
-		System.out.println("abs, long");
-		
-		return a < 0 ? -a : a;
-	}
-	
-	public static int abs(int a)
-	{
-		System.out.println("abs, int");
-		
-		return a < 0 ? -a : a;
-	}
-	
-	//...	
 }
