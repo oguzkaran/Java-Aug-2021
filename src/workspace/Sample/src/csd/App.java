@@ -1,23 +1,34 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Sınıf türünden bellekte ayrılan alanlara nesne (object) denir. Nesneler heap'te yaratılır. Java'da stack'te nesne
-	yaratılamaz. Java'da bir nesnenin ismi yoktur. Nesnenin adresi vardır ve bu adres uygun bir referans değişkende 
-	tutulur. Bir nesne yaratmak için new operatörü kullanılır. new operatörü özel amaçlı, tek operandlı ve araek
-	durumunda bir operatördür. new operatörü heap'de yaratılmış olan nesnenin adresini (referansını) üretir. Operatörün
-	genel biçimi:
-		new <referans tür ismi>([argümanlar]);
-	
+	Referans parametreli metotlar olabilir. Bu durumda metot içerisinde referans paametresine geçilen adresteki nesneye
+	erişilebilir	  
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
-	{			
-		Sample s;
+	{
+		Date birthDate;
 		
-		s = new Sample();
+		birthDate = new Date();
+		
+		birthDate.day = 11;
+		birthDate.month = 7;
+		birthDate.year = 1983;
+		
+		DateUtil.display(birthDate);
+		DateUtil.display(birthDate);
 	}
 }
 
-class Sample {
-	
+
+class DateUtil {
+	public static void display(Date d)
+	{
+		System.out.printf("%02d/%02d/%04d%n", d.day, d.month, d.year);
+	}
 }
+
+class Date {
+	public int day, month, year;
+	//...
+} 
