@@ -1,81 +1,80 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Yukarıdaki örnekte anlatılan olası problemler aşağıdaki gibi static veri elemanı kullanılarak çözülebilir. Böylece
-	aşağıdaki gibi daha basit ve hata yapma olasılığı düşürülmüş olarak kod yazılabilir. Detaylar göz edilmiştir.
-	Burada static veri elemanın kullanımına odaklanınız
+	Point sınıfı ve test kodu
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
-	{	
-		SpaceWarGameApp.run();
+	{
+		Point p1, p2;
+		
+		p1 = new Point();
+		p2 = new Point();	
+		
+		
+		p1.x = 100;
+		p1.y = 200;
+		p2.x = 103;
+		p2.y = 396;
+		
+		p1.display();
+		p2.display();				
+		System.out.println("----------------");
+		
+		double dist;
+		
+		dist = p1.distance(p2);
+		
+		System.out.printf("distance: %f%n", dist);
+		System.out.println("----------------");
+		
+		int x = 103, y = 396;
+		
+		dist = p1.distance(x, y);
+		
+		System.out.printf("distance: %f%n", dist);
+		System.out.println("----------------");
+		
+		dist = p1.distance();
+		
+		System.out.printf("distance: %f%n", dist);
+		System.out.println("----------------");
 	}
 }
 
-
-class SpaceWarGameApp {
-	public static void run()
-	{		
-		//...
-		
-		for (int i = 0; i < 10; ++i) {
-			Alien a = new Alien();
-			
-			//...			
-		}
-		
-		//...
-		
-		for (int i = 0; i < 20; ++i) {
-			Soldier s = new Soldier();
-			
-			//...		
-		}
-		
-		//...
-		
-		System.out.printf("Number of Aliens:%d%n", Alien.count);
-		System.out.printf("Number of Soldiers:%d%n", Soldier.count);
-	}
-}
-
-
-class Alien {
-	public static int count;
-	public int color;
-	public int armsCount;
-	public int gunsCount;	
-	//...
+class Point {
+	public int x;
+	public int y;
 	
-	public Alien()
+	public double distance()
 	{
-		++count;
+		return distance(0, 0);
 	}
-}
-
-class Soldier {
-	public static int count;
-	public int title;
-	public int gunType;
-	//...
-	public Soldier()
+	
+	public double distance(Point other)
 	{
-		++count;
+		return distance(other.x, other.y);
 	}
-}
-
-class Civilian {
-	public static int count;
-	//...
-}
-
-class Building {
-	public static int count;
-	//...
-}
-
-class Tank {
-	public static int count;
-	//...
+	
+	public double distance(int a, int b)
+	{
+		return Math.sqrt(Math.pow(x - a, 2) + Math.pow(y - b, 2));
+	}
+	
+	public void offset(int dxy)
+	{
+		offset(dxy, dxy);
+	}
+	
+	public void offset(int dx, int dy)
+	{
+		x += dx;
+		y += dy;
+	}
+	
+	public void display()
+	{
+		System.out.printf("{x: %d, y: %d}%n", x, y);		
+	}
 }
 
