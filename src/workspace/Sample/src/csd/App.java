@@ -1,34 +1,81 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Referans parametreli metotlar olabilir. Bu durumda metot içerisinde referans paametresine geçilen adresteki nesneye
-	erişilebilir	  
+	Yukarıdaki örnekte anlatılan olası problemler aşağıdaki gibi static veri elemanı kullanılarak çözülebilir. Böylece
+	aşağıdaki gibi daha basit ve hata yapma olasılığı düşürülmüş olarak kod yazılabilir. Detaylar göz edilmiştir.
+	Burada static veri elemanın kullanımına odaklanınız
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
-	{
-		Date birthDate;
-		
-		birthDate = new Date();
-		
-		birthDate.day = 11;
-		birthDate.month = 7;
-		birthDate.year = 1983;
-		
-		DateUtil.display(birthDate);
-		DateUtil.display(birthDate);
+	{	
+		SpaceWarGameApp.run();
 	}
 }
 
 
-class DateUtil {
-	public static void display(Date d)
-	{
-		System.out.printf("%02d/%02d/%04d%n", d.day, d.month, d.year);
+class SpaceWarGameApp {
+	public static void run()
+	{		
+		//...
+		
+		for (int i = 0; i < 10; ++i) {
+			Alien a = new Alien();
+			
+			//...			
+		}
+		
+		//...
+		
+		for (int i = 0; i < 20; ++i) {
+			Soldier s = new Soldier();
+			
+			//...		
+		}
+		
+		//...
+		
+		System.out.printf("Number of Aliens:%d%n", Alien.count);
+		System.out.printf("Number of Soldiers:%d%n", Soldier.count);
 	}
 }
 
-class Date {
-	public int day, month, year;
+
+class Alien {
+	public static int count;
+	public int color;
+	public int armsCount;
+	public int gunsCount;	
 	//...
-} 
+	
+	public Alien()
+	{
+		++count;
+	}
+}
+
+class Soldier {
+	public static int count;
+	public int title;
+	public int gunType;
+	//...
+	public Soldier()
+	{
+		++count;
+	}
+}
+
+class Civilian {
+	public static int count;
+	//...
+}
+
+class Building {
+	public static int count;
+	//...
+}
+
+class Tank {
+	public static int count;
+	//...
+}
+
