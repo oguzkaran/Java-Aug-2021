@@ -1,80 +1,27 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Point sınıfı ve test kodu
+	Anahtar Notlar: Sınıfı yazan programcı bir ctor yazarsa default ctor'u yazıp yazmayacağına yönelik kararı nasıl
+	verecektir? Şüphesiz sınıfa göre karar verecektir. Bu durumda programcı tarafından karar vermek için şöyle basit
+	bir soru sorulabilir: "Bu sınıf türünden bir nesnenin default durumu var mı?" Örneğin, Random sınıfının default 
+	ctor'u Random nesnenin default durumudur. Yani tohum değerini her çağrımada farklı verecek şekilde nesnenin
+	yaratılmasını sağlamaktır. Ancak bazı özel durumlarda sınıfı kullanan başka sınıf default ctor zorunluluğu isteyebilir.
+	Bu durumda progamcı sınıf için default ctor'u yazar 
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{
-		Point p1, p2;
+		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
-		p1 = new Point();
-		p2 = new Point();	
+		System.out.print("Tohum değerini giriniz:");
+		long seed = Long.parseLong(kb.nextLine());		
 		
+		java.util.Random r = new java.util.Random(seed);
 		
-		p1.x = 100;
-		p1.y = 200;
-		p2.x = 103;
-		p2.y = 396;
+		for (int i = 0; i < 10; ++i)
+			System.out.printf("%02d ", r.nextInt(100));
 		
-		p1.display();
-		p2.display();				
-		System.out.println("----------------");
-		
-		double dist;
-		
-		dist = p1.distance(p2);
-		
-		System.out.printf("distance: %f%n", dist);
-		System.out.println("----------------");
-		
-		int x = 103, y = 396;
-		
-		dist = p1.distance(x, y);
-		
-		System.out.printf("distance: %f%n", dist);
-		System.out.println("----------------");
-		
-		dist = p1.distance();
-		
-		System.out.printf("distance: %f%n", dist);
-		System.out.println("----------------");
-	}
-}
-
-class Point {
-	public int x;
-	public int y;
-	
-	public double distance()
-	{
-		return distance(0, 0);
-	}
-	
-	public double distance(Point other)
-	{
-		return distance(other.x, other.y);
-	}
-	
-	public double distance(int a, int b)
-	{
-		return Math.sqrt(Math.pow(x - a, 2) + Math.pow(y - b, 2));
-	}
-	
-	public void offset(int dxy)
-	{
-		offset(dxy, dxy);
-	}
-	
-	public void offset(int dx, int dy)
-	{
-		x += dx;
-		y += dy;
-	}
-	
-	public void display()
-	{
-		System.out.printf("{x: %d, y: %d}%n", x, y);		
-	}
+		System.out.println();	
+	}	
 }
 
