@@ -1,27 +1,45 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Anahtar Notlar: Sınıfı yazan programcı bir ctor yazarsa default ctor'u yazıp yazmayacağına yönelik kararı nasıl
-	verecektir? Şüphesiz sınıfa göre karar verecektir. Bu durumda programcı tarafından karar vermek için şöyle basit
-	bir soru sorulabilir: "Bu sınıf türünden bir nesnenin default durumu var mı?" Örneğin, Random sınıfının default 
-	ctor'u Random nesnenin default durumudur. Yani tohum değerini her çağrımada farklı verecek şekilde nesnenin
-	yaratılmasını sağlamaktır. Ancak bazı özel durumlarda sınıfı kullanan başka sınıf default ctor zorunluluğu isteyebilir.
-	Bu durumda progamcı sınıf için default ctor'u yazar 
+	Homework-003-7. sorunun bir çözümü
+	(Not: Çözüm çalışma sorusunun verildiği tarihte görülen konulara göre yapılmıştır)
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		
-		System.out.print("Tohum değerini giriniz:");
-		long seed = Long.parseLong(kb.nextLine());		
-		
-		java.util.Random r = new java.util.Random(seed);
-		
-		for (int i = 0; i < 10; ++i)
-			System.out.printf("%02d ", r.nextInt(100));
-		
-		System.out.println();	
+		IsDecimalHarshadTest.run();
 	}	
 }
 
+
+class IsDecimalHarshadTest {
+	public static void run()
+	{
+		for (int n = 1; n <= 999999; ++n)
+			if (NumberUtil.isDecimalHarshad(n))
+				System.out.printf("%d%n", n);
+		
+		System.out.println("Tekrar yapıyor musunuz?");
+	}	
+}
+
+
+class NumberUtil {
+	public static boolean isDecimalHarshad(int val)
+	{
+		return val >= 0 && val % sumDigits(val) == 0;
+	}
+	
+	public static int sumDigits(int val)
+	{
+		int sum = 0;
+		
+		while (val != 0) {
+			sum += val % 10;
+			val /= 10;			
+		}
+		
+		return Math.abs(sum);		
+	}
+	
+}
