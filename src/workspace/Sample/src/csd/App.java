@@ -1,43 +1,41 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	 Sınıf Çalışması: Parametresi ile aldığı iki yazıdan birincisi içerisinde ikincisinden kaç tane olduğunu döndüren
-	 countString isimli metodu StringUtil sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz.
-	 Örnek: aaa yazısı içerisinde aa dan 2 tane var	    
+	Sınıf Çalışması: Paremetresi ile aldığı bir yazının tersini döndüren reversed isimli metodu StringUtil sınıfı
+	içerisinde yazınız ve aşağıdaki kod ile test ediniz
+	(İleride daha hızlı ve etkin olanı yazılacaktır) 
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{
-		CountStringTest.run();
+		ReverseTest.run();
 	}	
 }
 
 
-class CountStringTest {	
+class ReverseTest {
 	public static void run()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
 		for (;;) {
-			System.out.printf("Birinci yazıyı giriniz:");
-			String s1 = kb.nextLine();
+			System.out.printf("Bir yazı giriniz:");
+			String s = kb.nextLine();
 			
-			if ("elma".equals(s1))
+			if ("elma".equals(s))
 				break;
 			
-			System.out.printf("İkinci yazıyı giriniz:");
-			String s2 = kb.nextLine();
-			int count = StringUtil.countString(s1, s2);
-			
-			System.out.printf("Sayı:%d%n", count);
+			System.out.println("---------------------------");
+			System.out.println(StringUtil.reversed(s));
+			System.out.println("---------------------------");
 		}
 		
-		System.out.println("Tekrar yapıyor musunuz?");		
-	}	
+		System.out.println("Tekrar yapıyor musunuz?");
+	}
 }
 
 class StringUtil {
-	public static int countString(String s1, String s2)
+	public static String reversed(String s)
 	{
 		//TODO:
 	}
