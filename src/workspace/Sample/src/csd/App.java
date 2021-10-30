@@ -1,7 +1,15 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Sınıf Çalışması: Paremetresi ile aldığı bir yazının tersini döndüren reversed isimli metodu StringUtil sınıfı
-	içerisinde yazınız ve aşağıdaki kod ile test ediniz
-	(İleride daha hızlı ve etkin olanı yazılacaktır) 
+	Sınıf Çalışması: Kalvyeden bir kullanıcı adı ve şifre isteyen basit bir ATM uygulamasının b ir parçası olan 
+	programı aşağıdaki açıklamalara göre yazınız:	
+	Açıklamalar:
+	- Kullanıcı adı ve şifre 3(üç) kez denenebilecektir.
+	- 3(üç) kez deneme sırasında doğru giriş yapılırsa "Giriş başarılı", 3(üç) kez deneme de yanlış olursa 
+	"Giriş başarısız. Deneme hakkınız bitti!..." mesajı verilecektir. 
+	- Kullanıcı adı ve şifrenin doğruluk kontrolü program içerisinde belirlenen bir kullanıcı ve şifre ile yapılacaktır
+	- Programı genel düşünerek yazınız
+	
+	Not:Program şu ana kadar gördüklerimiz ile yazılmıştır	
+	 
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
@@ -11,7 +19,6 @@ class App {
 		ReverseTest.run();
 	}	
 }
-
 
 class ReverseTest {
 	public static void run()
@@ -37,6 +44,11 @@ class ReverseTest {
 class StringUtil {
 	public static String reversed(String s)
 	{
-		//TODO:
+		String rev = "";
+		
+		for (int i = s.length() - 1; i >= 0; --i)
+			rev += s.charAt(i);	
+		
+		return rev;
 	}
 }
