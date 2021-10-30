@@ -32,9 +32,7 @@ class CountStringTest {
 			System.out.printf("Sayı:%d%n", count);
 		}
 		
-		System.out.println("Tekrar yapıyor musunuz?");
-		
-		
+		System.out.println("Tekrar yapıyor musunuz?");		
 	}	
 }
 
