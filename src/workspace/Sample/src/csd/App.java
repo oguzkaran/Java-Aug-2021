@@ -1,18 +1,19 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Sınıf Çalışması: Parametresi ile aldığı bir yazının ilk harfi büyük geri kalanları küçük olacak şekilde bir 
-	yazı döndüren capitalize isimli metodu yazınız ve aşağıdaki kod ile test ediniz.
-	Örneğin: yazı "bugün HAVA çok Güzel" ise "Bugün hava çok güzel" yazısına geri dönecektir  
+	Sınıf Çalışması: Parametresi ile aldığı bir yazının yalnızca başındaki boşluk karakterlerini atan trimLeading ve
+	yalnızca sonundaki boşluk karakterlerini atan trimTrailing isimli metotları yazınız ve aşağıdaki kod ile test
+	ediniz.
+	(Not: Java 11'e kadar bu işlemleri yapan metot String sınıfında bulunmuyordu)  
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{
-		CapitalizeTest.run();
+		TrimLeadingTrailingTest.run();
 	}	
 }
 
-class CapitalizeTest {	
+class TrimLeadingTrailingTest {	
 	public static void run()
 	{		
 		java.util.Scanner kb = new java.util.Scanner(System.in);
@@ -23,7 +24,8 @@ class CapitalizeTest {
 			
 			System.out.println("--------------------------");
 			System.out.printf("(%s)%n", s);
-			System.out.printf("(%s)%n", StringUtil.capitalize(s));
+			System.out.printf("(%s)%n", StringUtil.trimLeading(s));
+			System.out.printf("(%s)%n", StringUtil.trimTrailing(s));
 			System.out.println("--------------------------");
 			
 			if ("elma".equals(s))
@@ -35,9 +37,13 @@ class CapitalizeTest {
 }
 
 class StringUtil {
-	public static String capitalize(String s)
+	public static String trimLeading(String s)
 	{
 		//TODO:
 	}
+	public static String trimTrailing(String s)
+	{
+		//TODO:
+	}	
 }
 
