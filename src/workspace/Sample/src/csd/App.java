@@ -16,21 +16,7 @@ package csd;
 class App {
 	public static void main(String [] args) 
 	{
-		java.util.Scanner kb = new java.util.Scanner(System.in);
-		
-		for (;;) {
-			System.out.print("Numaranızı giriniz:");
-			String s = kb.nextLine();
-			int no = Integer.parseInt(s);
-			
-			if (no <= 0)
-				break;
-			
-			System.out.print("Adınızı giriniz:");
-			String name = kb.nextLine();
-			
-			System.out.printf("{no: %d, name: %s}%n", no, name);
-		}
+		IsPangramTest.run();
 	}	
 }
 
