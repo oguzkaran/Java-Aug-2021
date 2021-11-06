@@ -1,65 +1,66 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Point sınıfı 
+	Sınıf Çalışması: Parametresi ile aldığı bir yazının Türkçe pangram olup olmadığını test eden ispangramTR ve İngilizce
+	pangram olup olmadığını test eden isPangramEN metotlarını yazınız ve aşağıdaki kod ile test ediniz.
+	Pangram: İçerisinde özel isim bulunmayan, anlamlı ve ilgili alfabenin tüm karakterlerinin kullanılmış olduğu
+	cümlelere denir.  
+	
+	İngilizce pangram:
+		The quick brown fox jumps over the lazy dog
+	Türkçe pangram:
+		Pijamalı hasta yağız şoföre çabucak güvendi
+	Açıklama: Metotlar sadece karakterlerin hepsinin kullanılıp kullanılmadığına bakacaktır. Özel isim ya da anlamlı olması
+	durumu gözardı edilecektir
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
 class App {
 	public static void main(String [] args) 
 	{
-		Point p = new Point(100, 100);
+		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
-		System.out.println(p.toString());
+		for (;;) {
+			System.out.print("Numaranızı giriniz:");
+			String s = kb.nextLine();
+			int no = Integer.parseInt(s);
+			
+			if (no <= 0)
+				break;
+			
+			System.out.print("Adınızı giriniz:");
+			String name = kb.nextLine();
+			
+			System.out.printf("{no: %d, name: %s}%n", no, name);
+		}
 	}	
 }
 
-
-class Point {
-	public int x;
-	public int y;
-	
-	public Point()
-	{		
-	}
-	
-	public Point(int a)
+class IsPangramTest {
+	public static void run()
 	{
-		x = a;
-	}
-	
-	public Point(int a, int b)
-	{
-		x = a;
-		y = b;
-	}
-	
-	public double distance()
-	{
-		return distance(0, 0);
-	}
-	
-	public double distance(Point other)
-	{
-		return distance(other.x, other.y);
-	}
-	
-	public double distance(int a, int b)
-	{
-		return Math.sqrt(Math.pow(x - a, 2) + Math.pow(y - b, 2));
-	}
-	
-	public void offset(int dxy)
-	{
-		offset(dxy, dxy);
-	}
-	
-	public void offset(int dx, int dy)
-	{
-		x += dx;
-		y += dy;
-	}
-	
-	public String toString()
-	{
-		return String.format("{x: %d, y: %d}", x, y);		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		for (;;) {
+			System.out.print("Bir yazı giriniz:");
+			String text = kb.nextLine();
+			
+			if ("elma".equals(text))
+				break;
+			
+			System.out.println(StringUtil.IsPangramTR(text) ? "Pangram" : "Pangram değil");
+			System.out.println(StringUtil.IsPangramEN(text) ? "Pangram" : "Not a pangram");
+		}
 	}
 }
+
+class StringUtil {
+	public static boolean IsPangramTR(String text)
+	{
+		
+	}
+	
+	public static boolean IsPangramEN(String text)
+	{
+		
+	}
+}
+
