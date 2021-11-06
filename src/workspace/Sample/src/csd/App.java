@@ -1,64 +1,55 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Sınıf Çalışması: Parametresi ile aldığı bir yazının Türkçe pangram olup olmadığını test eden ispangramTR ve İngilizce
-	pangram olup olmadığını test eden isPangramEN metotlarını yazınız ve aşağıdaki kod ile test ediniz.
-	Pangram: İçerisinde özel isim bulunmayan, anlamlı ve ilgili alfabenin tüm karakterlerinin kullanılmış olduğu
-	cümlelere denir.  
-	
-	İngilizce pangram:
-		The quick brown fox jumps over the lazy dog
-	Türkçe pangram:
-		Pijamalı hasta yağız şoföre çabucak güvendi
-	Açıklama: Metotlar sadece karakterlerin hepsinin kullanılıp kullanılmadığına bakacaktır. Özel isim ya da anlamlı olması
-	durumu gözardı edilecektir
-	
-	Örnek contains metodu kullanılarak yapılmıştır
+	Sınıf Çalışması: Parametresi ile aldığı int türden bir n değeri için n tane rasgele belirlenmiş Türkçe karaketerlerden
+	oluşan bir yazı döndüren getRandomTextTR ile n tane rasgele belirlenmiş İngilizce karaketerlerden oluşan bir yazı 
+	döndüren getRandomTextEN metotlarını yazınız ve aşağıdaki kod ile test ediniz  
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
+
+import java.util.Random;
 
 class App {
 	public static void main(String [] args) 
 	{
-		IsPangramTest.run();
+		GetRandomTextTest.run();
 	}	
 }
 
-class IsPangramTest {
+class GetRandomTextTest {
 	public static void run()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
 		for (;;) {
-			System.out.print("Bir yazı giriniz:");
-			String text = kb.nextLine();
+			System.out.print("Bir sayı giriniz:");
+			int n = Integer.parseInt(kb.nextLine());
 			
-			if ("elma".equals(text))
+			if (n <= 0)
 				break;
 			
-			System.out.println(StringUtil.isPangramTR(text) ? "Pangram" : "Pangram değil");
-			System.out.println(StringUtil.isPangramEN(text) ? "Pangram" : "Not a pangram");
+			System.out.println(StringUtil.getRandomTextTR(n));
 		}
 	}
 }
 
 class StringUtil {
-	public static boolean isPangramTR(String text)
+	
+	public static String getRandomTextTR(int n)
 	{
-		return isPangram(text.toLowerCase(), "abcçdefgğhıijklmnoöprsştuüvyz");		
+		return getRandomTextTR(new Random(), n);
 	}
 	
-	public static boolean isPangramEN(String text)
+	public static String getRandomTextTR(Random r, int n)
 	{
-		return isPangram(text.toLowerCase(), "abcdefghijklmnopqrstuwxvyz");
+		
 	}
 	
-	public static boolean isPangram(String text, String alphabet)
+	public static String getRandomTextEN(int n)
 	{
-		int length = alphabet.length();
+		return getRandomTextEN(new Random(), n);
+	}
+	
+	public static String getRandomTextEN(Random r, int n)
+	{
 		
-		for (int i = 0; i < length; ++i)
-			if (!text.contains(alphabet.charAt(i) + ""))
-				return false;
-		
-		return true;
 	}
 }
