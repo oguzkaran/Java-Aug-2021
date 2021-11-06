@@ -10,6 +10,8 @@
 		Pijamalı hasta yağız şoföre çabucak güvendi
 	Açıklama: Metotlar sadece karakterlerin hepsinin kullanılıp kullanılmadığına bakacaktır. Özel isim ya da anlamlı olması
 	durumu gözardı edilecektir
+	
+	Örnek contains metodu kullanılarak yapılmıştır
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
 
@@ -32,21 +34,31 @@ class IsPangramTest {
 			if ("elma".equals(text))
 				break;
 			
-			System.out.println(StringUtil.IsPangramTR(text) ? "Pangram" : "Pangram değil");
-			System.out.println(StringUtil.IsPangramEN(text) ? "Pangram" : "Not a pangram");
+			System.out.println(StringUtil.isPangramTR(text) ? "Pangram" : "Pangram değil");
+			System.out.println(StringUtil.isPangramEN(text) ? "Pangram" : "Not a pangram");
 		}
 	}
 }
 
 class StringUtil {
-	public static boolean IsPangramTR(String text)
+	public static boolean isPangramTR(String text)
 	{
-		
+		return isPangram(text.toLowerCase(), "abcçdefgğhıijklmnoöprsştuüvyz");		
 	}
 	
-	public static boolean IsPangramEN(String text)
+	public static boolean isPangramEN(String text)
 	{
+		return isPangram(text.toLowerCase(), "abcdefghijklmnopqrstuwxvyz");
+	}
+	
+	public static boolean isPangram(String text, String alphabet)
+	{
+		int length = alphabet.length();
 		
+		for (int i = 0; i < length; ++i)
+			if (!text.contains(alphabet.charAt(i) + ""))
+				return false;
+		
+		return true;
 	}
 }
-
