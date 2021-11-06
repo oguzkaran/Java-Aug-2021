@@ -1,55 +1,44 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Sınıf Çalışması: Parametresi ile aldığı int türden bir n değeri için n tane rasgele belirlenmiş Türkçe karaketerlerden
-	oluşan bir yazı döndüren getRandomTextTR ile n tane rasgele belirlenmiş İngilizce karaketerlerden oluşan bir yazı 
-	döndüren getRandomTextEN metotlarını yazınız ve aşağıdaki kod ile test ediniz  
+	Sınıf Çalışması: Parametresi ile aldığı bir yazının palndrome olup olmadığını test eden isPalindrome isimli metodu
+	yazınız ve aşağıdaki kod ile test ediniz:
+	Palindrom: Yalnızca alfabetik karakterleri ters ve düz olarak okunduğunda aynı olan yazılara denir. Alfabetik karakterler 
+	dışındakiler yok varsayılır. Örneğin:
+	Ey Edip Adana'da pide ye 	-> eyedipadanadapideye
+	Anastas mum satsana			-> anastasmumsatsana
+	Ali Papila					-> alipapila		  
 ----------------------------------------------------------------------------------------------------------------------*/
 package csd;
-
-import java.util.Random;
 
 class App {
 	public static void main(String [] args) 
 	{
-		GetRandomTextTest.run();
+		IsPalindromeTest.run();
 	}	
 }
 
-class GetRandomTextTest {
+
+class IsPalindromeTest {
 	public static void run()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		
 		for (;;) {
-			System.out.print("Bir sayı giriniz:");
-			int n = Integer.parseInt(kb.nextLine());
+			System.out.print("Bir yazı giriniz:");
+			String s = kb.nextLine();
 			
-			if (n <= 0)
+			if ("elma".equals(s))
 				break;
 			
-			System.out.println(StringUtil.getRandomTextTR(n));
+			System.out.println(StringUtil.isPalindrome(s) ? "Palindrom" : "Palindrom değil");
 		}
+		
+		System.out.println("Tekrar yapıyor musunuz?");
 	}
 }
 
 class StringUtil {
-	
-	public static String getRandomTextTR(int n)
+	public static boolean isPalindrome(String s)
 	{
-		return getRandomTextTR(new Random(), n);
-	}
-	
-	public static String getRandomTextTR(Random r, int n)
-	{
-		
-	}
-	
-	public static String getRandomTextEN(int n)
-	{
-		return getRandomTextEN(new Random(), n);
-	}
-	
-	public static String getRandomTextEN(Random r, int n)
-	{
-		
+		//TODO:
 	}
 }
