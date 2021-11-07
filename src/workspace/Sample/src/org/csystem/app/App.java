@@ -1,13 +1,25 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	java.lang paketi altındaki tüm sınıflar her yerden görülebilirdir. Yani isimleri doğrudan kullanılabilir
+	Yukarıdaki iki kurala göre bir sınıfın veri elemanı ile aynı isimde metot parametre değişkeni veya yerel değişken
+	bildirilebilir. Aşağıdaki örnekte a parametre değişkeninin değeri kendisine atanmıştır. Kod tamamen durumu
+	anlatmak için yazılmıştır. Veri elemanı olan a'ya erişim ileride ele alınacaktır
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
 class App {
 	public static void main(String [] args) 
 	{
-		String s = "ankara"; // ~ karşılığı: java.lang.String s = "ankara";
-		
-		System.out.println(s); // ~ karşılığı: java.lang.System.out.println(s);
+	
 	}	
 }
+
+
+class Sample {
+	public void foo(int a)
+	{
+		a = a; //Dikkat self assignment
+	}
+	
+	public int a;
+}
+
+

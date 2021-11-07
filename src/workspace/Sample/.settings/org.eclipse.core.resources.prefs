@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/org/csystem/app/App.java=UTF-8
+encoding//src/org/csystem/application/dateapp/DateApp.java=UTF-8
+encoding//src/org/csystem/application/dateapp/DateUtil.java=UTF-8
+encoding//src/org/csystem/application/game/ballfall/BallFallGameApp.java=UTF-8
