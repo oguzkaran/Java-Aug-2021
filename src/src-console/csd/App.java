@@ -4,13 +4,7 @@ package csd;
 class App {	
 	public static void main(String [] args)  
 	{
-		IX ix = new IX() {
-
-		};
+		System.out.println("I am App.main");			
 	}
-}
-
-interface IX {
-
 }
 
