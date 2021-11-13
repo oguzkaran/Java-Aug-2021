@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : NumberUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 07.11.2021
+	LAST UPDATE : 13.11.2021
 
 	Utility class that is used for numeric operations
 
@@ -10,60 +10,8 @@
 -----------------------------------------------------------------------*/
 package org.csystem.util.numeric;
 
-public class NumberUtil {
-
-    public static int calculateDigitalRoot(int val)
-    {
-        int root = Math.abs(val);
-
-        while (root > 9)
-            root = sumDigits(root);
-
-        return root;
-    }
-
-    public static int calculateDigitalRoot(int val)
-    {
-        int root = Math.abs(val);
-
-        while ((root = sumDigits(root)) > 9)
-            ;
-
-        return root;
-    }
-
-    public static int countDigits(int val)
-    {
-        if (val == 0)
-            return 1;
-
-        return (int) Math.log10(Math.abs(val)) + 1;
-    }
-
-    public static void displayCollatz(int n)
-    {
-        if (n <= 0) {
-            System.out.println("Geçersiz sayı");
-            return;
-        }
-
-        System.out.println(n);
-
-        while (n != 1)
-            System.out.println(n = n % 2 == 0 ? n / 2 : 3 * n + 1);
-    }
-
-    public static long factorial(int n)
-    {
-        long result = 1;
-
-        for (long i = 2; i <= n; ++i)
-            result *= i;
-
-        return result;
-    }
-
-    public static int getDigitsFactorialSum(int n)
+public class NumberUtil {	
+	public static int getDigitsFactorialSum(int n)
     {
         int total = 0;
 
@@ -88,6 +36,34 @@ public class NumberUtil {
         return result;
     }
 
+
+    public static int calculateDigitalRoot(int val)
+    {
+        int root = Math.abs(val);
+
+        while (root > 9)
+            root = sumDigits(root);
+
+        return root;
+    }
+    
+
+    public static int countDigits(int val)
+    {
+        return val == 0 ? 1 : (int) Math.log10(Math.abs(val)) + 1;
+    }
+    
+    public static long factorial(int n)
+    {
+        long result = 1;
+
+        for (long i = 2; i <= n; ++i)
+            result *= i;
+
+        return result;
+    }
+
+    
     public static int getFibonacciNumber(int n)
     {
         if (n <= 2)
@@ -228,18 +204,7 @@ public class NumberUtil {
                 return false;
 
         return true;
-    }
-
-    public static boolean isPrimeX(long val)
-    {
-        long sum = val;
-        boolean result;
-
-        while ((result = isPrime(sum)) && sum > 9)
-            sum = sumDigits(sum);
-
-        return result;
-    }
+    }   
 
     public static boolean isPrimeX(long val)
     {
@@ -322,18 +287,7 @@ public class NumberUtil {
         }
 
         return result;
-    }
-
-    public static int signum(int a)
-    {
-        int result = -1;
-        if (a > 0)
-            result = 1;
-        else if (a == 0)
-            result = 0;
-
-        return result;
-    }
+    }    
 
     public static int sumDigits(long val)
     {

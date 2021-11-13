@@ -1,25 +1,23 @@
 /*----------------------------------------------------------------------------------------------------------------------	 
-	Yukarıdaki iki kurala göre bir sınıfın veri elemanı ile aynı isimde metot parametre değişkeni veya yerel değişken
-	bildirilebilir. Aşağıdaki örnekte a parametre değişkeninin değeri kendisine atanmıştır. Kod tamamen durumu
-	anlatmak için yazılmıştır. Veri elemanı olan a'ya erişim ileride ele alınacaktır
+	Yukarıdaki problemin bir çözümü 
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
+
+import test.*;
 
 class App {
 	public static void main(String [] args) 
 	{
-	
-	}	
-}
-
-
-class Sample {
-	public void foo(int a)
-	{
-		a = a; //Dikkat self assignment
+		test.Sample s1;
+		mest.Sample s2;
+		org.csystem.app.test.Sample s3;
+		Mample m;
+		//...
+		
 	}
-	
-	public int a;
 }
+
+
+
 
 

@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : StringUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 07.11.2021
+	LAST UPDATE : 13.11.2021
 
 	Utility class that is used for string operations
 
@@ -13,11 +13,8 @@ package org.csystem.util.string;
 public class StringUtil {
 
     public static String capitalize(String s)
-    {
-        if (s.isBlank())
-            return s;
-
-        return Character.toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();
+    {        
+        return s.isBlank() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();
     }
 
     public static int countString(String s1, String s2)
@@ -102,7 +99,7 @@ public class StringUtil {
         while (left < right) {
             char chLeft = Character.toLowerCase(s.charAt(left));
 
-            if (!isLetter(chLeft)) {
+            if (!Character.isLetter(chLeft)) {
                 ++left;
                 continue;
             }
@@ -147,10 +144,7 @@ public class StringUtil {
 
     public static String padLeading(String s, int length, char ch)
     {
-        if (length <= s.length())
-            return s;
-
-        return (ch + "").repeat(length - s.length()) + s;
+        return length <= s.length() ? s : (ch + "").repeat(length - s.length()) + s;
     }
 
     public static String padLeading(String s, int length)
@@ -159,11 +153,8 @@ public class StringUtil {
     }
 
     public static String padTrailing(String s, int length, char ch)
-    {
-        if (length <= s.length())
-            return s;
-
-        return s + (ch + "").repeat(length - s.length());
+    {        
+        return length <= s.length() ? s : s + (ch + "").repeat(length - s.length());
     }
 
     public static String padTrailing(String s, int length)
