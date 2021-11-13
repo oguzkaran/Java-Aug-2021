@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : Point.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 07.11.2021
+	LAST UPDATE : 13.11.2021
 
 	Point class that represents 2D point
 
@@ -9,6 +9,10 @@
 	All Rights Free
 -----------------------------------------------------------------------*/
 package org.csystem.util.math.geometry;
+
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 
 public class Point {
 	public int x;
@@ -41,7 +45,7 @@ public class Point {
 	
 	public double distance(int a, int b)
 	{
-		return Math.sqrt(Math.pow(x - a, 2) + Math.pow(y - b, 2));
+		return sqrt(pow(x - a, 2) + pow(y - b, 2));
 	}
 	
 	public void offset(int dxy)

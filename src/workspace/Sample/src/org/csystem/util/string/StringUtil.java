@@ -10,11 +10,18 @@
 -----------------------------------------------------------------------*/
 package org.csystem.util.string;
 
+import static java.lang.Character.isLetter;
+import static java.lang.Character.isWhitespace;
+import static java.lang.Character.toLowerCase;
+import static java.lang.Character.toUpperCase;
+
+import java.util.Random;
+
 public class StringUtil {
 
     public static String capitalize(String s)
     {        
-        return s.isBlank() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();
+        return s.isBlank() ? s : toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();
     }
 
     public static int countString(String s1, String s2)
@@ -49,7 +56,7 @@ public class StringUtil {
         return result;
     }
 
-    public static String getRandomText(java.util.Random r, int n, String sourceText)
+    public static String getRandomText(Random r, int n, String sourceText)
     {
         String str = "";
         int length = sourceText.length();
@@ -60,24 +67,24 @@ public class StringUtil {
         return str;
     }
 
-    public static String getRandomTextTR(java.util.Random r, int n)
+    public static String getRandomTextTR(Random r, int n)
     {
         return getRandomText(r, n, "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz");
     }
 
     public static String getRandomTextTR(int n)
     {
-        return getRandomTextTR(new java.util.Random(), n);
+        return getRandomTextTR(new Random(), n);
     }
 
-    public static String getRandomTextEN(java.util.Random r, int n)
+    public static String getRandomTextEN(Random r, int n)
     {
         return getRandomText(r, n, "ABCDEFGHIJKLMNOPQRSTUWXVYZabcdefghijklmnopqrstuwxvyz");
     }
 
     public static String getRandomTextEN(int n)
     {
-        return getRandomTextEN(new java.util.Random(), n);
+        return getRandomTextEN(new Random(), n);
     }
 
     public static boolean isAllLetter(String s)
@@ -85,7 +92,7 @@ public class StringUtil {
         int length = s.length();
 
         for (int i = 0; i < length; ++i)
-            if (!Character.isLetter(s.charAt(i)))
+            if (!isLetter(s.charAt(i)))
                 return false;
 
         return true;
@@ -97,16 +104,16 @@ public class StringUtil {
         int right = s.length() - 1;
 
         while (left < right) {
-            char chLeft = Character.toLowerCase(s.charAt(left));
+            char chLeft = toLowerCase(s.charAt(left));
 
-            if (!Character.isLetter(chLeft)) {
+            if (!isLetter(chLeft)) {
                 ++left;
                 continue;
             }
 
-            char chRight = Character.toLowerCase(s.charAt(right));
+            char chRight = toLowerCase(s.charAt(right));
 
-            if (!Character.isLetter(chRight)) {
+            if (!isLetter(chRight)) {
                 --right;
                 continue;
             }
@@ -177,7 +184,7 @@ public class StringUtil {
         int i;
         int length = s.length();
 
-        for (i = 0; i < length && Character.isWhitespace(s.charAt(i)); ++i)
+        for (i = 0; i < length && isWhitespace(s.charAt(i)); ++i)
             ;
 
         return s.substring(i);
@@ -187,7 +194,7 @@ public class StringUtil {
     {
         int i;
 
-        for (i = s.length() - 1; i >= 0 && Character.isWhitespace(s.charAt(i)); --i)
+        for (i = s.length() - 1; i >= 0 && isWhitespace(s.charAt(i)); --i)
             ;
 
         return s.substring(0, i + 1);

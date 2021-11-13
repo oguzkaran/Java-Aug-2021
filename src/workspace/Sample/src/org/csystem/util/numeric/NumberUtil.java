@@ -10,6 +10,11 @@
 -----------------------------------------------------------------------*/
 package org.csystem.util.numeric;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.log10;
+
+import java.util.Random;
+
 public class NumberUtil {	
 	public static int getDigitsFactorialSum(int n)
     {
@@ -39,7 +44,7 @@ public class NumberUtil {
 
     public static int calculateDigitalRoot(int val)
     {
-        int root = Math.abs(val);
+        int root = abs(val);
 
         while (root > 9)
             root = sumDigits(root);
@@ -50,7 +55,7 @@ public class NumberUtil {
 
     public static int countDigits(int val)
     {
-        return val == 0 ? 1 : (int) Math.log10(Math.abs(val)) + 1;
+        return val == 0 ? 1 : (int) log10(abs(val)) + 1;
     }
     
     public static long factorial(int n)
@@ -128,7 +133,7 @@ public class NumberUtil {
         return val;
     }
 
-    public static long getRandomLongPrime(java.util.Random r)
+    public static long getRandomLongPrime(Random r)
     {
         long prime;
 
@@ -262,7 +267,7 @@ public class NumberUtil {
         if (n == 0)
             return;
 
-        n = Math.abs(n);
+        n = abs(n);
 
         int i = 2;
 
@@ -298,7 +303,6 @@ public class NumberUtil {
             val /= 10;
         }
 
-        return Math.abs(sum);
+        return abs(sum);
     }
-
 }
