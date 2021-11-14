@@ -1,21 +1,44 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Diziye ilkdeğer olarak verilen elemanlar sabit ifadesi olmak zorunda değildir
+    Sınıf Çalışması: Parametresi ile aldığı int türden bir dizinin en küçük elemanını, en büyük elemanını, toplamını ve
+    ortalamasını döndüren sırasıyla min, max, sum average metotlarını yazınız ve aşağıdaki kod ile test ediniz
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
+import static org.csystem.util.array.ArrayUtil.*;
+
+import java.util.Random;
 import java.util.Scanner;
 
 class App {
     public static void main(String[] args)
     {
-        Scanner kb = new Scanner(System.in);
-        System.out.print("Bir sayı giriniz:");
-        int val = Integer.parseInt(kb.nextLine());
-        int [] a = {val, val + 1, val + 3, 3 * val + 2,};
-
-        for (int i = 0; i < a.length; ++i)
-            System.out.printf("%d ", a[i]);
-
-        System.out.println();
+        MinMaxSumAverageTest.run();
     }
 }
+
+class MinMaxSumAverageTest {
+    public static void run()
+    {
+        Scanner kb = new Scanner(System.in);
+        Random r = new Random();
+
+        for (;;) {
+            System.out.print("Dizinin eleman sayısını giriniz:");
+            int n = Integer.parseInt(kb.nextLine());
+
+            if (n <= 0)
+                break;
+
+            int [] a = getRandomArray(r, n, 0, 99);
+
+            System.out.println("------------------------------------");
+            display(2, a);
+            System.out.printf("En küçük eleman:%d%n", min(a));
+            System.out.printf("En küçük eleman:%d%n", max(a));
+            System.out.printf("En küçük eleman:%d%n", sum(a));
+            System.out.printf("En küçük eleman:%f%n", average(a));
+            System.out.println("------------------------------------");
+        }
+    }
+}
+
