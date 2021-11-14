@@ -21,7 +21,7 @@ public class ArrayUtil {
 
     public static double average(int [] a)
     {
-
+        return (double)sum(a) / a.length;
     }
 
     public static void display(int [] a)
@@ -74,12 +74,24 @@ public class ArrayUtil {
 
     public static int min(int [] a)
     {
+        int minVal = a[0];
 
+        for (int i = 1; i < a.length; ++i)
+            if (a[i] < minVal)
+                minVal = a[i];
+
+        return minVal;
     }
 
     public static int max(int [] a)
     {
+        int maxVal = a[0];
 
+        for (int i = 1; i < a.length; ++i)
+            if (maxVal < a[i])
+                maxVal = a[i];
+
+        return maxVal;
     }
 
     public static void reverse(int [] a)
@@ -92,7 +104,12 @@ public class ArrayUtil {
 
     public static int sum(int [] a)
     {
+        int total = 0;
 
+        for (int i = 0; i < a.length; ++i)
+            total += a[i];
+
+        return total;
     }
 
     public static void swap(int [] a, int i, int k)

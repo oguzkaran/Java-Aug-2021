@@ -34,9 +34,9 @@ class MinMaxSumAverageTest {
             System.out.println("------------------------------------");
             display(2, a);
             System.out.printf("En küçük eleman:%d%n", min(a));
-            System.out.printf("En küçük eleman:%d%n", max(a));
-            System.out.printf("En küçük eleman:%d%n", sum(a));
-            System.out.printf("En küçük eleman:%f%n", average(a));
+            System.out.printf("En büyük eleman:%d%n", max(a));
+            System.out.printf("Toplam:%d%n", sum(a));
+            System.out.printf("Ortalama:%f%n", average(a));
             System.out.println("------------------------------------");
         }
     }
