@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : NumberUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 13.11.2021
+	LAST UPDATE : 28.11.2021
 
 	Utility class that is used for numeric operations
 
@@ -15,7 +15,13 @@ import static java.lang.Math.log10;
 
 import java.util.Random;
 
-public class NumberUtil {	
+public class NumberUtil {
+
+    public static int [] getDigits(int val)
+    {
+        //TODO:
+    }
+
 	public static int getDigitsFactorialSum(int n)
     {
         int total = 0;
