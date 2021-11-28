@@ -1,12 +1,12 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Sınıf Çalışması: Parametresi ile aldığı bir sayının basamaklarından oluşan diziye geri dönen getDigits isimli metodu
-    NumberUtil sınıfı içerisinde yazınız ve aşağıdaki kod ile test ediniz. Metot negatif sayılar içim sayının pozitif
-    olması durumunda elde edilen diziye geri dönecektir
+    Partition Algoritması: Bir dizinin içerisinde bulunan elemanlardan belirli koşula uyanları mantıksal solda, uymayanları
+    sağda kalacak şekilde dizi üzerinde değişiklik yapmaktadır. Bu algoritma için ikinci bir dizi kullanılmamalıdır. ArrayUtil
+    sınıfında partition metodu bir eşik değerinde küçük olan elemanları dizinin solunda büyük veya eşit olanları dizinin
+    sağında toplayacak şekilde yazılmıştır
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
 import org.csystem.util.array.ArrayUtil;
-import org.csystem.util.numeric.NumberUtil;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -14,27 +14,30 @@ import java.util.Scanner;
 class App {
     public static void main(String[] args)
     {
-        GetDigitsTest.run();
+        PartitionTest.run();
     }
 }
 
-class GetDigitsTest {
+class PartitionTest {
     public static void run()
     {
         Scanner kb = new Scanner(System.in);
+        Random r = new Random();
 
         System.out.print("Bir sayı giriniz:");
         int n = Integer.parseInt(kb.nextLine());
-        Random r = new Random();
 
         for (int i = 0; i < n; ++i) {
-            int val = r.nextInt(2_000_000_001) - 1_000_000_000;
-            System.out.printf("%d -> ", val);
-            ArrayUtil.display(NumberUtil.getDigits(val));
-        }
+            int [] a = ArrayUtil.getRandomArray(r, r.nextInt(10) + 1, 0, 99);
+            int threshold = r.nextInt(220) - 110;
 
-        System.out.printf("%d -> ", 0);
-        ArrayUtil.display(NumberUtil.getDigits(0));
+            System.out.println("---------------------------------------");
+            System.out.printf("Threshold:%d%n", threshold);
+            ArrayUtil.display(2, a);
+            int partitionPoint = ArrayUtil.partition(a, threshold);
+            System.out.printf("Partition point (index):%d%n", partitionPoint);
+            ArrayUtil.display(2, a);
+            System.out.println("---------------------------------------");
+        }
     }
 }
-

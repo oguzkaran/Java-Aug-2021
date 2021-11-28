@@ -19,7 +19,14 @@ public class NumberUtil {
 
     public static int [] getDigits(int val)
     {
-        //TODO:
+        int [] digits = new int[countDigits(val)];
+
+        val = Math.abs(val);
+
+        for (int i = digits.length - 1; i >= 0; digits[i] = val % 10, val /= 10, --i)
+            ;
+
+        return digits;
     }
 
 	public static int getDigitsFactorialSum(int n)
