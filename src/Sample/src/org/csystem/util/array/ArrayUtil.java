@@ -94,7 +94,6 @@ public class ArrayUtil {
     public static void display(int [] a)
     {
         display(1, a);
-
     }
 
     public static void display(int n, int [] a)
@@ -124,6 +123,16 @@ public class ArrayUtil {
             a[i] = r.nextInt(max - min + 1) + min;
     }
 
+    public static int [] getHistogramData(int [] a, int n) //[0, n]
+    {
+        int [] counts = new int[n + 1];
+
+        for (int i = 0; i < a.length; ++i)
+            ++counts[a[i]];
+
+        return counts;
+    }
+
     public static int [] getRandomArray(int n, int min, int max)
     {
         return getRandomArray(new Random(), n, min, max);
@@ -137,7 +146,6 @@ public class ArrayUtil {
 
         return a;
     }
-
 
     public static int min(int [] a)
     {
