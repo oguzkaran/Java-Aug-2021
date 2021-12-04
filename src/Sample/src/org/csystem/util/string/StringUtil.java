@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : StringUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 13.11.2021
+	LAST UPDATE : 04.12.2021
 
 	Utility class that is used for string operations
 
@@ -10,12 +10,11 @@
 -----------------------------------------------------------------------*/
 package org.csystem.util.string;
 
-import static java.lang.Character.isLetter;
-import static java.lang.Character.isWhitespace;
-import static java.lang.Character.toLowerCase;
-import static java.lang.Character.toUpperCase;
+import org.csystem.util.array.ArrayUtil;
 
 import java.util.Random;
+
+import static java.lang.Character.*;
 
 public class StringUtil {
 
@@ -58,13 +57,13 @@ public class StringUtil {
 
     public static String getRandomText(Random r, int n, String sourceText)
     {
-        String str = "";
+        char [] c = new char[n];
         int length = sourceText.length();
 
         for (int i = 0; i < n; ++i)
-            str += sourceText.charAt(r.nextInt(length));
+            c[i] = sourceText.charAt(r.nextInt(length));
 
-        return str;
+        return String.valueOf(c);
     }
 
     public static String getRandomTextTR(Random r, int n)
@@ -169,14 +168,29 @@ public class StringUtil {
         return padTrailing(s, length, ' ');
     }
 
-    public static String reverse(String s)
+    public static String removeWhiteSpaces(String s)
     {
-        String rev = "";
+        char [] c = new char[s.length()];
+        int idx;
 
-        for (int i = s.length() - 1; i >= 0; --i)
-            rev += s.charAt(i);
+        idx = 0;
+        for (int i = 0; i < c.length; ++i) {
+            char ch = s.charAt(i);
 
-        return rev;
+            if (!Character.isWhitespace(ch))
+                c[idx++] = ch;
+        }
+
+        return String.valueOf(c, 0, idx);
+    }
+
+    public static String reversed(String s)
+    {
+        char [] c = s.toCharArray();
+
+        ArrayUtil.reverse(c);
+
+        return String.valueOf(c);
     }
 
     public static String trimLeading(String s)

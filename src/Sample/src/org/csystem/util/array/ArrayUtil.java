@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 28.11.2021
+	LAST UPDATE : 04.12.2021
 
 	Utility class that is used for array operations
 
@@ -112,6 +112,20 @@ public class ArrayUtil {
             System.out.printf("%f%n", a[i]);
     }
 
+    public static void drawHistogram(int [] data, int n, char ch)
+    {
+        int maxVal = max(data);
+
+        for (int i = 0; i < data.length; ++i) {
+            int count = (int)Math.ceil(data[i] * n / (double)maxVal);
+
+            while (count-- > 0)
+                System.out.print(ch);
+
+            System.out.println();
+        }
+    }
+
     public static void fillRandomArray(int [] a, int min, int max)
     {
         fillRandomArray(new Random(), a, min, max);
@@ -194,6 +208,14 @@ public class ArrayUtil {
             swap(a, i, a.length - 1 - i);
     }
 
+    public static void reverse(char [] a)
+    {
+        int halfVal = a.length / 2;
+
+        for (int i = 0; i < halfVal; ++i)
+            swap(a, i, a.length - 1 - i);
+    }
+
     public static void selectionSort(int [] a)
     {
         selectionSort(a, false);
@@ -221,6 +243,15 @@ public class ArrayUtil {
     public static void swap(int [] a, int i, int k)
     {
         int temp;
+
+        temp = a[i];
+        a[i] = a[k];
+        a[k] = temp;
+    }
+
+    public static void swap(char [] a, int i, int k)
+    {
+        char temp;
 
         temp = a[i];
         a[i] = a[k];
