@@ -1,34 +1,22 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Referans dizileri:
+	Sınıf Çalışması: Klavyeden int türden bir n sayısı okuyunuz n elemanlı bir String dizisi yaratınız. Bu dizinin
+	her bir elemanını rasgele uzunlukta rasgele üretilmiş yazılarla doldurunuz. Bu işlemden sonra dizinin elemanlarının
+	klavyeden girilen yine String türden bir ayraç alacak şekilde birleştirilmiş yeni bir String referansı elde eden
+	programı yazınız. Program için StringUtil sınıfı içerisine join isimli bir metot eklenecektir
+	Örneğin:
+	Üretilen yazılar: "xyz", "abcd", "efg" olsun
+	Klavyeden girilen ayraç: --
+	Sonuçta elde edilen yazı aşağıdaki gibi olacaktır:
+	"xyz--abcd--efg"
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.random.RandomUtil;
-import org.csystem.util.string.StringUtil;
-
-import java.util.Random;
+import org.csystem.application.dateapp.DateApp;
 
 class App {
     public static void main(String [] args)
     {
-        RemoveWhitespacesTest.run();
+        DateApp.run();
     }
 }
 
-class RemoveWhitespacesTest {
-    public static void run()
-    {
-        Random r = new Random();
-        java.util.Scanner kb = new java.util.Scanner(System.in);
-        System.out.print("Bir sayı giriniz:");
-        int count = Integer.parseInt(kb.nextLine());
-
-        for (int i = 0; i < count; ++i) {
-            System.out.println("-----------------------------------------------------------");
-            String s = StringUtil.getRandomText(r, RandomUtil.nextInt(r, 10, 20), " \tabcdefg12345:? \t \t");
-            System.out.printf("(%s)%n", s);
-            System.out.printf("(%s)%n", StringUtil.removeWhiteSpaces(s));
-            System.out.println("-----------------------------------------------------------");
-        }
-    }
-}

@@ -23,6 +23,19 @@ public class StringUtil {
         return s.isBlank() ? s : toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();
     }
 
+    public static String changeCase(String s)
+    {
+        char [] c = s.toCharArray();
+
+        for (int i = 0; i < c.length; ++i)
+            if (isUpperCase(c[i]))
+                c[i] = toLowerCase(c[i]);
+            else if (isLowerCase(c[i]))
+                c[i] = toUpperCase(c[i]);
+
+        return String.valueOf(c);
+    }
+
     public static int countString(String s1, String s2)
     {
         int count = 0;
@@ -146,6 +159,20 @@ public class StringUtil {
                 return false;
 
         return true;
+    }
+
+    public static String join(String [] str, char delimiter)
+    {
+        return join(str, delimiter + "");
+    }
+
+    public static String join(String [] str, String delimiter)
+    {
+        String result = "";
+
+        //TODO:
+
+        return result;
     }
 
     public static String padLeading(String s, int length, char ch)

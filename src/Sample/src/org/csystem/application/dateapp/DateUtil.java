@@ -1,42 +1,44 @@
 package org.csystem.application.dateapp;
 
 public class DateUtil {
+	public static int [] daysOfMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	public static String [] daysOfWeekTR = {"Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"};
+	public static String [] daysOfWeekEN = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+	public static String [] monthsTR = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+			"Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+	};
+	public static String [] monthsEN = {"",
+			"Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+	};
+
 	public static void displayDateTR(int day, int month, int year)
 	{
-		int dayOfWeek = getDayOfWeek(day, month, year);	
-		
-		
-		switch (dayOfWeek) {
-		case 0:
-			System.out.printf("%02d/%02d/%04d Pazar%n", day, month, year);
-			break;
-		case 1:
-			System.out.printf("%02d/%02d/%04d Pazartesi%n", day, month, year);
-			break;
-		case 2:
-			System.out.printf("%02d/%02d/%04d Salı%n", day, month, year);
-			break;
-		case 3:
-			System.out.printf("%02d/%02d/%04d Çarşamba%n", day, month, year);
-			break;
-		case 4:
-			System.out.printf("%02d/%02d/%04d Perşembe%n", day, month, year);
-			break;
-		case 5:
-			System.out.printf("%02d/%02d/%04d Cuma%n", day, month, year);
-			break;
-		case 6:
-			System.out.printf("%02d/%02d/%04d Cumartesi%n", day, month, year);
-			break;
-		default:
+		int dayOfWeek = getDayOfWeek(day, month, year);
+
+		if (dayOfWeek == -1) {
 			System.out.println("Geçersiz tarih");
-		}
-		
-		if (dayOfWeek == -1)
 			return;
+		}
+
+		System.out.printf("%d %s %d %s%n", day, monthsTR[month], year, daysOfWeekTR[dayOfWeek]);
 		
 		System.out.println( isWeekday(day, month, year) ? "Hafta sonu kursu yaklaşıyor. Tekrar yapmayı unutmayınız!..." 
 				: "Bugün kurs var. Tekrar yaptınız mı?");		
+	}
+
+	public static void displayDateEN(int day, int month, int year)
+	{
+		int dayOfWeek = getDayOfWeek(day, month, year);
+
+		if (dayOfWeek == -1) {
+			System.out.println("Invalid Date");
+			return;
+		}
+
+		System.out.printf("%d%s %s %d %s%n", day, getDaySuffix(day), monthsEN[month], year, daysOfWeekEN[dayOfWeek]);
+
+		System.out.println( isWeekday(day, month, year) ? "Course day is comming. Do not forget to review!..."
+				: "Today is a course day. Did you review?");
 	}
 	
 	public static boolean isWeekday(int day, int month, int year)
@@ -64,6 +66,28 @@ public class DateUtil {
 		return totalDays % 7;
 			
 	}
+
+	public static String getDaySuffix(int day)
+	{
+		String suffix = "th";
+
+		switch (day) {
+			case 1:
+			case 21:
+			case 31:
+				suffix = "st";
+				break;
+			case 2:
+			case 22:
+				suffix = "nd";
+				break;
+			case 3:
+			case 23:
+				suffix = "rd";
+		}
+
+		return suffix;
+	}
 	
 	public static int getDayOfYear(int day, int month, int year)
 	{		
@@ -73,54 +97,19 @@ public class DateUtil {
 	public static int getTotalDaysByMonth(int month, int year)
 	{
 		int totalDays = 0;
-		
-		switch (month - 1) {
-		case 11:
-			totalDays += 30;
-		case 10:
-			totalDays += 31;
-		case 9:
-			totalDays += 30;
-		case 8:
-			totalDays += 31;
-		case 7:
-			totalDays += 31;
-		case 6:
-			totalDays += 30;
-		case 5:
-			totalDays += 31;
-		case 4:
-			totalDays += 30;
-		case 3:
-			totalDays += 31;
-		case 2:
-			totalDays += isLeapYear(year) ? 29 : 28;			
-		case 1:
-			totalDays += 31;
-		}
-		
-		return totalDays;
+
+		for (int m = month - 1; m >= 1; --m)
+			totalDays += daysOfMonth[m];
+
+		return month > 2 && isLeapYear(year) ? totalDays + 1 : totalDays;
 	}
 	
 	public static boolean isValidDate(int day, int month, int year)
 	{
 		if (day < 1 || day > 31 || month < 1 || month > 12)
 			return false;
-		
-		int days = 31;
-		
-		switch (month) {
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			days = 30;
-			break;
-		case 2:
-			days = isLeapYear(year) ? 29 : 28;						
-		}
-		
-		return day <= days;
+
+		return day <= (month == 2 && isLeapYear(year) ? 29 : daysOfMonth[month]);
 	}
 	
 	public static boolean isLeapYear(int year)

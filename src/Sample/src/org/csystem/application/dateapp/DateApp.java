@@ -14,7 +14,6 @@
 		- Metotlarınızı aşağıdaki verilen kod ile test edebilirsiniz
 	(İleride daha iyisi yazılacaktır)
 ----------------------------------------------------------------------------------------------------------------------*/
-
 package org.csystem.application.dateapp;
 
 public class DateApp {
@@ -32,13 +31,14 @@ public class DateApp {
             System.out.print("Ay?");
             int month = Integer.parseInt(kb.nextLine());
 
-            System.out.print("Y?l?");
+            System.out.print("Yıl?");
             int year = Integer.parseInt(kb.nextLine());
 
 
             DateUtil.displayDateTR(day, month, year);
+            DateUtil.displayDateEN(day, month, year);
         }
 
-        System.out.println("Tekrar yap?yor musunuz?");
+        System.out.println("Tekrar yapıyor musunuz?");
     }
 }
