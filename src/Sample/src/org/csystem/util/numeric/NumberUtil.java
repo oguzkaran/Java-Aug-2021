@@ -12,8 +12,7 @@ package org.csystem.util.numeric;
 
 import java.util.Random;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.log10;
+import static java.lang.Math.*;
 
 public class NumberUtil {
     public static String [] ones = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
@@ -46,21 +45,39 @@ public class NumberUtil {
         return str;
     }
 
-    public static int [] getDigits(int val)
+
+    public static int countDigits(int val)
     {
-        int [] digits = new int[countDigits(val)];
+        return val == 0 ? 1 : (int) log10(abs(val)) + 1;
+    }
 
-        val = Math.abs(val);
+    public static int [] getDigits(long val)
+    {
+        return getDigits(val, 1);
+    }
 
-        for (int i = digits.length - 1; i >= 0; digits[i] = val % 10, val /= 10, --i)
+    public static int [] getDigits(long val, int n)
+    {
+        int [] digits = new int[val != 0 ? (int)(log10(abs(val)) / n) + 1 : 1];
+        int powOfTen = (int)pow(10, n);
+
+        val = abs(val);
+
+        for (int i = digits.length - 1; val != 0; digits[i--] = (int)(val % powOfTen), val /= powOfTen)
             ;
 
         return digits;
     }
 
     public static int [] getDigitsInThrees(long val)
-    {}
+    {
+        return getDigits(val, 3);
+    }
 
+    public static int [] getDigitsInTwos(long val)
+    {
+        return getDigits(val, 2);
+    }
 
 	public static int getDigitsFactorialSum(int n)
     {
@@ -99,10 +116,7 @@ public class NumberUtil {
     }
     
 
-    public static int countDigits(int val)
-    {
-        return val == 0 ? 1 : (int) log10(abs(val)) + 1;
-    }
+
     
     public static long factorial(int n)
     {
@@ -281,21 +295,6 @@ public class NumberUtil {
             return a;
 
         return c;
-    }
-
-    public static int min(int a, int b, int c)
-    {
-        return (a < b) ? (a < c ? a : c) : (b < c ? b : c);
-    }
-
-    public static int pow(int a, int b)
-    {
-        int result = 1;
-
-        for (int i = 0; i < b; ++i)
-            result *= a;
-
-        return result;
     }
 
     public static void printGoldbachPrimePairs(int val)

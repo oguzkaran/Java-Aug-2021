@@ -8,7 +8,6 @@ package org.csystem.app;
 
 import org.csystem.util.array.ArrayUtil;
 import org.csystem.util.numeric.NumberUtil;
-import org.csystem.util.random.RandomUtil;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -32,7 +31,14 @@ class GetDigitsInThreesTest {
         for (int i = 0; i < n; ++i) {
             long val = r.nextLong();
 
+            System.out.println("--------------------------------------------");
+            System.out.printf("%d: ", val);
+            ArrayUtil.display(NumberUtil.getDigits(val));
+            System.out.printf("%d: ", val);
+            ArrayUtil.display(NumberUtil.getDigitsInTwos(val));
+            System.out.printf("%d: ", val);
             ArrayUtil.display(NumberUtil.getDigitsInThrees(val));
+            System.out.println("--------------------------------------------");
         }
     }
 }
