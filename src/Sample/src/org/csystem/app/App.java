@@ -1,44 +1,21 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Parametresi ile aldığı long türden bir sayının en fazla 3(üç) basamaklı ayrılmış sayılarından
-	oluşan int türden bir diziyi döndüren getDigitsInThrees mettodunu NumberUtil sınıfı içeriside yazınız ve aşağıdaki
-	kod ile test ediniz
-	Örnek: 6987456 -> 6 987 456
+	Sınıf Çalışması: Klavyeden aşağıdaki formatta girilen bilgiyi ayrıştırarak ekrana detayları yazdıran programı yazınız:
+	<isim>:<gg/aa/yyyy>:<ders adı>:<arasınav>:<final>
+	Oğuz Karan:10/09/1976:Matematik:90:56
+	Açıklamalar:
+	- Bu formata göre kişinin arasınav ve final notlarına göre arasınav * 0.4 + final * 0.6 formülüne göre geçeme
+	notunu da yazdıracaktır
+	- Doğum tarihinin hangi güne geldiği de ekrana yazdırılacaktır
+	- Geçme notu 50 olarak düşünülmelidir. Geçti veya Kaldı bilgisi de ekrana yazdırılacaktır
+	- Programda yazının format kontrolü yapılmayacaktır
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.array.ArrayUtil;
-import org.csystem.util.numeric.NumberUtil;
-
-import java.util.Random;
-import java.util.Scanner;
+import org.csystem.application.studentinfoparser_todo.StudentInfoParserApp;
 
 class App {
     public static void main(String [] args)
     {
-        GetDigitsInThreesTest.run();
-    }
-}
-
-class GetDigitsInThreesTest {
-    public static void run()
-    {
-        Random r = new Random();
-        Scanner kb = new Scanner(System.in);
-
-        System.out.print("Bir sayı giriniz:");
-        int n = Integer.parseInt(kb.nextLine());
-
-        for (int i = 0; i < n; ++i) {
-            long val = r.nextLong();
-
-            System.out.println("--------------------------------------------");
-            System.out.printf("%d: ", val);
-            ArrayUtil.display(NumberUtil.getDigits(val));
-            System.out.printf("%d: ", val);
-            ArrayUtil.display(NumberUtil.getDigitsInTwos(val));
-            System.out.printf("%d: ", val);
-            ArrayUtil.display(NumberUtil.getDigitsInThrees(val));
-            System.out.println("--------------------------------------------");
-        }
+        StudentInfoParserApp.run();
     }
 }
