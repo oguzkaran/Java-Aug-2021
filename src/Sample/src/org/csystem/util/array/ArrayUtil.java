@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 04.12.2021
+	LAST UPDATE : 05.12.2021
 
 	Utility class that is used for array operations
 
@@ -110,6 +110,13 @@ public class ArrayUtil {
     {
         for (int i = 0; i < a.length; ++i)
             System.out.printf("%f%n", a[i]);
+    }
+
+
+    public static void display(String [] str)
+    {
+        for (int i = 0; i < str.length; ++i)
+            System.out.println(str[i]);
     }
 
     public static void drawHistogram(int [] data, int n, char ch)

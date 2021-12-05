@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : StringUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 04.12.2021
+	LAST UPDATE : 05.12.2021
 
 	Utility class that is used for string operations
 
@@ -11,6 +11,7 @@
 package org.csystem.util.string;
 
 import org.csystem.util.array.ArrayUtil;
+import org.csystem.util.random.RandomUtil;
 
 import java.util.Random;
 
@@ -99,6 +100,26 @@ public class StringUtil {
         return getRandomTextEN(new Random(), n);
     }
 
+    public static String [] getRandomTextsTR(Random r, int n, int min, int max)
+    {
+        String [] str = new String[n];
+
+        for (int i = 0; i < n; ++i)
+            str[i] = getRandomTextTR(r, RandomUtil.nextInt(r, min, max + 1));
+
+        return str;
+    }
+
+    public static String [] getRandomTextsEN(Random r, int n, int min, int max)
+    {
+        String [] str = new String[n];
+
+        for (int i = 0; i < n; ++i)
+            str[i] = getRandomTextEN(r, RandomUtil.nextInt(r, min, max + 1));
+
+        return str;
+    }
+
     public static boolean isAllLetter(String s)
     {
         int length = s.length();
@@ -163,16 +184,33 @@ public class StringUtil {
 
     public static String join(String [] str, char delimiter)
     {
-        return join(str, delimiter + "");
+        return join(str, delimiter, false);
+    }
+
+    public static String join(String [] str, char delimiter, boolean removeEmpties)
+    {
+        return join(str, delimiter + "", removeEmpties);
     }
 
     public static String join(String [] str, String delimiter)
     {
+        return join(str, delimiter, false);
+    }
+
+    public static String join(String [] str, String delimiter, boolean removeEmpties)
+    {
         String result = "";
 
-        //TODO:
+        for (int i = 0; i < str.length; ++i) {
+            String s = str[i];
 
-        return result;
+            if (removeEmpties && s.isEmpty())
+                continue;
+
+            result += s + delimiter;
+        }
+
+        return result.substring(0, result.length() - delimiter.length());
     }
 
     public static String padLeading(String s, int length, char ch)

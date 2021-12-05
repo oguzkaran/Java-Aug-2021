@@ -1,22 +1,38 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Klavyeden int türden bir n sayısı okuyunuz n elemanlı bir String dizisi yaratınız. Bu dizinin
-	her bir elemanını rasgele uzunlukta rasgele üretilmiş yazılarla doldurunuz. Bu işlemden sonra dizinin elemanlarının
-	klavyeden girilen yine String türden bir ayraç alacak şekilde birleştirilmiş yeni bir String referansı elde eden
-	programı yazınız. Program için StringUtil sınıfı içerisine join isimli bir metot eklenecektir
-	Örneğin:
-	Üretilen yazılar: "xyz", "abcd", "efg" olsun
-	Klavyeden girilen ayraç: --
-	Sonuçta elde edilen yazı aşağıdaki gibi olacaktır:
-	"xyz--abcd--efg"
+	Sınıf Çalışması: Parametresi ile aldığı long türden bir sayının en fazla 3(üç) basamaklı ayrılmış sayılarından
+	oluşan int türden bir diziyi döndüren getDigitsInThrees mettodunu NumberUtil sınıfı içeriside yazınız ve aşağıdaki
+	kod ile test ediniz
+	Örnek: 6987456 -> 6 987 456
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.application.dateapp.DateApp;
+import org.csystem.util.array.ArrayUtil;
+import org.csystem.util.numeric.NumberUtil;
+import org.csystem.util.random.RandomUtil;
+
+import java.util.Random;
+import java.util.Scanner;
 
 class App {
     public static void main(String [] args)
     {
-        DateApp.run();
+        GetDigitsInThreesTest.run();
     }
 }
 
+class GetDigitsInThreesTest {
+    public static void run()
+    {
+        Random r = new Random();
+        Scanner kb = new Scanner(System.in);
+
+        System.out.print("Bir sayı giriniz:");
+        int n = Integer.parseInt(kb.nextLine());
+
+        for (int i = 0; i < n; ++i) {
+            long val = r.nextLong();
+
+            ArrayUtil.display(NumberUtil.getDigitsInThrees(val));
+        }
+    }
+}
