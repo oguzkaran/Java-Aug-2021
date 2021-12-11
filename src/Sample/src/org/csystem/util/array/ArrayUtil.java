@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 05.12.2021
+	LAST UPDATE : 11.12.2021
 
 	Utility class that is used for array operations
 
@@ -112,11 +112,22 @@ public class ArrayUtil {
             System.out.printf("%f%n", a[i]);
     }
 
-
     public static void display(String [] str)
     {
         for (int i = 0; i < str.length; ++i)
             System.out.println(str[i]);
+    }
+
+    public static void display(int n, int [][] a)
+    {
+        String fmt = String.format("%%0%dd ", n);
+
+        for (int i = 0; i < a.length; ++i) {
+            for (int k = 0; k < a[i].length; ++k)
+                System.out.printf(fmt, a[i][k]);
+
+            System.out.println();
+        }
     }
 
     public static void drawHistogram(int [] data, int n, char ch)
@@ -167,6 +178,42 @@ public class ArrayUtil {
 
         return a;
     }
+
+    public static int [][] getRandomMatrix(int m, int n, int min, int max)
+    {
+        return getRandomMatrix(new Random(), m, n, min, max);
+    }
+
+    public static int [][] getRandomMatrix(Random r, int m, int n, int min, int max)
+    {
+        int [][] matrix = new int[m][];
+
+        for (int i = 0; i < m; ++i)
+            matrix[i] = getRandomArray(r, n, min, max);
+
+        return matrix;
+    }
+
+    public static int [][] getRandomSquareMatrix(int n, int min, int max)
+    {
+        return getRandomSquareMatrix(new Random(), n, min, max);
+    }
+
+    public static int [][] getRandomSquareMatrix(Random r, int n, int min, int max)
+    {
+        return getRandomMatrix(r, n, n, min, max);
+    }
+
+    public static boolean isMatrix(int [][] a)
+    {
+        //TODO:
+    }
+
+    public static boolean isSquareMatrix(int [][] a)
+    {
+        //TODO:
+    }
+
 
     public static int min(int [] a)
     {
