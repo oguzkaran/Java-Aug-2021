@@ -1,6 +1,15 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Parametresi ile aldığı dizi dizisinin matris olup olmadığını test isMatrix ve kare matris olup
-	olmadığını test eden isSquareMatrix isimli metodu yazınız ve aşağıdaki kod ile test ediniz
+	Sınıf Çalışması: Parametresi ile aldığı bir matrisin devriğini (transpose) döndüren transposed isimli metodu yazınız
+	ve aşağıdaki kod ile test ediniz.
+	Açıklamalar:
+	    - Metot matris olup olmama kontrolü yapmayacaktır
+	    - Örneğin:
+	    1 2 3
+	    4 5 6
+	    matrisinin devriği
+	    1 4
+	    2 5
+	    3 6
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
@@ -12,12 +21,11 @@ import java.util.Scanner;
 class App {
     public static void main(String [] args)
     {
-        IsMatrixSquareMatrixTest.run();
+        TransposedTest.run();
     }
 }
 
-
-class IsMatrixSquareMatrixTest {
+class TransposedTest {
     public static int [] [] getArray(Random r, int m, int n)
     {
         return r.nextBoolean() ? getRandomMatrix(r, m, n, 0, 99) : getRandomSquareMatrix(r, m, 0, 99);
@@ -38,12 +46,11 @@ class IsMatrixSquareMatrixTest {
             System.out.print("Sütun sayısını giriniz:");
             int n = Integer.parseInt(kb.nextLine());
 
-            int [][] a = getArray(r, m, n);
+            int [][] a = getRandomMatrix(r, m, n, 0, 99);
 
             System.out.println("-------------------------------------");
             display(2, a);
-            System.out.println(isMatrix(a) ? "Matris" : "Matris değil");
-            System.out.println(isMatrix(a) ? "Kare matris" : "Kare matris değil");
+            display(2, transposed(a));
             System.out.println("-------------------------------------");
         }
 
