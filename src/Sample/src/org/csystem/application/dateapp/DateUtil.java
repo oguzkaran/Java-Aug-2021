@@ -22,7 +22,7 @@ public class DateUtil {
 
 		System.out.printf("%d %s %d %s%n", day, monthsTR[month], year, daysOfWeekTR[dayOfWeek]);
 		
-		System.out.println( isWeekday(day, month, year) ? "Hafta sonu kursu yaklaşıyor. Tekrar yapmayı unutmayınız!..." 
+		System.out.println(isWeekday(day, month, year) ? "Hafta sonu kursu yaklaşıyor. Tekrar yapmayı unutmayınız!..."
 				: "Bugün kurs var. Tekrar yaptınız mı?");		
 	}
 
@@ -37,9 +37,31 @@ public class DateUtil {
 
 		System.out.printf("%d%s %s %d %s%n", day, getDaySuffix(day), monthsEN[month], year, daysOfWeekEN[dayOfWeek]);
 
-		System.out.println( isWeekday(day, month, year) ? "Course day is comming. Do not forget to review!..."
+		System.out.println(isWeekday(day, month, year) ? "Course day is comming. Do not forget to review!..."
 				: "Today is a course day. Did you review?");
 	}
+
+	public static String getDateTR(int day, int month, int year)
+	{
+		return String.format("%d %s %d %s", day, monthsTR[month], year, daysOfWeekTR[getDayOfWeek(day, month, year)]);
+	}
+
+	public static String getDateEN(int day, int month, int year)
+	{
+		return String.format("%d%s %s %d %s", day, getDaySuffix(day), monthsEN[month], year,
+				daysOfWeekEN[getDayOfWeek(day, month, year)]);
+	}
+
+	public static String getDayOfWeekEN(int day, int month, int year)
+	{
+		return daysOfWeekEN[getDayOfWeek(day, month, year)];
+	}
+
+	public static String getDayOfWeekTR(int day, int month, int year)
+	{
+		return daysOfWeekTR[getDayOfWeek(day, month, year)];
+	}
+
 	
 	public static boolean isWeekday(int day, int month, int year)
 	{
