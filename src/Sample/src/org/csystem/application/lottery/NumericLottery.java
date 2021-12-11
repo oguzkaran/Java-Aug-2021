@@ -32,7 +32,6 @@ public class NumericLottery {
         return numbers;
     }
 
-
     public NumericLottery()
     {
         random = new Random();
@@ -46,5 +45,15 @@ public class NumericLottery {
     public int [] getNumbers()
     {
         return getNumbers(getFlags());
+    }
+
+    public int [][] getNumbers(int n)
+    {
+        int [][] numbers = new int[n][];
+
+        for (int i = 0; i < n; ++i)
+            numbers[i] = getNumbers();
+
+        return numbers;
     }
 }

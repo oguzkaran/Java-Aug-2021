@@ -301,6 +301,27 @@ public class ArrayUtil {
         return total;
     }
 
+    public static int sum(int [][] a)
+    {
+        int total = 0;
+
+        for (int i = 0; i < a.length; ++i)
+            total += sum(a[i]);
+
+        return total;
+    }
+
+    public static int sumDiagonal(int [][] a)
+    {
+        int total = 0;
+
+        for (int i = 0; i < a.length; ++i)
+            total += a[i][i];
+
+        return total;
+    }
+
+
     public static void swap(int [] a, int i, int k)
     {
         int temp;
@@ -321,6 +342,12 @@ public class ArrayUtil {
 
     public static int [][] transposed(int [][] a)
     {
-        //TODO:
+        int [][] result = new int[a[0].length][a.length];
+
+        for (int i = 0; i < a.length; ++i)
+            for (int j = 0; j < a[i].length; ++j)
+                result[j][i] = a[i][j];
+
+        return result;
     }
 }

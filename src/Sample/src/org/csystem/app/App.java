@@ -1,59 +1,19 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Sınıf Çalışması: Parametresi ile aldığı bir matrisin devriğini (transpose) döndüren transposed isimli metodu yazınız
-	ve aşağıdaki kod ile test ediniz.
-	Açıklamalar:
-	    - Metot matris olup olmama kontrolü yapmayacaktır
-	    - Örneğin:
-	    1 2 3
-	    4 5 6
-	    matrisinin devriği
-	    1 4
-	    2 5
-	    3 6
+    Sınıf Çalışması: Bir okulda Kimya sınavı ortak olarak yapılıyor olsun. Kaç şube olduğu ve herbir şubede kaç öğrenci
+    olduğu bilgileri klavyeden alınsın. Bu işlem sonrasında öğrencilerin notları rasgele olarak belirlensin. Tüm bu
+    işlemlerden Kimya sınavı için herbir şubenin ayrı ayrı not ortalamaları ve okulun not ortalamasını bulan basit bir
+    simülasyon programı yazınız
+
+    Not: İleride daha iyisi yazılacaktır
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import static org.csystem.util.array.ArrayUtil.*;
-
-import java.util.Random;
-import java.util.Scanner;
+import org.csystem.application.simulation.exam.ExamSimulationApp;
 
 class App {
     public static void main(String [] args)
     {
-        TransposedTest.run();
+        ExamSimulationApp.run();
     }
 }
 
-class TransposedTest {
-    public static int [] [] getArray(Random r, int m, int n)
-    {
-        return r.nextBoolean() ? getRandomMatrix(r, m, n, 0, 99) : getRandomSquareMatrix(r, m, 0, 99);
-    }
-
-    public static void run()
-    {
-        Random r = new Random();
-        Scanner kb = new Scanner(System.in);
-
-        for (;;) {
-            System.out.print("Satır sayısını giriniz:");
-            int m = Integer.parseInt(kb.nextLine());
-
-            if (m <= 0)
-                break;
-
-            System.out.print("Sütun sayısını giriniz:");
-            int n = Integer.parseInt(kb.nextLine());
-
-            int [][] a = getRandomMatrix(r, m, n, 0, 99);
-
-            System.out.println("-------------------------------------");
-            display(2, a);
-            display(2, transposed(a));
-            System.out.println("-------------------------------------");
-        }
-
-        System.out.println("Tekrar yapıyor musunuz?");
-    }
-}
