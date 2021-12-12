@@ -1,19 +1,23 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Sınıf Çalışması: Bir okulda Kimya sınavı ortak olarak yapılıyor olsun. Kaç şube olduğu ve herbir şubede kaç öğrenci
-    olduğu bilgileri klavyeden alınsın. Bu işlem sonrasında öğrencilerin notları rasgele olarak belirlensin. Tüm bu
-    işlemlerden Kimya sınavı için herbir şubenin ayrı ayrı not ortalamaları ve okulun not ortalamasını bulan basit bir
-    simülasyon programı yazınız
-
-    Not: İleride daha iyisi yazılacaktır
+    İstenirse String sınıfının toCharArray metodu ile char türden dizi elde edilip for-each döngü deyimi ile
+    dolaşılabilir
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.application.simulation.exam.ExamSimulationApp;
+import org.csystem.util.array.ArrayUtil;
 
 class App {
     public static void main(String [] args)
     {
-        ExamSimulationApp.run();
+        int [][] a = ArrayUtil.getRandomMatrix(3, 4, 0, 99);
+
+        ArrayUtil.display(2, a);
+        System.out.println("----------------------------------");
+
+        for (int [] array : a) {
+            for (int val : array)
+                System.out.printf("%02d ", val);
+            System.out.println();
+        }
     }
 }
-

@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 11.12.2021
+	LAST UPDATE : 12.12.2021
 
 	Utility class that is used for array operations
 
@@ -100,22 +100,22 @@ public class ArrayUtil {
     {
         String fmt = String.format("%%0%dd ", n);
 
-        for (int i = 0; i < a.length; ++i)
-            System.out.printf(fmt, a[i]);
+        for (int val : a)
+            System.out.printf(fmt, val);
 
         System.out.println();
     }
 
     public static void display(double [] a)
     {
-        for (int i = 0; i < a.length; ++i)
-            System.out.printf("%f%n", a[i]);
+        for (double val : a)
+            System.out.printf("%f%n", val);
     }
 
     public static void display(String [] str)
     {
-        for (int i = 0; i < str.length; ++i)
-            System.out.println(str[i]);
+        for (String s : str)
+            System.out.println(s);
     }
 
     public static void display(int n, int [][] a)
