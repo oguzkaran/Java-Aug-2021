@@ -114,10 +114,7 @@ public class NumberUtil {
 
         return root;
     }
-    
 
-
-    
     public static long factorial(int n)
     {
         long result = 1;

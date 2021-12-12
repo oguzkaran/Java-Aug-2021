@@ -122,9 +122,9 @@ public class ArrayUtil {
     {
         String fmt = String.format("%%0%dd ", n);
 
-        for (int i = 0; i < a.length; ++i) {
-            for (int k = 0; k < a[i].length; ++k)
-                System.out.printf(fmt, a[i][k]);
+        for (int [] array : a) {
+            for (int val : array)
+                System.out.printf(fmt, val);
 
             System.out.println();
         }
@@ -134,8 +134,8 @@ public class ArrayUtil {
     {
         int maxVal = max(data);
 
-        for (int i = 0; i < data.length; ++i) {
-            int count = (int)Math.ceil(data[i] * n / (double)maxVal);
+        for (int val : data) {
+            int count = (int)Math.ceil(val * n / (double)maxVal);
 
             while (count-- > 0)
                 System.out.print(ch);
@@ -159,8 +159,8 @@ public class ArrayUtil {
     {
         int [] counts = new int[n + 1];
 
-        for (int i = 0; i < a.length; ++i)
-            ++counts[a[i]];
+        for (int val : a)
+            ++counts[val];
 
         return counts;
     }
@@ -295,8 +295,8 @@ public class ArrayUtil {
     {
         int total = 0;
 
-        for (int i = 0; i < a.length; ++i)
-            total += a[i];
+        for (int val : a)
+            total += val;
 
         return total;
     }
@@ -305,8 +305,8 @@ public class ArrayUtil {
     {
         int total = 0;
 
-        for (int i = 0; i < a.length; ++i)
-            total += sum(a[i]);
+        for (int [] array : a)
+            total += sum(array);
 
         return total;
     }

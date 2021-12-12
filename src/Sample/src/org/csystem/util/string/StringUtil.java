@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : StringUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 05.12.2021
+	LAST UPDATE : 12.12.2021
 
 	Utility class that is used for string operations
 
@@ -120,6 +120,15 @@ public class StringUtil {
         return str;
     }
 
+    public static int indexOfStartsWith(String [] str, String s)
+    {
+        for (int i = 0; i < str.length; ++i)
+            if (str[i].startsWith(s))
+                return i;
+
+        return -1;
+    }
+
     public static boolean isAllLetter(String s)
     {
         int length = s.length();
@@ -199,15 +208,33 @@ public class StringUtil {
 
     public static String join(String [] str, String delimiter, boolean removeEmpties)
     {
+        return join(str, 0, delimiter, removeEmpties);
+    }
+
+    public static String join(String [] str, int startIndex, char delimiter)
+    {
+        return join(str, startIndex, delimiter, false);
+    }
+
+    public static String join(String [] str, int startIndex, char delimiter, boolean removeEmpties)
+    {
+        return join(str, startIndex, delimiter + "", removeEmpties);
+    }
+
+    public static String join(String [] str, int startIndex, String delimiter)
+    {
+        return join(str, startIndex, delimiter, false);
+    }
+
+    public static String join(String [] str, int startIndex, String delimiter, boolean removeEmpties)
+    {
         String result = "";
 
-        for (int i = 0; i < str.length; ++i) {
-            String s = str[i];
-
-            if (removeEmpties && s.isEmpty())
+        for (int i = startIndex; i < str.length; ++i) {
+            if (removeEmpties && str[i].isEmpty())
                 continue;
 
-            result += s + delimiter;
+            result += str[i] + delimiter;
         }
 
         return result.substring(0, result.length() - delimiter.length());
