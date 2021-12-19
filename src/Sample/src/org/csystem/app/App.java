@@ -1,20 +1,35 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Sınıfların özellikle veri elemanlarının gizlenmesine (yani başka bir sınıftan erişilemez duruma getirilmesine)
-    nesne yönelimli programlama tekniğinde "kapsülleme (encapsulation)" denir. Bu kavrama ayrıca
-    "veri/bilgi gizleme (data/information hiding)" de denir. Burada temel amaç dışarıyı yani sınıfın dışını ilgilendirmeyecek
-    verilerin ve bilgilerin gizlenmesidir. Bu kavram gerçek hayattan programlamaya aktarılmıştır. Örneğin araba kullanırken
-    sürücü, vites değiştirdiğinde ya da arabayı kullanırken vites otmatik değiştiğinde bu işlemin içsel olarak nasıl
-    yapıldığını bilmek zorunda değildir. Bilse bile bunun araba kullanırken bir anlamı olmaz.
-
-    Bu anlamda sınıfı yazan (server) ve sınıfı kullanan (client) bakış açısı farklıdır. Şüphesiz sınıfı yazan kişi için iki
-    bakış açısı da düşünülmelidir. Sınıfı kullanan bakış açısı ise (müşteri kodlar) içsel detayları bilmek zorunluluğu
-    getirmez. Kısaca müşteri kodlar kullanımı ilgilendirmeyecek detaylardan bağımsızdır.
+    Bir veri elemanı gizlendiğinde sınıfın müşteri kodlarının bu elemana değer vermesi veya değerini elde etmesi için
+    yani bu elemana dolaylı olarak erişebilmesi için public metotlar yazılır. Veri elemanlarına erişip değerini elde
+    etmek için kullanılan metotlara "get metotları (getters)" denir. Veri elemanlarına erişip değerini değiştirmeye
+    yarayan metotlara ise "set metotları (setters)" denir. Sınıfın bu şekildeki metotlarına "accessors" denir. Tersine
+    get veya set metotlarının bir veri elemanına karşılık gelmesi gerekmez. Hangi durumda olursa olsun bu metotlar
+    sınıfı kullanan (client) bakış açısıyla "accessor" metotlardır. Bu durum tamamen sınıfın tasarımıyla ilgilidir.
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
 class App {
     public static void main(String [] args)
     {
+        Date d = new Date();
 
+        d.setDay(6);
+
+        System.out.println(d.getDay());
+    }
+}
+
+class Date {
+    private int m_day, m_month, m_year;
+
+    public int getDay()
+    {
+        return m_day;
+    }
+
+    public void setDay(int day)
+    {
+        //...
+        m_day = day;
     }
 }
