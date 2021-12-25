@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : NumberUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 05.12.2021
+	LAST UPDATE : 25.12.2021
 
 	Utility class that is used for numeric operations
 
@@ -15,10 +15,10 @@ import java.util.Random;
 import static java.lang.Math.*;
 
 public class NumberUtil {
-    public static String [] ones = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
-    public static String [] tens = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
+    private static String [] ms_ones = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
+    private static String [] ms_tens = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
 
-    public static String numberToText3DigitsTR(int val)
+    private static String numberToText3DigitsTR(int val)
     {
         if (val == 0)
             return "sıfır";
@@ -32,19 +32,22 @@ public class NumberUtil {
 
         if (a != 0) {
             if (a != 1)
-                str += ones[a];
+                str += ms_ones[a];
             str += "yüz";
         }
 
         if (b != 0)
-            str += tens[b];
+            str += ms_tens[b];
 
         if (c != 0)
-            str += ones[c];
+            str += ms_ones[c];
 
         return str;
     }
 
+    public NumberUtil()
+    {
+    }
 
     public static int countDigits(int val)
     {

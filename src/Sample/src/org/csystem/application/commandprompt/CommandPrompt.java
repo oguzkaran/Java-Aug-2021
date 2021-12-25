@@ -5,9 +5,9 @@ import org.csystem.util.string.StringUtil;
 import java.util.Scanner;
 
 public class CommandPrompt {
-    public static String [] commands = {"length", "reverse", "upper", "lower", "clear", "chgprom", "quit"};
-    public String prompt;
-    public Scanner kb = new Scanner(System.in);
+    private static String [] ms_commands = {"length", "reverse", "upper", "lower", "clear", "chgprom", "quit"};
+    private String m_prompt;
+    private Scanner m_kb = new Scanner(System.in);
 
     public static boolean checkCommandEqual(String [] cmdInfo, int length, String message)
     {
@@ -69,15 +69,15 @@ public class CommandPrompt {
     {
         if (cmdInfo.length == 1) {
             System.out.print("Input prompt:");
-            String p = kb.nextLine();
+            String p = m_kb.nextLine();
 
             if (!p.isBlank())
-                prompt = p.strip();
+                m_prompt = p.strip();
             else
                 System.out.println("Prompt must include at least one character without whitespace");
         }
         else
-            prompt = StringUtil.join(cmdInfo, 1, ' ');
+            m_prompt = StringUtil.join(cmdInfo, 1, ' ');
     }
 
     public static void quitProc(String [] cmdInfo)
@@ -99,10 +99,10 @@ public class CommandPrompt {
             return;
         }
 
-        int index = StringUtil.indexOfStartsWith(commands, cmdInfo[0]);
+        int index = StringUtil.indexOfStartsWith(ms_commands, cmdInfo[0]);
 
         if (index != -1) {
-            cmdInfo[0] = commands[index];
+            cmdInfo[0] = ms_commands[index];
             doWorkForCommand(cmdInfo);
         }
         else
@@ -136,16 +136,16 @@ public class CommandPrompt {
         }
     }
 
-    public CommandPrompt(String p)
+    public CommandPrompt(String prompt)
     {
-        prompt = p;
+        m_prompt = prompt;
     }
 
     public void run()
     {
         for (;;) {
-            System.out.print(prompt + ">");
-            String cmd = kb.nextLine().strip();
+            System.out.print(m_prompt + ">");
+            String cmd = m_kb.nextLine().strip();
 
             parseCommand(cmd.split("[ \t]+"));
         }

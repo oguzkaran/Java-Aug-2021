@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 12.12.2021
+	LAST UPDATE : 25.12.2021
 
 	Utility class that is used for array operations
 
@@ -13,7 +13,7 @@ package org.csystem.util.array;
 import java.util.Random;
 
 public class ArrayUtil {
-    public static void bubbleSortAscending(int [] a)
+    private static void bubbleSortAscending(int [] a)
     {
         for (int i = 0; i < a.length - 1; ++i)
             for (int k = 0; k < a.length - 1 - i; ++k)
@@ -21,7 +21,7 @@ public class ArrayUtil {
                     swap(a, k, k + 1);
     }
 
-    public static void bubbleSortDescending(int [] a)
+    private static void bubbleSortDescending(int [] a)
     {
         for (int i = 0; i < a.length - 1; ++i)
             for (int k = 0; k < a.length - 1 - i; ++k)
@@ -29,7 +29,7 @@ public class ArrayUtil {
                     swap(a, k, k + 1);
     }
 
-    public static void selectionSortAscending(int [] a)
+    private static void selectionSortAscending(int [] a)
     {
         int min, minIndex;
 
@@ -48,7 +48,7 @@ public class ArrayUtil {
         }
     }
 
-    public static void selectionSortDescending(int [] a)
+    private static void selectionSortDescending(int [] a)
     {
         int max, maxIndex;
 
@@ -65,6 +65,10 @@ public class ArrayUtil {
             a[maxIndex] = a[i];
             a[i] = max;
         }
+    }
+
+    private ArrayUtil()
+    {
     }
 
     public static void addBy(int [] a, int val)
@@ -89,6 +93,13 @@ public class ArrayUtil {
             bubbleSortDescending(a);
         else
             bubbleSortAscending(a);
+    }
+
+
+    public static void copy(int [] src, int [] dest)
+    {
+        for (int i = 0; i < src.length; ++i)
+            dest[i] = src[i];
     }
 
     public static void display(int [] a)

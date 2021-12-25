@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : RandomUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 04.12.2021
+	LAST UPDATE : 25.12.2021
 
 	Utility class that is used as an extension of Random class
 
@@ -14,6 +14,10 @@ package org.csystem.util.random;
 import java.util.Random;
 
 public class RandomUtil {
+    private RandomUtil()
+    {
+    }
+
     public static int nextInt(Random random, int min, int bound)
     {
         return random.nextInt(bound - min) + min;

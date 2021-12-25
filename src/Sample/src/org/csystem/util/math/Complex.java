@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : Complex.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 13.11.2021
+	LAST UPDATE : 25.12.2021
 
 	Complex class that represents a complex number
 
@@ -13,22 +13,22 @@ package org.csystem.util.math;
 import static java.lang.Math.sqrt;
 
 public class Complex {
-	public static Complex add(double a1, double b1, double a2, double b2) //ileride gizlenecek
+	private static Complex add(double a1, double b1, double a2, double b2)
 	{		
 		return new Complex(a1 + a2, b1 + b2);
 	}
 	
-	public static Complex subtract(double a1, double b1, double a2, double b2) //ileride gizlenecek
+	private static Complex subtract(double a1, double b1, double a2, double b2)
 	{
 		return add(a1, b1, -a2, -b2);
 	}
 	
-	public static Complex multiply(double a1, double b1, double a2, double b2) //ileride gizlenecek
+	private static Complex multiply(double a1, double b1, double a2, double b2)
 	{
 		return new Complex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2);
 	}
 	
-	public static Complex divide(double a1, double b1, double a2, double b2) //ileride gizlenecek
+	private static Complex divide(double a1, double b1, double a2, double b2)
 	{
 		Complex z = multiply(a1, b1, a2, -b2);
 		
