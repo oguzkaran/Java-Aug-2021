@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/commandprompt/CommandPrompt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/commandprompt/CommandPrompt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/commandprompt/CommandPromptApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/commandprompt/CommandPromptApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/game/ballfall/BallFall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/game/ballfall/BallFall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/game/ballfall/BallFallGameApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/game/ballfall/BallFallGameApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/lottery/NumericLottery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/lottery/NumericLottery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/lottery/NumericLotteryApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/lottery/NumericLotteryApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/random/randomnumbers/RandomNumbersGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/random/randomnumbers/RandomNumbersGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulationApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulationApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParserApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParserApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/array/ArrayUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/array/ArrayUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/Complex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/Complex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/numeric/NumberUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/numeric/NumberUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/random/RandomUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/random/RandomUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/string/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/string/StringUtil.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22n82uBlylwuyXfenSkI6bexamn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../doc/Examples.txt" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.csystem.app.App" />
+      <module name="Sample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.csystem.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="" />
+      <created>1640461789884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640461789884</updated>
+      <workItem from="1640461792251" duration="69000" />
+      <workItem from="1640462059965" duration="45000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
