@@ -17,6 +17,10 @@
 package org.csystem.application.dateapp;
 
 public class DateApp {
+    private DateApp()
+    {
+    }
+
     public static void run()
     {
         java.util.Scanner kb = new java.util.Scanner(System.in);

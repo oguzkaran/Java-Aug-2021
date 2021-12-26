@@ -4,7 +4,32 @@
     <list default="true" id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/commandprompt/CommandPromptApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/commandprompt/CommandPromptApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/game/ballfall/BallFallGameApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/game/ballfall/BallFallGameApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/lottery/NumericLotteryApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/lottery/NumericLotteryApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulationApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/simulation/exam/ExamSimulationApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParserApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParserApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/array/ArrayUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/array/ArrayUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/commandprompt/CommandPromptApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/commandprompt/CommandPromptApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/dateapp/DateApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/dateapp/DateApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/game/ballfall/BallFallGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/game/ballfall/BallFallGameApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/lottery/NumericLotteryApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/lottery/NumericLotteryApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/simulation/exam/ExamSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/simulation/exam/ExamSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/simulation/exam/ExamSimulationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/simulation/exam/ExamSimulationApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParserApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParserApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/array/ArrayUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/array/ArrayUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/math/geometry/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/math/geometry/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +88,9 @@
       <option name="presentableId" value="Default" />
       <updated>1640461789884</updated>
       <workItem from="1640461792251" duration="69000" />
-      <workItem from="1640462059965" duration="77000" />
+      <workItem from="1640462059965" duration="5244000" />
+      <workItem from="1640502377486" duration="816000" />
+      <workItem from="1640503237974" duration="1128000" />
     </task>
     <servers />
   </component>

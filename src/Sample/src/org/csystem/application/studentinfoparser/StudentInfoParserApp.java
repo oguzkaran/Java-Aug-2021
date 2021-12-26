@@ -14,10 +14,14 @@
 package org.csystem.application.studentinfoparser;
 
 public class StudentInfoParserApp {
-    public static void display(StudentInfo [] students)
+    private static void display(StudentInfo [] students)
     {
         for (int i = 0; i < students.length; ++i)
             System.out.println(students[i].toString());
+    }
+
+    private StudentInfoParserApp()
+    {
     }
 
     public static void run()

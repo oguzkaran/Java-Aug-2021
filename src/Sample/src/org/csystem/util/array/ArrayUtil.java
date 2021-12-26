@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 25.12.2021
+	LAST UPDATE : 26.12.2021
 
 	Utility class that is used for array operations
 
@@ -97,6 +97,12 @@ public class ArrayUtil {
 
 
     public static void copy(int [] src, int [] dest)
+    {
+        for (int i = 0; i < src.length; ++i)
+            dest[i] = src[i];
+    }
+
+    public static void copy(double [] src, double [] dest)
     {
         for (int i = 0; i < src.length; ++i)
             dest[i] = src[i];

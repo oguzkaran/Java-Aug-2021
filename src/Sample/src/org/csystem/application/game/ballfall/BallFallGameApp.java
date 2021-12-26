@@ -7,6 +7,10 @@ package org.csystem.application.game.ballfall;
 import java.util.Scanner;
 
 public class BallFallGameApp {
+	private BallFallGameApp()
+	{
+	}
+
 	public static void run()
 	{
 		Scanner kb = new Scanner(System.in);

@@ -3,14 +3,14 @@ package org.csystem.application.studentinfoparser;
 import java.util.Random;
 
 public class RandomStudentInfoFactory {
-    public String [] studentInfo;
-    public boolean [] flags;
-    public int count;
-    public Random random;
+    private String [] m_studentInfo;
+    private boolean [] m_flags;
+    private int m_count;
+    private Random m_random;
 
-    public void init() //Öğrenci bilgilerinin herhangi bir yerden elde edebilir. Örnek amaçlı ilkdeğer verme ile yapılmıştır
+    private void init() //Öğrenci bilgileri herhangi bir yerden elde edebilir. Örnek amaçlı ilkdeğer verme ile yapılmıştır
     {
-        studentInfo = new String[] {
+        m_studentInfo = new String[] {
                 "Oğuz Karan:10/09/1976:Matematik:34:45",
                 "Abdullah Eren Kılınç:14/05/2001:Programlamaya Giriş:89:100",
                 "Deniz Şahan:27/05/1994:Algorithmic Trading:90:100",
@@ -23,35 +23,35 @@ public class RandomStudentInfoFactory {
                 "Utku Çalışkan:13/01/1997:İngilizce:50:50",
         };
 
-        flags = new boolean[studentInfo.length];
+        m_flags = new boolean[m_studentInfo.length];
     }
 
     public RandomStudentInfoFactory()
     {
-        random = new Random();
+        m_random = new Random();
         init();
     }
 
     public int getNumberOfStudents()
     {
-        return studentInfo.length;
+        return m_studentInfo.length;
     }
 
     public String getRandomStudentInfoStr()
     {
-        if (count == studentInfo.length)
+        if (m_count == m_studentInfo.length)
             return "";
 
         int index;
 
         for (;;) {
-            index = random.nextInt(studentInfo.length);
-            if (!flags[index])
+            index = m_random.nextInt(m_studentInfo.length);
+            if (!m_flags[index])
                 break;
         }
-        ++count;
-        flags[index] = true;
+        ++m_count;
+        m_flags[index] = true;
 
-        return studentInfo[index];
+        return m_studentInfo[index];
     }
 }
