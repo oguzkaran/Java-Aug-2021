@@ -1,7 +1,7 @@
 package org.csystem.application.studentinfoparser;
 
 public class StudentInfoParser {
-    private StudentInfo m_studentInfo;
+    private final StudentInfo m_studentInfo;
 
     public StudentInfoParser(String str)
     {

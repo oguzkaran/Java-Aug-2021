@@ -5,9 +5,9 @@ import org.csystem.util.string.StringUtil;
 import java.util.Scanner;
 
 public class CommandPrompt {
-    private static String [] ms_commands = {"length", "reverse", "upper", "lower", "clear", "chgprom", "quit"};
+    private static final String [] ms_commands = {"length", "reverse", "upper", "lower", "clear", "chgprom", "quit"};
     private String m_prompt;
-    private Scanner m_kb = new Scanner(System.in);
+    private final Scanner m_kb = new Scanner(System.in);
 
     public static boolean checkCommandEqual(String [] cmdInfo, int length, String message)
     {
@@ -23,6 +23,7 @@ public class CommandPrompt {
     {
         if (checkCommandEqual(cmdInfo, 1, "length command must have at least one argument"))
             return;
+
 
         String args = StringUtil.join(cmdInfo, 1, "");
 

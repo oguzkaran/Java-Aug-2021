@@ -6,7 +6,7 @@ public class RandomStudentInfoFactory {
     private String [] m_studentInfo;
     private boolean [] m_flags;
     private int m_count;
-    private Random m_random;
+    private final Random m_random;
 
     private void init() //Öğrenci bilgileri herhangi bir yerden elde edebilir. Örnek amaçlı ilkdeğer verme ile yapılmıştır
     {

@@ -3,7 +3,7 @@ package org.csystem.application.random.randomnumbers;
 import org.csystem.util.array.ArrayUtil;
 
 public class RandomNumbersGenerator {
-    private int [] m_numbers;
+    private final int [] m_numbers;
 
     public RandomNumbersGenerator(int n, int min, int max)
     {
