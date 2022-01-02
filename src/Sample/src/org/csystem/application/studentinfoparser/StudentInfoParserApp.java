@@ -8,16 +8,14 @@
 	- Doğum tarihinin hangi güne geldiği de ekrana yazdırılacaktır
 	- Geçme notu 50 olarak düşünülmelidir. Geçti veya Kaldı bilgisi de ekrana yazdırılacaktır
 	- Programda yazının format kontrolü yapılmayacaktır
-
-	Not: Uygulama şu ana kadar gördüğümüz konulara göre yazılmıştır. İleride daha iyisi yazılacaktır
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.application.studentinfoparser;
 
 public class StudentInfoParserApp {
     private static void display(StudentInfo [] students)
     {
-        for (int i = 0; i < students.length; ++i)
-            System.out.println(students[i].toString());
+        for (StudentInfo si : students)
+            System.out.println(si.toString());
     }
 
     private StudentInfoParserApp()
@@ -31,13 +29,11 @@ public class StudentInfoParserApp {
 
         String str;
 
-        int i = 0;
-
-        while (!(str = factory.getRandomStudentInfoStr()).isEmpty()) { //for döngü deyimi ile daha iyi olabilir. Hatırlatma amaçlı while kullanılmıştır
+        for (int i = 0; !(str = factory.getRandomStudentInfoStr()).isEmpty(); ++i) {
             StudentInfoParser parser = new StudentInfoParser(str);
 
             //...
-            students[i++] = parser.getStudentInfo();
+            students[i] = parser.getStudentInfo();
         }
 
         display(students);

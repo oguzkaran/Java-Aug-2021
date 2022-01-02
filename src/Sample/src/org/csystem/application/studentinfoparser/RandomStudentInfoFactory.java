@@ -3,13 +3,14 @@ package org.csystem.application.studentinfoparser;
 import java.util.Random;
 
 public class RandomStudentInfoFactory {
-    private String [] m_studentInfo;
-    private boolean [] m_flags;
+    private final String [] m_studentInfo;
+    private final boolean [] m_flags;
     private int m_count;
     private final Random m_random;
 
-    private void init() //Öğrenci bilgileri herhangi bir yerden elde edebilir. Örnek amaçlı ilkdeğer verme ile yapılmıştır
+    public RandomStudentInfoFactory() //Öğrenci bilgileri herhangi bir yerden elde edebilir. Örnek amaçlı ilkdeğer verme ile yapılmıştır
     {
+        m_random = new Random();
         m_studentInfo = new String[] {
                 "Oğuz Karan:10/09/1976:Matematik:34:45",
                 "Abdullah Eren Kılınç:14/05/2001:Programlamaya Giriş:89:100",
@@ -21,15 +22,10 @@ public class RandomStudentInfoFactory {
                 "Refik Can Devşeli:11/01/2000:Kimya:30:51",
                 "İrem Manavoğlu:06/03/1997:Fizik:78:75",
                 "Utku Çalışkan:13/01/1997:İngilizce:50:50",
+                "Deniz Kerem Sığınak:21/09/2006:Matematik:70:50",
+                "Berk Tunç:01/06/2005:İngilizce:78:50"
         };
-
         m_flags = new boolean[m_studentInfo.length];
-    }
-
-    public RandomStudentInfoFactory()
-    {
-        m_random = new Random();
-        init();
     }
 
     public int getNumberOfStudents()

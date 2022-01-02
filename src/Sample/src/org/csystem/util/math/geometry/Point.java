@@ -59,8 +59,6 @@ public class Point {
 		return new Point(r, theta, true);
 	}
 
-
-
 	public double getX()
 	{
 		return m_x;

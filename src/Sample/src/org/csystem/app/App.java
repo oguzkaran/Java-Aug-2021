@@ -1,22 +1,21 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Sınıfın static ve final elemanlarının bir kullanımı. Math sınıfının PI ve E veri elemanları da final olarak
-    bildirilmiştir
+	IntValue sınıfı ve test kodu
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
+
+import org.csystem.util.wrapper.IntValue;
 
 class App {
     public static void main(String [] args)
     {
-        System.out.println(ChemistryUtil.AVOGADRO_NUMBER);
-        System.out.println(Math.PI);
-        System.out.println(Math.E);
+        IntValue intValue1 = IntValue.ZERO;
+        IntValue intValue2 = IntValue.of(0);
+
+        System.out.println(intValue1 == intValue2);
     }
 }
 
-class ChemistryUtil {
-    public static final double AVOGADRO_NUMBER = 6.02E23;
-    //...
-}
+
 
 
 

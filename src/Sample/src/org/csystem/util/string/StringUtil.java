@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : StringUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 25.12.2021
+	LAST UPDATE : 02.01.2022
 
 	Utility class that is used for string operations
 
@@ -18,6 +18,13 @@ import java.util.Random;
 import static java.lang.Character.*;
 
 public class StringUtil {
+    private static final String ALPHABET_LOWER_TR = "abcçdefgğhıijklmnoöprsştuüvyz";
+    private static final String ALPHABET_LOWER_EN = "abcdefghijklmnopqrstuwxvyz";
+    private static final String ALPHABET_UPPER_TR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+    private static final String ALPHABET_UPPER_EN = "ABCDEFGHIJKLMNOPQRSTUWXVYZ";
+    private static final String ALPHABET_ALL_TR = ALPHABET_UPPER_TR + ALPHABET_LOWER_TR;
+    private static final String ALPHABET_ALL_EN = ALPHABET_UPPER_EN + ALPHABET_LOWER_EN;
+
 
     private StringUtil()
     {
@@ -86,7 +93,7 @@ public class StringUtil {
 
     public static String getRandomTextTR(Random r, int n)
     {
-        return getRandomText(r, n, "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz");
+        return getRandomText(r, n, ALPHABET_ALL_TR);
     }
 
     public static String getRandomTextTR(int n)
@@ -96,7 +103,7 @@ public class StringUtil {
 
     public static String getRandomTextEN(Random r, int n)
     {
-        return getRandomText(r, n, "ABCDEFGHIJKLMNOPQRSTUWXVYZabcdefghijklmnopqrstuwxvyz");
+        return getRandomText(r, n, ALPHABET_ALL_EN);
     }
 
     public static String getRandomTextEN(int n)
@@ -176,12 +183,12 @@ public class StringUtil {
 
     public static boolean isPangramTR(String text)
     {
-        return isPangram(text.toLowerCase(), "abcçdefgğhıijklmnoöprsştuüvyz");
+        return isPangram(text.toLowerCase(), ALPHABET_LOWER_TR);
     }
 
     public static boolean isPangramEN(String text)
     {
-        return isPangram(text.toLowerCase(), "abcdefghijklmnopqrstuwxvyz");
+        return isPangram(text.toLowerCase(), ALPHABET_LOWER_EN);
     }
 
     public static boolean isPangram(String text, String alphabet)

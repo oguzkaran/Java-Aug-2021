@@ -1,11 +1,21 @@
-package org.csystem.application.random.randomnumbers;
+/*----------------------------------------------------------------------
+	FILE        : RandomIntArrayGenerator.java
+	AUTHOR      : Java-Aug-2021 Group
+	LAST UPDATE : 02.01.2022
+
+	Immutable int number generator
+
+	Copyleft (c) 1993 by C and System Programmers Association (CSD)
+	All Rights Free
+-----------------------------------------------------------------------*/
+package org.csystem.util.random;
 
 import org.csystem.util.array.ArrayUtil;
 
-public class RandomNumbersGenerator {
+public class RandomIntArrayGenerator {
     private final int [] m_numbers;
 
-    public RandomNumbersGenerator(int n, int min, int max)
+    public RandomIntArrayGenerator(int n, int min, int max)
     {
         m_numbers = ArrayUtil.getRandomArray(n, min, max);
     }

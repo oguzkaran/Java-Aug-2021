@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="" />
+    <list default="true" id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/ChemistryUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/string/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/string/StringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/random/randomnumbers/RandomNumbersGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/random/RandomIntArrayGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParserApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParserApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/math/geometry/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/math/geometry/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/string/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/string/StringUtil.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -22,6 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../doc/Examples.txt" />
   </component>
@@ -69,5 +91,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
