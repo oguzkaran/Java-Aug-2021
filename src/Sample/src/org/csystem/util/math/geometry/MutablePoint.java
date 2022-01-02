@@ -1,9 +1,9 @@
 /*----------------------------------------------------------------------
-	FILE        : Point.java
+	FILE        : MutablePoint.java
 	AUTHOR      : Java-Aug-2021 Group
 	LAST UPDATE : 02.01.2022
 
-	Immutable Point class that represents 2D point
+	MutablePoint class that represents 2D point
 
 	Copyleft (c) 1993 by C and System Programmers Association (CSD)
 	All Rights Free
@@ -13,11 +13,11 @@ package org.csystem.util.math.geometry;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class Point {
-	private final double m_x;
-	private final double m_y;
+public class MutablePoint {
+	private double m_x;
+	private double m_y;
 
-	private Point(double a, double b, boolean polar)
+	private MutablePoint(double a, double b, boolean polar)
 	{
 		if (polar) {
 			m_x = a * Math.cos(b);
@@ -29,34 +29,34 @@ public class Point {
 		}
 	}
 
-	public static Point createCartesian()
+	public static MutablePoint createCartesian()
 	{
 		return createCartesian(0);
 	}
 
-	public static Point createCartesian(double x)
+	public static MutablePoint createCartesian(double x)
 	{
 		return createCartesian(x, 0);
 	}
 
-	public static Point createCartesian(double x, double y)
+	public static MutablePoint createCartesian(double x, double y)
 	{
-		return new Point(x, y, false);
+		return new MutablePoint(x, y, false);
 	}
 
-	public static Point createPolar()
+	public static MutablePoint createPolar()
 	{
 		return createPolar(0, 0);
 	}
 
-	public static Point createPolar(double r)
+	public static MutablePoint createPolar(double r)
 	{
 		return createPolar(r, 0);
 	}
 
-	public static Point createPolar(double r, double theta)
+	public static MutablePoint createPolar(double r, double theta)
 	{
-		return new Point(r, theta, true);
+		return new MutablePoint(r, theta, true);
 	}
 
 	public double getX()
@@ -64,9 +64,19 @@ public class Point {
 		return m_x;
 	}
 
+	public void setX(double x)
+	{
+		m_x = x;
+	}
+
 	public double getY()
 	{
 		return m_y;
+	}
+
+	public void setY(double y)
+	{
+		m_y = y;
 	}
 
 	public double distance()
@@ -74,7 +84,7 @@ public class Point {
 		return distance(0, 0);
 	}
 	
-	public double distance(Point other)
+	public double distance(MutablePoint other)
 	{
 		return distance(other.m_x, other.m_y);
 	}
@@ -83,15 +93,16 @@ public class Point {
 	{
 		return sqrt(pow(m_x - a, 2) + pow(m_y - b, 2));
 	}
-
-	public Point offset(double dxy)
+	
+	public void offset(double dxy)
 	{
-		return offset(dxy, dxy);
+		offset(dxy, dxy);
 	}
-
-	public Point offset(double dx, double dy)
+	
+	public void offset(double dx, double dy)
 	{
-		return new Point(m_x + dx, m_y + dy, false);
+		m_x += dx;
+		m_y += dy;
 	}
 	
 	public String toString()

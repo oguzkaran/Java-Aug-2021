@@ -3,7 +3,7 @@
 	AUTHOR      : Java-Aug-2021 Group
 	LAST UPDATE : 02.01.2022
 
-	Immutable Complex class that represents a complex number
+	MutableComplex class that represents a complex number
 
 	Copyleft (c) 1993 by C and System Programmers Association (CSD)
 	All Rights Free
@@ -12,39 +12,39 @@ package org.csystem.util.math;
 
 import static java.lang.Math.sqrt;
 
-public class Complex {
-	private static Complex add(double a1, double b1, double a2, double b2)
-	{
-		return new Complex(a1 + a2, b1 + b2);
+public class MutableComplex {
+	private static MutableComplex add(double a1, double b1, double a2, double b2)
+	{		
+		return new MutableComplex(a1 + a2, b1 + b2);
 	}
-
-	private static Complex subtract(double a1, double b1, double a2, double b2)
+	
+	private static MutableComplex subtract(double a1, double b1, double a2, double b2)
 	{
 		return add(a1, b1, -a2, -b2);
 	}
-
-	private static Complex multiply(double a1, double b1, double a2, double b2)
+	
+	private static MutableComplex multiply(double a1, double b1, double a2, double b2)
 	{
-		return new Complex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2);
+		return new MutableComplex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2);
 	}
-
-	private static Complex divide(double a1, double b1, double a2, double b2)
+	
+	private static MutableComplex divide(double a1, double b1, double a2, double b2)
 	{
-		Complex z = multiply(a1, b1, a2, -b2);
-
+		MutableComplex z = multiply(a1, b1, a2, -b2);
+		
 		return multiply(1 / (a2 * a2 + b2 * b2), z);
 	}
+	
+	private double m_real;
+	private double m_imag;
 
-	private final double m_real;
-	private final double m_imag;
-
-	public Complex(double theta)
+	public MutableComplex(double theta)
 	{
 		m_real = Math.cos(theta);
 		m_imag = Math.sin(theta);
 	}
 
-	public Complex(double real, double imag)
+	public MutableComplex(double real, double imag)
 	{
 		m_real = real;
 		m_imag = imag;
@@ -55,9 +55,19 @@ public class Complex {
 		return m_real;
 	}
 
+	public void setReal(double real)
+	{
+		m_real = real;
+	}
+
 	public double getImag()
 	{
 		return m_real;
+	}
+
+	public void setImag(double imag)
+	{
+		m_imag = imag;
 	}
 
 	public double getLength()
@@ -70,71 +80,71 @@ public class Complex {
 		return sqrt(m_real * m_real + m_imag * m_imag);
 	}
 	
-	public Complex getConjugate()
+	public MutableComplex getConjugate()
 	{
-		return new Complex(m_real, -m_imag);
+		return new MutableComplex(m_real, -m_imag);
 	}
 	
 	//add methods
-	public static Complex add(double val, Complex z)
+	public static MutableComplex add(double val, MutableComplex z)
 	{
 		return add(val, 0, z.m_real, z.m_imag);
 	}
 	
-	public Complex add(double val)
+	public MutableComplex add(double val)
 	{
 		return add(m_real, m_imag, val, 0);
 	}
 	
-	public Complex add(Complex other)
+	public MutableComplex add(MutableComplex other)
 	{
 		return add(m_real, m_imag, other.m_real, other.m_imag);
 	}	
 	
 	//subtract methods
-	public static Complex subtract(double val, Complex z)
+	public static MutableComplex subtract(double val, MutableComplex z)
 	{
 		return subtract(val, 0, z.m_real, z.m_imag);
 	}
 	
-	public Complex subtract(double val)
+	public MutableComplex subtract(double val)
 	{
 		return subtract(m_real, m_imag, val, 0);
 	}
 	
-	public Complex subtract(Complex other)
+	public MutableComplex subtract(MutableComplex other)
 	{
 		return subtract(m_real, m_imag, other.m_real, other.m_imag);
 	}	
 	
 	//multiply methods
-	public static Complex multiply(double val, Complex z)
+	public static MutableComplex multiply(double val, MutableComplex z)
 	{
 		return multiply(val, 0, z.m_real, z.m_imag);
 	}
 	
-	public Complex multiply(double val)
+	public MutableComplex multiply(double val)
 	{
 		return multiply(m_real, m_imag, val, 0);
 	}
 	
-	public Complex multiply(Complex other)
+	public MutableComplex multiply(MutableComplex other)
 	{
 		return multiply(m_real, m_imag, other.m_real, other.m_imag);
 	}
 	
 	//divide methods
-	public static Complex divide(double val, Complex z)
+	public static MutableComplex divide(double val, MutableComplex z)
 	{
 		return divide(val, 0, z.m_real, z.m_imag);
 	}
 	
-	public Complex divide(double val)
+	public MutableComplex divide(double val)
 	{
 		return divide(m_real, m_imag, val, 0);
 	}
 	
-	public Complex divide(Complex other)
+	public MutableComplex divide(MutableComplex other)
 	{
 		return divide(m_real, m_imag, other.m_real, other.m_imag);
 	}	

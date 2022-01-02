@@ -3,7 +3,7 @@
 	AUTHOR      : Java-Aug-2021 Group
 	LAST UPDATE : 02.01.2022
 
-	Immutable class that wraps int value and caches values in [-128, 127]
+	Immutable class that wraps an int value and caches values in [-128, 127]
 
 	Copyleft (c) 1993 by C and System Programmers Association (CSD)
 	All Rights Free
@@ -43,9 +43,80 @@ public class IntValue {
         return m_value;
     }
 
+    public static int sum(int left, int right)
+    {
+        return left + right;
+    }
+
+    public IntValue add(int value)
+    {
+        return of(m_value + value);
+    }
+
+    public IntValue add(IntValue other)
+    {
+        return add(other.m_value);
+    }
+
+    public IntValue subtract(int value)
+    {
+        return add(-value);
+    }
+
+    public IntValue subtract(IntValue other)
+    {
+        return subtract(other.m_value);
+    }
+
+    public IntValue multiply(int value)
+    {
+        return of(m_value * value);
+    }
+
+    public IntValue multiply(IntValue other)
+    {
+        return multiply(other.m_value);
+    }
+
+    public IntValue divide(int value)
+    {
+        return of(m_value / value);
+    }
+
+    public IntValue divide(IntValue other)
+    {
+        return divide(other.m_value);
+    }
+
+    public IntValue [] divideAndRemainder(int value)
+    {
+        return new IntValue[] {of(m_value / value), of(m_value % value)};
+    }
+
+    public IntValue [] divideAndRemainder(IntValue other)
+    {
+        return divideAndRemainder(other.m_value);
+    }
+
+    public IntValue increment()
+    {
+        return add(1);
+    }
+
+    public IntValue decrement()
+    {
+        return subtract(1);
+    }
+
+    public int compareTo(IntValue other)
+    {
+        return m_value - other.m_value;
+    }
+
     public String toString()
     {
         return m_value + "";
     }
 
+    //...
 }

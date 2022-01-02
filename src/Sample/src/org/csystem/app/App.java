@@ -1,21 +1,16 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	IntValue sınıfı ve test kodu
+	Immutable Complex sınıfı
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.wrapper.IntValue;
+import org.csystem.util.math.Complex;
 
 class App {
     public static void main(String [] args)
     {
-        IntValue intValue1 = IntValue.ZERO;
-        IntValue intValue2 = IntValue.of(0);
+        Complex z = new Complex(Math.PI * 6);
 
-        System.out.println(intValue1 == intValue2);
+        System.out.println(z.toString());
     }
 }
-
-
-
-
 
