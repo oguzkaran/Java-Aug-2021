@@ -1,16 +1,18 @@
 /*----------------------------------------------------------------------------------------------------------------------
-	Immutable Complex sınıfı
+	MutableDate sınıfı
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.math.Complex;
+import org.csystem.util.datetime.MutableDate;
 
 class App {
     public static void main(String [] args)
     {
-        Complex z = new Complex(Math.PI * 6);
+        MutableDate date = new MutableDate(8, 1, 2022);
 
-        System.out.println(z.toString());
+        System.out.println(date.toString());
+        System.out.println(date.toString('.'));
+        System.out.println(date.toLongDateStringTR());
+        System.out.println(date.toLongDateStringEN());
     }
 }
-

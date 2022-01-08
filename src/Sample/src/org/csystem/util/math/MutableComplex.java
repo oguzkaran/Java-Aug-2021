@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutableComplex.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 02.01.2022
+	LAST UPDATE : 08.01.2022
 
 	MutableComplex class that represents a complex number
 
@@ -14,40 +14,44 @@ import static java.lang.Math.sqrt;
 
 public class MutableComplex {
 	private static MutableComplex add(double a1, double b1, double a2, double b2)
-	{		
-		return new MutableComplex(a1 + a2, b1 + b2);
+	{
+		return new MutableComplex(a1 + a2, b1 + b2, false);
 	}
-	
+
 	private static MutableComplex subtract(double a1, double b1, double a2, double b2)
 	{
 		return add(a1, b1, -a2, -b2);
 	}
-	
+
 	private static MutableComplex multiply(double a1, double b1, double a2, double b2)
 	{
-		return new MutableComplex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2);
+		return new MutableComplex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2, false);
 	}
-	
+
 	private static MutableComplex divide(double a1, double b1, double a2, double b2)
 	{
 		MutableComplex z = multiply(a1, b1, a2, -b2);
-		
+
 		return multiply(1 / (a2 * a2 + b2 * b2), z);
 	}
-	
+
 	private double m_real;
 	private double m_imag;
 
-	public MutableComplex(double theta)
+	private MutableComplex(double a, double b, boolean polar)
 	{
-		m_real = Math.cos(theta);
-		m_imag = Math.sin(theta);
+		m_real = polar ? a * Math.cos(b) : a;
+		m_imag = polar ? a * Math.sin(b) : b;
 	}
 
-	public MutableComplex(double real, double imag)
+	public static MutableComplex create(double real, double imag)
 	{
-		m_real = real;
-		m_imag = imag;
+		return new MutableComplex(real, imag, false);
+	}
+
+	public static MutableComplex createPolar(double r, double theta)
+	{
+		return new MutableComplex(r, theta, true);
 	}
 
 	public double getReal()
@@ -82,7 +86,7 @@ public class MutableComplex {
 	
 	public MutableComplex getConjugate()
 	{
-		return new MutableComplex(m_real, -m_imag);
+		return new MutableComplex(m_real, -m_imag, false);
 	}
 	
 	//add methods

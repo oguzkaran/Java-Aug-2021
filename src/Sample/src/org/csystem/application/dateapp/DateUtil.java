@@ -61,7 +61,6 @@ public class DateUtil {
 	{
 		return daysOfWeekTR[getDayOfWeek(day, month, year)];
 	}
-
 	
 	public static boolean isWeekday(int day, int month, int year)
 	{

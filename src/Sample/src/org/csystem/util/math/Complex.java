@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
-	FILE        : MutableComplex.java
+	FILE        : Complex.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 02.01.2022
+	LAST UPDATE : 08.01.2022
 
 	Immutable Complex class that represents a complex number
 
@@ -15,7 +15,7 @@ import static java.lang.Math.sqrt;
 public class Complex {
 	private static Complex add(double a1, double b1, double a2, double b2)
 	{
-		return new Complex(a1 + a2, b1 + b2);
+		return new Complex(a1 + a2, b1 + b2, false);
 	}
 
 	private static Complex subtract(double a1, double b1, double a2, double b2)
@@ -25,7 +25,7 @@ public class Complex {
 
 	private static Complex multiply(double a1, double b1, double a2, double b2)
 	{
-		return new Complex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2);
+		return new Complex(a1 * a2 - b1 * b2, a1 * b2 + b1 * a2, false);
 	}
 
 	private static Complex divide(double a1, double b1, double a2, double b2)
@@ -38,16 +38,20 @@ public class Complex {
 	private final double m_real;
 	private final double m_imag;
 
-	public Complex(double theta)
+	private Complex(double a, double b, boolean polar)
 	{
-		m_real = Math.cos(theta);
-		m_imag = Math.sin(theta);
+		m_real = polar ? a * Math.cos(b) : a;
+		m_imag = polar ? a * Math.sin(b) : b;
 	}
 
-	public Complex(double real, double imag)
+	public static Complex create(double real, double imag)
 	{
-		m_real = real;
-		m_imag = imag;
+		return new Complex(real, imag, false);
+	}
+
+	public static Complex createPolar(double r, double theta)
+	{
+		return new Complex(r, theta, true);
 	}
 
 	public double getReal()
@@ -72,7 +76,7 @@ public class Complex {
 	
 	public Complex getConjugate()
 	{
-		return new Complex(m_real, -m_imag);
+		return new Complex(m_real, -m_imag, false);
 	}
 	
 	//add methods

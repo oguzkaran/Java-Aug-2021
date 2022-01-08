@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : Point.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 02.01.2022
+	LAST UPDATE : 08.01.2022
 
 	Immutable Point class that represents 2D point
 
@@ -19,14 +19,8 @@ public class Point {
 
 	private Point(double a, double b, boolean polar)
 	{
-		if (polar) {
-			m_x = a * Math.cos(b);
-			m_y = a * Math.sin(b);
-		}
-		else {
-			m_x = a;
-			m_y = b;
-		}
+		m_x = polar ? a * Math.cos(b) : a;
+		m_y = polar ? a * Math.sin(b) : b;
 	}
 
 	public static Point createCartesian()
