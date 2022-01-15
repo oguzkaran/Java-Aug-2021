@@ -1,7 +1,6 @@
 package org.csystem.application.studentinfoparser;
 
 import org.csystem.util.datetime.Date;
-import org.csystem.util.datetime.MutableDate;
 
 public class StudentInfoParser {
     private final StudentInfo m_studentInfo;

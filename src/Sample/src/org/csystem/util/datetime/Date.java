@@ -13,7 +13,6 @@ package org.csystem.util.datetime;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
 
 import static org.csystem.util.datetime.DateCheckCommon.*;
 
@@ -43,40 +42,6 @@ public class Date {
         m_month = month;
         m_year = year;
         m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
-    }
-
-    public static Date createRandomDate()
-    {
-        return createRandomDate(new Random());
-    }
-
-    public static Date createRandomDate(Random r)
-    {
-        return createRandomDate(r, new Date().m_year);
-    }
-
-    public static Date createRandomDate(int year)
-    {
-        return createRandomDate(new Random(), year);
-    }
-
-    public static Date createRandomDate(Random r, int year)
-    {
-        return createRandomDate(r, year, year);
-    }
-
-    public static Date createRandomDate(int minYear, int maxYear)
-    {
-        return createRandomDate(new Random(), minYear, maxYear);
-    }
-
-    public static Date createRandomDate(Random r, int minYear, int maxYear)
-    {
-        int year = r.nextInt(maxYear - minYear + 1) + minYear;
-        int month = r.nextInt(12) + 1;
-        int day = r.nextInt(getDays(month, year)) + 1;
-
-        return new Date(day, month, year);
     }
 
     public static Date today()

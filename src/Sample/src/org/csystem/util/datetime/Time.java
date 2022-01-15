@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : Time.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 08.01.2022
+	LAST UPDATE : 15.01.2022
 
 	Immutable Time class that represents time with hour, minute, second
 	and millisecond
@@ -13,7 +13,6 @@ package org.csystem.util.datetime;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
 
 import static org.csystem.util.datetime.TimeCheckCommon.checkTime;
 
@@ -53,16 +52,6 @@ public class Time {
     public static final Time MIDNIGHT = of(0, 0);
     public static final Time MIN = MIDNIGHT;
     public static final Time NOON = of(12, 0);
-
-    public static Time createRandomTime()
-    {
-        return createRandomTime(new Random());
-    }
-
-    public static Time createRandomTime(Random random)
-    {
-        return new Time(random.nextInt(24), random.nextInt(60), random.nextInt(60), random.nextInt(1000));
-    }
 
     public static Time of(int hour, int minute)
     {

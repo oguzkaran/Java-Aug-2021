@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutableTime.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 08.01.2022
+	LAST UPDATE : 15.01.2022
 
 	MutableTime class that represents time with hour, minute, second
 	and millisecond
@@ -13,7 +13,6 @@ package org.csystem.util.datetime;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
 
 import static org.csystem.util.datetime.TimeCheckCommon.*;
 
@@ -29,15 +28,6 @@ public class MutableTime {
     public static final MutableTime MIN = MIDNIGHT;
     public static final MutableTime NOON = new MutableTime(12, 0, 0, 0);
 
-    public static MutableTime createRandomTime()
-    {
-        return createRandomTime(new Random());
-    }
-
-    public static MutableTime createRandomTime(Random random)
-    {
-        return new MutableTime(random.nextInt(24), random.nextInt(60), random.nextInt(60), random.nextInt(1000));
-    }
 
     /*  Bu ctor o anki sistem zamanını alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.
         Tasarım açısında default ctor'un yaptığı iş için yazılmıştır

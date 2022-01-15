@@ -13,7 +13,6 @@ package org.csystem.util.datetime;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
 
 import static org.csystem.util.datetime.DateCheckCommon.*;
 
@@ -44,40 +43,6 @@ public class MutableDate {
         m_month = month;
         m_year = year;
         m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
-    }
-
-    public static MutableDate createRandomDate()
-    {
-        return createRandomDate(new Random());
-    }
-
-    public static MutableDate createRandomDate(Random r)
-    {
-        return createRandomDate(r, new MutableDate().m_year);
-    }
-
-    public static MutableDate createRandomDate(int year)
-    {
-        return createRandomDate(new Random(), year);
-    }
-
-    public static MutableDate createRandomDate(Random r, int year)
-    {
-        return createRandomDate(r, year, year);
-    }
-
-    public static MutableDate createRandomDate(int minYear, int maxYear)
-    {
-        return createRandomDate(new Random(), minYear, maxYear);
-    }
-
-    public static MutableDate createRandomDate(Random r, int minYear, int maxYear)
-    {
-        int year = r.nextInt(maxYear - minYear + 1) + minYear;
-        int month = r.nextInt(12) + 1;
-        int day = r.nextInt(getDays(month, year)) + 1;
-
-        return new MutableDate(day, month, year);
     }
 
      /*  Bu ctor o anki sistem tarihini alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.

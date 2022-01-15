@@ -5,21 +5,14 @@
       <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/dateapp/DateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DateCheckCommon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DateCheckCommon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/MutableDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/MutableDate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/dateapp/DateApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/dateapp/DateApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/dateapp/DateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/RandomStudentInfoFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParserApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/DateCheckCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/DateCheckCommon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
