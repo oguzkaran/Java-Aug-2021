@@ -17,6 +17,7 @@
 package org.csystem.application.dateapp;
 
 public class DateApp {
+
     private DateApp()
     {
     }
@@ -38,9 +39,10 @@ public class DateApp {
             System.out.print("Yıl?");
             int year = Integer.parseInt(kb.nextLine());
 
+            DateReport dateReport = new DateReport(day, month, year);
 
-            DateUtil.displayDateTR(day, month, year);
-            DateUtil.displayDateEN(day, month, year);
+            dateReport.displayDateTR();
+            dateReport.displayDateEN();
         }
 
         System.out.println("Tekrar yapıyor musunuz?");

@@ -1,9 +1,9 @@
 /*----------------------------------------------------------------------
-	FILE        : MutableDate.java
+	FILE        : Date.java
 	AUTHOR      : Java-Aug-2021 Group
 	LAST UPDATE : 15.01.2022
 
-	MutableDate class that represents date with day, month, year and related
+	Immutable Date class that represents date with day, month, year and related
 	values
 
 	Copyleft (c) 1993 by C and System Programmers Association (CSD)
@@ -17,84 +17,77 @@ import java.util.Random;
 
 import static org.csystem.util.datetime.DateCheckCommon.*;
 
-public class MutableDate {
-    private int m_day;
-    private int m_month;
-    private int m_year;
-    private int m_dayOfWeek;
+public class Date {
+    private final int m_day;
+    private final int m_month;
+    private final int m_year;
+    private final int m_dayOfWeek;
 
-    private void checkDay(int day)
+    /*  Bu ctor o anki sistem tarihini alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.
+        Tasarım açısından default ctor'un yaptığı iş için yazılmıştır
+     */
+    private Date()
     {
-        checkDate(day, m_month, m_year, "Invalid day value: " + day);
+        Calendar today = new GregorianCalendar();
+
+        m_day = today.get(Calendar.DAY_OF_MONTH);
+        m_month = today.get(Calendar.MONTH) + 1;
+        m_year = today.get(Calendar.YEAR);
+        m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
     }
 
-    private void checkMonth(int month)
+    private Date(int day, int month, int year)
     {
-        checkDate(m_day, month, m_year, "Invalid month value: " + month);
-    }
-
-    private void checkYear(int year)
-    {
-        checkDate(m_day, m_month, year, "Invalid year value: " + year);
-    }
-
-    private void set(int day, int month, int year)
-    {
+        checkDate(day, month, year);
         m_day = day;
         m_month = month;
         m_year = year;
         m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
     }
 
-    public static MutableDate createRandomDate()
+    public static Date createRandomDate()
     {
         return createRandomDate(new Random());
     }
 
-    public static MutableDate createRandomDate(Random r)
+    public static Date createRandomDate(Random r)
     {
-        return createRandomDate(r, new MutableDate().m_year);
+        return createRandomDate(r, new Date().m_year);
     }
 
-    public static MutableDate createRandomDate(int year)
+    public static Date createRandomDate(int year)
     {
         return createRandomDate(new Random(), year);
     }
 
-    public static MutableDate createRandomDate(Random r, int year)
+    public static Date createRandomDate(Random r, int year)
     {
         return createRandomDate(r, year, year);
     }
 
-    public static MutableDate createRandomDate(int minYear, int maxYear)
+    public static Date createRandomDate(int minYear, int maxYear)
     {
         return createRandomDate(new Random(), minYear, maxYear);
     }
 
-    public static MutableDate createRandomDate(Random r, int minYear, int maxYear)
+    public static Date createRandomDate(Random r, int minYear, int maxYear)
     {
         int year = r.nextInt(maxYear - minYear + 1) + minYear;
         int month = r.nextInt(12) + 1;
         int day = r.nextInt(getDays(month, year)) + 1;
 
-        return new MutableDate(day, month, year);
+        return new Date(day, month, year);
     }
 
-     /*  Bu ctor o anki sistem tarihini alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.
-        Tasarım açısından default ctor'un yaptığı iş için yazılmıştır
-     */
-
-    public MutableDate()
+    public static Date today()
     {
-        Calendar today = new GregorianCalendar();
-
-        set(today.get(Calendar.DAY_OF_MONTH), today.get(Calendar.MONTH) + 1, today.get(Calendar.YEAR));
+        return new Date();
     }
 
-    public MutableDate(int day, int month, int year)
+
+    public static Date of(int day, int month, int year)
     {
-        checkDate(day, month, year);
-        set(day, month, year);
+        return new Date(day, month, year);
     }
 
     public int getDay()
@@ -102,41 +95,14 @@ public class MutableDate {
         return m_day;
     }
 
-    public void setDay(int day)
-    {
-        if (m_day == day)
-            return;
-
-        checkDay(day);
-        set(day, m_month, m_year);
-    }
-
     public int getMonthValue()
     {
         return m_month;
     }
 
-    public void setMonthValue(int month)
-    {
-        if (m_month == month)
-            return;
-
-        checkMonth(month);
-        set(m_day, month, m_year);
-    }
-
     public int getYear()
     {
         return m_year;
-    }
-
-    public void setYear(int year)
-    {
-        if (m_year == year)
-            return;
-
-        checkYear(year);
-        set(m_day, m_month, year);
     }
 
     public int getDayOfWeekValue()

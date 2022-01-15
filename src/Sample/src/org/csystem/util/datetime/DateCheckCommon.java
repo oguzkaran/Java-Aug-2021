@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : DateCheckCommon.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 08.01.2022
+	LAST UPDATE : 15.01.2022
 
 	Utility package private class that is used for checking date
 
@@ -29,6 +29,12 @@ class DateCheckCommon {
     {
         System.out.println(message);
         System.exit(1); //Exception işlemlerine kadar sabredin
+    }
+
+    static void checkDate(int day, int month, int year)
+    {
+        DateCheckCommon.checkDate(day, month, year,
+                String.format("Invalid date value(s): d -> %d, m -> %d, y -> %d", day, month, year));
     }
 
     static void checkDate(int day, int month, int year, String message)
@@ -81,6 +87,11 @@ class DateCheckCommon {
         }
 
         return suffix;
+    }
+
+    static int getDays(int month, int year)
+    {
+        return month == 2 && isLeapYear(year) ? 29 : DAYS_OF_MONTH[month];
     }
 
     static int getDayOfYear(int day, int month, int year)

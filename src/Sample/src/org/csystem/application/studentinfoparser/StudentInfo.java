@@ -1,10 +1,10 @@
 package org.csystem.application.studentinfoparser;
 
-import org.csystem.application.dateapp.DateUtil;
+import org.csystem.util.datetime.Date;
 
 public class StudentInfo {
     private String m_name;
-    private String m_birthDate;
+    private Date m_birthDate;
     private String m_lectureName;
     private int m_midTermGrade;
     private int m_finalGrade;
@@ -19,12 +19,7 @@ public class StudentInfo {
         m_name = name;
     }
 
-    public String getBirthDate()
-    {
-        return m_birthDate;
-    }
-
-    public void setBirthDate(String birthDate)
+    public void setBirthDate(Date birthDate)
     {
         m_birthDate = birthDate;
     }
@@ -66,14 +61,8 @@ public class StudentInfo {
 
     public String getBirthDateTR()
     {
-        String [] birthDateInfo = m_birthDate.split("[/]");
-        int day = Integer.parseInt(birthDateInfo[0]);
-        int month = Integer.parseInt(birthDateInfo[1]);
-        int year = Integer.parseInt(birthDateInfo[2]);
-
-        return DateUtil.getDateTR(day, month, year);
+        return m_birthDate.toLongDateStringTR();
     }
-
 
     public String toString()
     {
