@@ -5,14 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/application/studentinfoparser/StudentInfoParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/MutableDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/MutableDate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/studentinfoparser/StudentInfoParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/MutableTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/math/MutableFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/math/MutableFraction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +45,9 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.csystem.util.math" />
       <recent name="org.csystem.util.datetime" />
       <recent name="org.csystem.application.dateapp" />
-      <recent name="org.csystem.util.math" />
       <recent name="org.csystem.util.wrapper" />
     </key>
   </component>
