@@ -1,70 +1,54 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Aşağıdaki örnekte argümanlar açısından hız ve okunabilirlik durumu çözülebilmiştir. Ancak hala setColor ve move
-    metotlarının parametreleri geçilecek değerler açısından bir fikir vermemektedir
-
-    Örnekte detaylar gözardı edilmiştir
+    Aşağıdaki örnekte Color enum sınıfına eklenen ctor ile her bir sabite ilişkin nesne için bilgiler iliştirilmiştir
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
+
+import java.util.Random;
+import java.util.Scanner;
 
 class App {
     public static void main(String [] args)
     {
-        SpaceGame game = new SpaceGame();
+        Scanner kb = new Scanner(System.in);
+        RandomColorFactory factory = new RandomColorFactory(new Random());
 
-        game.run();
+        System.out.print("Bir sayı giriniz:");
+        int count = Integer.parseInt(kb.nextLine());
+
+        while (count-- > 0) {
+            Color color = factory.getColor();
+
+            System.out.println("--------------------------------------------");
+            System.out.printf("%s:{r: %d, g: %d, b: %d}%n", color.toString(), color.r, color.g, color.b);
+            System.out.println("--------------------------------------------");
+        }
     }
 }
 
-class Color {
-    //...
-    public static final int RED = 0;
-    public static final int GREEN = 1;
-    public static final int BLUE = 2;
-    public static final int WHITE = 3;
-    public static final int BLACK = 4;
-}
+class RandomColorFactory {
+    private final Random m_random;
+    private static final Color[] m_colors = Color.values();
 
-class Direction {
-    //...
-    public static final int RIGHT = 0;
-    public static final int TOP = 1;
-    public static final int LEFT = 2;
-    public static final int BOTTOM = 3;
-}
-
-class SpaceGame {
-    //...
-    public void run()
+    public RandomColorFactory(Random random)
     {
-        Alien alien = new Alien(/*...*/);
+        m_random = random;
+    }
 
-        //...
-
-        alien.setColor(Color.RED);
-
-        //...
-        alien.move(Direction.LEFT);
-        alien.move(Direction.TOP);
-        alien.move(Direction.BOTTOM);
-        //...
+    public Color getColor()
+    {
+        return m_colors[m_random.nextInt(m_colors.length)];
     }
 }
 
-class Alien {
-    private int m_color;
-    //...
-    public void setColor(int color)
+enum Color {
+    RED(255, 0, 0), GREEN(0, 255, 0), BLUE(0, 0, 255), WHITE(255, 255, 255), BLACK(0, 0, 0);
+
+    public final int r, g, b;
+
+    Color(int rVal, int yVal, int zVal)
     {
-        //...
-        m_color = color;
+        r = rVal;
+        g = yVal;
+        b = zVal;
     }
-
-    //...
-
-    public void move(int direction)
-    {
-        //...
-    }
-
-    //...
 }
