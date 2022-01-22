@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : DateCheckCommon.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 15.01.2022
+	LAST UPDATE : 22.01.2022
 
 	Utility package private class that is used for checking date
 
@@ -14,8 +14,6 @@ class DateCheckCommon {
     private DateCheckCommon()
     {
     }
-
-    static final int [] DAYS_OF_MONTH = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     static final String [] DAYS_OF_WEEK_TR = {"Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"};
     static final String [] DAYS_OF_WEEK_EN = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
     static final String [] MONTHS_TR = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
@@ -24,6 +22,10 @@ class DateCheckCommon {
     static final String [] MONTHS_EN = {"",
             "Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     };
+
+    static final DayOfWeek [] DAY_OF_WEEKS = DayOfWeek.values();
+
+    static final Month [] MONTHS = Month.values();
 
     static void doWorkForException(String message)
     {
@@ -61,7 +63,7 @@ class DateCheckCommon {
             return -1;
 
         for (int y = 1900; y < year; ++y)
-            totalDays += isLeapYear(y) ? 366 : 365;
+            totalDays += Month.isLeapYear(y) ? 366 : 365;
 
         return totalDays % 7;
 
@@ -89,11 +91,6 @@ class DateCheckCommon {
         return suffix;
     }
 
-    static int getDays(int month, int year)
-    {
-        return month == 2 && isLeapYear(year) ? 29 : DAYS_OF_MONTH[month];
-    }
-
     static int getDayOfYear(int day, int month, int year)
     {
         return isValidDate(day, month, year) ? day + getTotalDaysByMonth(month, year) : 0;
@@ -104,9 +101,9 @@ class DateCheckCommon {
         int totalDays = 0;
 
         for (int m = month - 1; m >= 1; --m)
-            totalDays += DAYS_OF_MONTH[m];
+            totalDays += MONTHS[m - 1].days;
 
-        return month > 2 && isLeapYear(year) ? totalDays + 1 : totalDays;
+        return month > 2 && Month.isLeapYear(year) ? totalDays + 1 : totalDays;
     }
 
     static boolean isValidDate(int day, int month, int year)
@@ -114,11 +111,6 @@ class DateCheckCommon {
         if (day < 1 || day > 31 || month < 1 || month > 12)
             return false;
 
-        return day <= (month == 2 && isLeapYear(year) ? 29 : DAYS_OF_MONTH[month]);
-    }
-
-    static boolean isLeapYear(int year)
-    {
-        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+        return day <= (month == 2 && Month.isLeapYear(year) ? 29 : MONTHS[month - 1].days);
     }
 }

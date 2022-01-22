@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : RandomMutableDateFactory.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 15.01.2022
+	LAST UPDATE : 22.01.2022
 
 	Class that generates random MutableDate objects
 
@@ -12,14 +12,13 @@ package org.csystem.util.datetime;
 
 import java.util.Random;
 
-import static org.csystem.util.datetime.DateCheckCommon.getDays;
 
 public class RandomMutableDateFactory {
     private static MutableDate createRandomDate(Random r, int minYear, int maxYear)
     {
         int year = r.nextInt(maxYear - minYear + 1) + minYear;
         int month = r.nextInt(12) + 1;
-        int day = r.nextInt(getDays(month, year)) + 1;
+        int day = r.nextInt(DateCheckCommon.MONTHS[month - 1].getDays(month, year)) + 1;
 
         return new MutableDate(day, month, year);
     }

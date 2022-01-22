@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutableDate.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 15.01.2022
+	LAST UPDATE : 22.01.2022
 
 	MutableDate class that represents date with day, month, year and related
 	values
@@ -42,7 +42,7 @@ public class MutableDate {
         m_day = day;
         m_month = month;
         m_year = year;
-        m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
+        m_dayOfWeek = DateCheckCommon.getDayOfWeek(m_day, m_month, m_year);
     }
 
      /*  Bu ctor o anki sistem tarihini alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.
@@ -60,6 +60,12 @@ public class MutableDate {
     {
         checkDate(day, month, year);
         set(day, month, year);
+    }
+
+    public MutableDate(int day, Month month, int year)
+    {
+        checkDate(day, month.ordinal() + 1, year);
+        set(day, month.ordinal() + 1, year);
     }
 
     public int getDay()
@@ -90,6 +96,16 @@ public class MutableDate {
         set(m_day, month, m_year);
     }
 
+    public Month getMonth()
+    {
+        return DateCheckCommon.MONTHS[m_month - 1];
+    }
+
+    public void setMonth(Month month)
+    {
+        setMonthValue(month.ordinal() + 1);
+    }
+
     public int getYear()
     {
         return m_year;
@@ -104,10 +120,11 @@ public class MutableDate {
         set(m_day, m_month, year);
     }
 
-    public int getDayOfWeekValue()
+    public DayOfWeek getDayOfWeek()
     {
-        return m_dayOfWeek;
+        return DateCheckCommon.DAY_OF_WEEKS[m_dayOfWeek];
     }
+
 
     public String getDayOfWeekTR()
     {
@@ -131,7 +148,7 @@ public class MutableDate {
 
     public boolean isLeapYear()
     {
-        return DateCheckCommon.isLeapYear(m_year);
+        return Month.isLeapYear(m_year);
     }
 
     public boolean isWeekend()

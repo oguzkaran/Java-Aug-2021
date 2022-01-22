@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : Date.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 15.01.2022
+	LAST UPDATE : 22.01.2022
 
 	Immutable Date class that represents date with day, month, year and related
 	values
@@ -25,6 +25,7 @@ public class Date {
     /*  Bu ctor o anki sistem tarihini alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.
         Tasarım açısından default ctor'un yaptığı iş için yazılmıştır
      */
+
     private Date()
     {
         Calendar today = new GregorianCalendar();
@@ -32,7 +33,7 @@ public class Date {
         m_day = today.get(Calendar.DAY_OF_MONTH);
         m_month = today.get(Calendar.MONTH) + 1;
         m_year = today.get(Calendar.YEAR);
-        m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
+        m_dayOfWeek = DateCheckCommon.getDayOfWeek(m_day, m_month, m_year);
     }
 
     private Date(int day, int month, int year)
@@ -41,7 +42,7 @@ public class Date {
         m_day = day;
         m_month = month;
         m_year = year;
-        m_dayOfWeek = getDayOfWeek(m_day, m_month, m_year);
+        m_dayOfWeek = DateCheckCommon.getDayOfWeek(m_day, m_month, m_year);
     }
 
     public static Date today()
@@ -49,10 +50,13 @@ public class Date {
         return new Date();
     }
 
-
     public static Date of(int day, int month, int year)
     {
         return new Date(day, month, year);
+    }
+    public static Date of(int day, Month month, int year)
+    {
+        return of(day, month.ordinal() + 1, year);
     }
 
     public int getDay()
@@ -65,14 +69,19 @@ public class Date {
         return m_month;
     }
 
+    public Month getMonth()
+    {
+        return DateCheckCommon.MONTHS[m_month - 1];
+    }
+
     public int getYear()
     {
         return m_year;
     }
 
-    public int getDayOfWeekValue()
+    public DayOfWeek getDayOfWeek()
     {
-        return m_dayOfWeek;
+        return DateCheckCommon.DAY_OF_WEEKS[m_dayOfWeek];
     }
 
     public String getDayOfWeekTR()
@@ -97,7 +106,7 @@ public class Date {
 
     public boolean isLeapYear()
     {
-        return DateCheckCommon.isLeapYear(m_year);
+        return Month.isLeapYear(m_year);
     }
 
     public boolean isWeekend()
