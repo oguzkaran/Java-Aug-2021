@@ -5,6 +5,11 @@
       <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/GasType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/Pilot.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
