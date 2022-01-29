@@ -37,8 +37,6 @@ public class Time {
         m_millisecond = now.get(Calendar.MILLISECOND);
     }
 
-    //...
-
     private Time(int hour, int minute, int second, int millisecond)
     {
         checkTime(hour, minute, second, millisecond);

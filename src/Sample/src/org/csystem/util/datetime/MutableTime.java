@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutableTime.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 15.01.2022
+	LAST UPDATE : 29.01.2022
 
 	MutableTime class that represents time with hour, minute, second
 	and millisecond
@@ -42,7 +42,15 @@ public class MutableTime {
         m_millisecond = now.get(Calendar.MILLISECOND);
     }
 
-    //...
+    public MutableTime(int hour, int minute)
+    {
+        this(hour, minute, 0);
+    }
+
+    public MutableTime(int hour, int minute, int second)
+    {
+        this(hour, minute, second, 0);
+    }
 
     public MutableTime(int hour, int minute, int second, int millisecond)
     {

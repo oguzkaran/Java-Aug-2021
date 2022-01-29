@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutableDate.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 22.01.2022
+	LAST UPDATE : 29.01.2022
 
 	MutableDate class that represents date with day, month, year and related
 	values
@@ -48,7 +48,6 @@ public class MutableDate {
      /*  Bu ctor o anki sistem tarihini alır. Burada yazılan kodların ne anlama geldiği şu an için önemsizdir.
         Tasarım açısından default ctor'un yaptığı iş için yazılmıştır
      */
-
     public MutableDate()
     {
         Calendar today = new GregorianCalendar();
@@ -64,8 +63,7 @@ public class MutableDate {
 
     public MutableDate(int day, Month month, int year)
     {
-        checkDate(day, month.ordinal() + 1, year);
-        set(day, month.ordinal() + 1, year);
+        this(day, month.ordinal() + 1, year);
     }
 
     public int getDay()
