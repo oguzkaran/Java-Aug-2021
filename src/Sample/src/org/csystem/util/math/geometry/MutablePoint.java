@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutablePoint.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 08.01.2022
+	LAST UPDATE : 30.01.2022
 
 	MutablePoint class that represents 2D point
 
@@ -21,6 +21,11 @@ public class MutablePoint {
 	{
 		m_x = polar ? a * Math.cos(b) : a;
 		m_y = polar ? a * Math.sin(b) : b;
+	}
+
+	MutablePoint(MutablePoint p)
+	{
+		this(p.m_x, p.m_y, false);
 	}
 
 	public static MutablePoint createCartesian()
@@ -51,6 +56,11 @@ public class MutablePoint {
 	public static MutablePoint createPolar(double r, double theta)
 	{
 		return new MutablePoint(r, theta, true);
+	}
+
+	public static MutablePoint create(Point p)
+	{
+		return createCartesian(p.getX(), p.getY());
 	}
 
 	public double getX()
@@ -98,7 +108,12 @@ public class MutablePoint {
 		m_x += dx;
 		m_y += dy;
 	}
-	
+
+	public Point toPoint()
+	{
+		return Point.createCartesian(m_x, m_y);
+	}
+
 	public String toString()
 	{
 		return String.format("{x: %f, y: %f}", m_x, m_y);

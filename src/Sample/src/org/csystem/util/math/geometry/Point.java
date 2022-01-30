@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : Point.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 08.01.2022
+	LAST UPDATE : 30.01.2022
 
 	Immutable Point class that represents 2D point
 
@@ -21,6 +21,11 @@ public class Point {
 	{
 		m_x = polar ? a * Math.cos(b) : a;
 		m_y = polar ? a * Math.sin(b) : b;
+	}
+
+	Point(Point p)
+	{
+		this(p.m_x, p.m_y, false);
 	}
 
 	public static Point createCartesian()
@@ -51,6 +56,11 @@ public class Point {
 	public static Point createPolar(double r, double theta)
 	{
 		return new Point(r, theta, true);
+	}
+
+	public static Point create(MutablePoint p)
+	{
+		return createCartesian(p.getX(), p.getY());
 	}
 
 	public double getX()
@@ -87,7 +97,12 @@ public class Point {
 	{
 		return new Point(m_x + dx, m_y + dy, false);
 	}
-	
+
+	public MutablePoint toMutablePoint()
+	{
+		return MutablePoint.createCartesian(m_x, m_y);
+	}
+
 	public String toString()
 	{
 		return String.format("{x: %f, y: %f}", m_x, m_y);

@@ -1,17 +1,17 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    MutableTime sınıfı
+    AnalyticalCircle sınıfı
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-import org.csystem.util.datetime.MutableTime;
 import org.csystem.util.math.geometry.AnalyticalCircle;
 
 class App {
     public static void main(String [] args)
     {
-        AnalyticalCircle ac = new AnalyticalCircle(-2.3, 100, 100);
+        AnalyticalCircle ac1 = new AnalyticalCircle(-7.8, 100, 200);
+        AnalyticalCircle ac2 = new AnalyticalCircle(-7.8, 97, 204);
 
-        System.out.println(ac.getRadius());
+        System.out.printf("d = %f%n", ac1.centerDistance(ac2));
     }
 }
 
