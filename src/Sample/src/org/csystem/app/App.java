@@ -1,17 +1,55 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    AnalyticalCircle sınıfı
+
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
-
-import org.csystem.util.math.geometry.AnalyticalCircle;
 
 class App {
     public static void main(String [] args)
     {
-        AnalyticalCircle ac1 = new AnalyticalCircle(-7.8, 100, 200);
-        AnalyticalCircle ac2 = new AnalyticalCircle(-7.8, 97, 204);
+        X x = new X();
+        Y y = new Y();
+        Z z = new Z();
+        T t = new T();
+        U u = new U();
 
-        System.out.printf("d = %f%n", ac1.centerDistance(ac2));
+        Sample.doWork(x);
+        Sample.doWork(y); //upcasting
+        Sample.doWork(z); //upcasting
+        Sample.doWork(t); //upcasting
+        Sample.doWork(u); //upcasting
+
+        //...
     }
 }
+
+class Sample {
+    public static void doWork(X x)
+    {
+        //...
+        ++x.a;
+    }
+}
+
+class X {
+    public int a;
+    //...
+}
+
+class Y extends X {
+    //...
+}
+
+class Z extends X {
+    //...
+}
+
+class T extends Y {
+    //...
+}
+
+class U extends Z {
+    //...
+}
+
+
 
