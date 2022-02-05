@@ -1,55 +1,33 @@
 /*----------------------------------------------------------------------------------------------------------------------
-
+    Taban sınıf türünden bir referans türemiş sınıf türünden bir referansa doğrudan atanamaz. Bu işlem tür dönüştürme
+    operatörü ile (explicit conversion, cast) yapılabilir. Bu kavrama "downcasting" denir. Burada tür dönüştürme
+    operatörü derlemeden geçmek için kullanılır.
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
 class App {
     public static void main(String [] args)
     {
-        X x = new X();
-        Y y = new Y();
-        Z z = new Z();
-        T t = new T();
-        U u = new U();
+        int [] a = new int[10];
+        double [] b = new double[20];
+        boolean [] c = new boolean[30];
+        char [] d = new char[10];
+        String [] e = new String[20];
+        Sample [] f = new Sample[40];
+        int [][] g = new int[12][];
+        int [][][] h = new int[12][][];
 
-        Sample.doWork(x);
-        Sample.doWork(y); //upcasting
-        Sample.doWork(z); //upcasting
-        Sample.doWork(t); //upcasting
-        Sample.doWork(u); //upcasting
-
-        //...
+        System.out.println(a.getClass().getName());
+        System.out.println(b.getClass().getName());
+        System.out.println(c.getClass().getName());
+        System.out.println(d.getClass().getName());
+        System.out.println(e.getClass().getName());
+        System.out.println(f.getClass().getName());
+        System.out.println(g.getClass().getName());
+        System.out.println(h.getClass().getName());
     }
 }
 
 class Sample {
-    public static void doWork(X x)
-    {
-        //...
-        ++x.a;
-    }
-}
-
-class X {
-    public int a;
     //...
 }
-
-class Y extends X {
-    //...
-}
-
-class Z extends X {
-    //...
-}
-
-class T extends Y {
-    //...
-}
-
-class U extends Z {
-    //...
-}
-
-
-
