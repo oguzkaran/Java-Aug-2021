@@ -45,6 +45,22 @@ public class RandomObjectArrayGeneratorApp {
 
                 ArrayUtil.display(2, a);
             }
+            else if (object instanceof Integer) {
+                int val = (int)object;
+                System.out.printf("%d * %d = %d%n", val, val, val * val);
+            }
+            else if (object instanceof Double) {
+                double val = (double)object;
+                System.out.printf("val = %f%n", val);
+            }
+            else if (object instanceof Character) {
+                char ch = (char)object;
+                System.out.printf("ch = %c%n", ch);
+            }
+            else if (object instanceof Boolean) {
+                boolean b = (boolean)object;
+                System.out.printf("b = %b%n", b);
+            }
             else {
                 Complex z = (Complex)object;
 

@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/array/ArrayUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/array/ArrayUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/generator/random/RandomObjectArrayFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/generator/random/RandomObjectArrayFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/application/generator/random/RandomObjectArrayGeneratorApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/application/generator/random/RandomObjectArrayGeneratorApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
