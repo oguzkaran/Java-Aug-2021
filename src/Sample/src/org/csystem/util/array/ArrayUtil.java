@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 26.12.2021
+	LAST UPDATE : 06.02.2022
 
 	Utility class that is used for array operations
 
@@ -250,6 +250,18 @@ public class ArrayUtil {
         return minVal;
     }
 
+    public static int min(int [][] a)
+    {
+        int minVal = Integer.MAX_VALUE;
+
+        for (int [] array : a)
+            for (int val : array)
+                if (val < minVal)
+                    minVal = val;
+
+        return minVal;
+    }
+
     public static int max(int [] a)
     {
         int maxVal = a[0];
@@ -257,6 +269,19 @@ public class ArrayUtil {
         for (int i = 1; i < a.length; ++i)
             if (maxVal < a[i])
                 maxVal = a[i];
+
+        return maxVal;
+    }
+
+
+    public static int max(int [][] a)
+    {
+        int maxVal = Integer.MIN_VALUE;
+
+        for (int [] array : a)
+            for (int val : array)
+                if (maxVal < val)
+                    maxVal = val;
 
         return maxVal;
     }
