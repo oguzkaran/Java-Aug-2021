@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : NumberUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 26.12.2021
+	LAST UPDATE : 20.02.2022
 
 	Utility class that is used for numeric operations
 
@@ -14,7 +14,7 @@ import java.util.Random;
 
 import static java.lang.Math.*;
 
-public class NumberUtil {
+public final class NumberUtil {
     private static final String [] ms_ones = {"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};
     private static final String [] ms_tens = {"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};
 

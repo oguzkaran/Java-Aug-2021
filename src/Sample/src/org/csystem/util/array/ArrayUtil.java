@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : ArrayUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 06.02.2022
+	LAST UPDATE : 20.02.2022
 
 	Utility class that is used for array operations
 
@@ -12,7 +12,7 @@ package org.csystem.util.array;
 
 import java.util.Random;
 
-public class ArrayUtil {
+public final class ArrayUtil {
     private static void bubbleSortAscending(int [] a)
     {
         for (int i = 0; i < a.length - 1; ++i)

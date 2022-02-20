@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : StringUtil.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 02.01.2022
+	LAST UPDATE : 20.02.2022
 
 	Utility class that is used for string operations
 
@@ -17,7 +17,7 @@ import java.util.Random;
 
 import static java.lang.Character.*;
 
-public class StringUtil {
+public final class StringUtil {
     private static final String ALPHABET_LOWER_TR = "abcçdefgğhıijklmnoöprsştuüvyz";
     private static final String ALPHABET_LOWER_EN = "abcdefghijklmnopqrstuwxvyz";
     private static final String ALPHABET_UPPER_TR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";

@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : DoubleValue.java
 	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 02.01.2022
+	LAST UPDATE : 2.02.2022
 
 	Immutable class that wraps a long value and caches values in [-128, 127]
 
@@ -10,7 +10,7 @@
 -----------------------------------------------------------------------*/
 package org.csystem.util.wrapper;
 
-public class LongValue {
+public final class LongValue {
     private static final int MIN_VALUE = -128;
     private static final int MAX_VALUE = 127;
     private static final int INDEX_PLUS_VALUE = -MIN_VALUE;
