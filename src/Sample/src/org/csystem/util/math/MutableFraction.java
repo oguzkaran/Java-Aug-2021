@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------
 	FILE        : MutableFraction.java
-	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 16.01.2022
+	AUTHOR      : Java-Nov-2021 Group
+	LAST UPDATE : 16.08.2022
 
 	MutableFraction class that represents fraction in mathematics
 
@@ -34,15 +34,13 @@ public class MutableFraction {
         return multiply(a1, b1, b2, a2);
     }
 
-    private static void check(int a, int b)
+    private static void check(double a, double b)
     {
         if (b == 0) {
             if (a == 0)
-                System.out.println("Indeterminate");
-            else
-                System.out.println("Undefined");
+                throw new IllegalArgumentException("Indeterminate");
 
-            System.exit(1); // Exception işlemleri konusuna kadar sabredin
+            throw new IllegalArgumentException("Undefined");
         }
     }
 
@@ -50,12 +48,18 @@ public class MutableFraction {
     {
         int min = Math.min(Math.abs(m_a), m_b);
 
-        for (int i = min; i >= 2; --i)
+        for (int i = min; i > 1; --i)
             if (m_a % i == 0 && m_b % i == 0) {
                 m_a /= i;
                 m_b /= i;
                 break;
             }
+    }
+
+    private void setValues(int a, int b)
+    {
+        m_a = a;
+        m_b = b;
     }
 
     private void setSign()
@@ -74,8 +78,7 @@ public class MutableFraction {
             return;
         }
 
-        m_a = a;
-        m_b = b;
+        setValues(a, b);
         setSign();
         simplify();
     }
@@ -102,12 +105,9 @@ public class MutableFraction {
         return m_a;
     }
 
-    public void setNumerator(int val)
+    public void setNumerator(int a)
     {
-        if (m_a == val)
-            return;
-
-        set(val, m_b);
+        set(a, m_b);
     }
 
     public int getDenominator()
@@ -115,13 +115,10 @@ public class MutableFraction {
         return m_b;
     }
 
-    public void setDenominator(int val)
+    public void setDenominator(int b)
     {
-        if (m_b == val)
-            return;
-
-        check(m_a, val);
-        set(m_a, val);
+        check(m_a, b);
+        set(m_a, b);
     }
 
     public double getRealValue()
@@ -193,29 +190,18 @@ public class MutableFraction {
         return divide(m_a, m_b, val, 1);
     }
 
-    //inc methods
-    public void inc(int val)
-    {
-        m_a += m_b * val;
-    }
-
     public void inc()
     {
-        inc(1);
-    }
-
-    //dec methods
-    public void dec(int val)
-    {
-        inc(-val);
+        m_a += m_b;
     }
 
     public void dec()
     {
-        dec(1);
+        m_a -= m_b;
     }
+
     public String toString()
     {
-        return String.format("%d%s", m_a, m_b == 1 ? "" : " / " + m_b + " = " + getRealValue());
+        return String.format("%d%s", m_a, m_b != 1 ? " / " + m_b + " = " + getRealValue() : "");
     }
 }

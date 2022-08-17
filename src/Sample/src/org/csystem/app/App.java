@@ -1,16 +1,61 @@
 /*----------------------------------------------------------------------------------------------------------------------
-    Programcı isterse çöp toplayıcının o an devreye girmesini sağlayabilir. Bunun için System sınıfının gc static metodu
-    veya Runtime sınfının gc metodu kullanılabilir. Ancak bu çoğunlukla hata neredeyse hiçbir zaman kullanılması tavsiye
-    edilmeyen bir yaklaşımdır. Programcı çöp toplayıcının devreye girmesi konusunda etkin çalışmasına güvenmelidir. Zaten
-    istenirse belirli kofigürasynlar da yapıalbilir. Çünkü çöp toplayıcının gereksiz yere arka planda çalıştırılması da
-    programı göreceli yavaşlatabilir
+	Arayüzler (Interfaces):
+
 ----------------------------------------------------------------------------------------------------------------------*/
 package org.csystem.app;
 
-class App {
-    public static void main(String [] args)
-    {
 
-    }
+class App {
+	public static void main(String[] args)
+	{
+
+	}
 }
+
+class Sample {
+	public static void bar() throws YourException
+	{
+		//...
+	}
+}
+
+class B extends A {
+	public void foo() throws Exception
+	{
+		Sample.bar();
+	}
+}
+
+abstract class A {
+	public abstract void foo() throws Exception;
+}
+
+
+class WrapperException extends RuntimeException {
+	public WrapperException(String message)
+	{
+		this(message, null);
+	}
+
+	public WrapperException(String message, Throwable cause)
+	{
+		super(message, cause);
+	}
+
+	public String getMessage()
+	{
+		Throwable cause = getCause();
+
+		return String.format("Message:%s%s", super.getMessage(), cause != null ? ", Cause Message:" + cause.getMessage() : "");
+	}
+}
+
+class MyException extends Exception {
+	//...
+}
+
+class YourException extends Exception {
+	//...
+}
+
 

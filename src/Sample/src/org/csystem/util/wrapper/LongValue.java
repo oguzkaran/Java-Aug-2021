@@ -1,20 +1,20 @@
-/*----------------------------------------------------------------------
-	FILE        : DoubleValue.java
-	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 2.02.2022
+/*----------------------------------------------------------------
+	FILE		: LongValue.java
+	AUTHOR		: Java-Nov-2021 Group
+	LAST UPDATE	: 15.05.2022
 
-	Immutable class that wraps a long value and caches values in [-128, 127]
+	Immutable LongValue class for wrapping a long value by using
+	cache for [-128, 17] closed interval value
 
-	Copyleft (c) 1993 by C and System Programmers Association (CSD)
+	Copyleft (c) 1993 C and System Programmers Association
 	All Rights Free
------------------------------------------------------------------------*/
+----------------------------------------------------------------*/
 package org.csystem.util.wrapper;
 
 public final class LongValue {
-    private static final int MIN_VALUE = -128;
-    private static final int MAX_VALUE = 127;
-    private static final int INDEX_PLUS_VALUE = -MIN_VALUE;
-    private static final LongValue[] ms_cache = new LongValue[MAX_VALUE - MIN_VALUE + 1];
+    private static final int CACHE_MIN = -128;
+    private static final int CACHE_MAX = 127;
+    private static final LongValue[] ms_cache = new LongValue[CACHE_MAX - CACHE_MIN + 1];
     private final long m_value;
 
     private LongValue(long value)
@@ -24,15 +24,15 @@ public final class LongValue {
 
     public static final LongValue ZERO = of(0);
     public static final LongValue ONE = of(1);
-    public static final LongValue TWO = of(1);
     public static final LongValue TEN = of(10);
 
     public static LongValue of(long value)
     {
-        if (value < MIN_VALUE || MAX_VALUE < value)
+        if (value < CACHE_MIN || CACHE_MAX < value)
             return new LongValue(value);
 
-        int idx = (int)value + INDEX_PLUS_VALUE;
+        int idx = (int)value + 128;
+
         if (ms_cache[idx] == null)
             ms_cache[idx] = new LongValue(value);
 
@@ -44,9 +44,9 @@ public final class LongValue {
         return m_value;
     }
 
-    public static long sum(long left, long right)
+    public int compareTo(LongValue other)
     {
-        return left + right;
+        return (int)(m_value - other.m_value);
     }
 
     public LongValue add(long value)
@@ -54,9 +54,9 @@ public final class LongValue {
         return of(m_value + value);
     }
 
-    public LongValue add(LongValue other)
+    public LongValue add(LongValue value)
     {
-        return add(other.m_value);
+        return add(value.m_value);
     }
 
     public LongValue subtract(long value)
@@ -64,9 +64,9 @@ public final class LongValue {
         return add(-value);
     }
 
-    public LongValue subtract(LongValue other)
+    public LongValue subtract(LongValue value)
     {
-        return subtract(other.m_value);
+        return subtract(value.m_value);
     }
 
     public LongValue multiply(long value)
@@ -74,9 +74,9 @@ public final class LongValue {
         return of(m_value * value);
     }
 
-    public LongValue multiply(LongValue other)
+    public LongValue multiply(LongValue value)
     {
-        return multiply(other.m_value);
+        return multiply(value.m_value);
     }
 
     public LongValue divide(long value)
@@ -84,42 +84,34 @@ public final class LongValue {
         return of(m_value / value);
     }
 
-    public LongValue divide(LongValue other)
+    public LongValue divide(LongValue value)
     {
-        return divide(other.m_value);
+        return divide(value.m_value);
     }
 
     public LongValue[] divideAndRemainder(long value)
     {
-        return new LongValue[] {of(m_value / value), of(m_value % value)};
+        LongValue[] result = new LongValue[2];
+
+        result[0] = divide(value);
+        result[1] = of(m_value % value);
+
+        return result;
     }
 
-    public LongValue[] divideAndRemainder(LongValue other)
+    public LongValue[] divideAndRemainder(LongValue value)
     {
-        return divideAndRemainder(other.m_value);
+        return divideAndRemainder(value.m_value);
     }
 
-    public LongValue increment()
+    public LongValue inc()
     {
         return add(1);
     }
 
-    public LongValue decrement()
+    public LongValue dec()
     {
         return subtract(1);
-    }
-
-    public int compareTo(LongValue other)
-    {
-        long diff = m_value - other.m_value;
-        int result = -1;
-
-        if (diff > 0)
-            result = 1;
-        else if (diff == 0)
-            result = 0;
-
-        return result;
     }
 
     public String toString()
@@ -127,5 +119,4 @@ public final class LongValue {
         return m_value + "";
     }
 
-    //...
 }

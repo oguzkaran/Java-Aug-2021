@@ -1,20 +1,20 @@
-/*----------------------------------------------------------------------
-	FILE        : IntValue.java
-	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 20.02.2022
+/*----------------------------------------------------------------
+	FILE		: IntValue.java
+	AUTHOR		: Java-Nov-2021 Group
+	LAST UPDATE	: 28.06.2022
 
-	Immutable class that wraps an int value and caches values in [-128, 127]
+	Immutable IntValue class for wrapping an int value by using
+	cache for [-128, 127] closed interval value
 
-	Copyleft (c) 1993 by C and System Programmers Association (CSD)
+	Copyleft (c) 1993 C and System Programmers Association
 	All Rights Free
------------------------------------------------------------------------*/
+----------------------------------------------------------------*/
 package org.csystem.util.wrapper;
 
 public final class IntValue {
-    private static final int MIN_VALUE = -128;
-    private static final int MAX_VALUE = 127;
-    private static final int INDEX_PLUS_VALUE = -MIN_VALUE;
-    private static final IntValue [] ms_cache = new IntValue[MAX_VALUE - MIN_VALUE + 1];
+    private static final int CACHE_MIN = -128;
+    private static final int CACHE_MAX = 127;
+    private static final IntValue [] ms_cache = new IntValue[CACHE_MAX - CACHE_MIN + 1];
     private final int m_value;
 
     private IntValue(int value)
@@ -24,18 +24,19 @@ public final class IntValue {
 
     public static final IntValue ZERO = of(0);
     public static final IntValue ONE = of(1);
-    public static final IntValue TWO = of(1);
     public static final IntValue TEN = of(10);
 
     public static IntValue of(int value)
     {
-        if (value < MIN_VALUE || MAX_VALUE < value)
+        if (value < CACHE_MIN || CACHE_MAX < value)
             return new IntValue(value);
 
-        if (ms_cache[value + INDEX_PLUS_VALUE] == null)
-            ms_cache[value + INDEX_PLUS_VALUE] = new IntValue(value);
+        int idx = value + 128;
 
-        return ms_cache[value + INDEX_PLUS_VALUE];
+        if (ms_cache[idx] == null)
+            ms_cache[idx] = new IntValue(value);
+
+        return ms_cache[idx];
     }
 
     public int getValue()
@@ -43,9 +44,9 @@ public final class IntValue {
         return m_value;
     }
 
-    public static int sum(int left, int right)
+    public int compareTo(IntValue other)
     {
-        return left + right;
+        return m_value - other.m_value;
     }
 
     public IntValue add(int value)
@@ -53,9 +54,9 @@ public final class IntValue {
         return of(m_value + value);
     }
 
-    public IntValue add(IntValue other)
+    public IntValue add(IntValue value)
     {
-        return add(other.m_value);
+        return add(value.m_value);
     }
 
     public IntValue subtract(int value)
@@ -63,9 +64,9 @@ public final class IntValue {
         return add(-value);
     }
 
-    public IntValue subtract(IntValue other)
+    public IntValue subtract(IntValue value)
     {
-        return subtract(other.m_value);
+        return subtract(value.m_value);
     }
 
     public IntValue multiply(int value)
@@ -73,9 +74,9 @@ public final class IntValue {
         return of(m_value * value);
     }
 
-    public IntValue multiply(IntValue other)
+    public IntValue multiply(IntValue value)
     {
-        return multiply(other.m_value);
+        return multiply(value.m_value);
     }
 
     public IntValue divide(int value)
@@ -83,34 +84,34 @@ public final class IntValue {
         return of(m_value / value);
     }
 
-    public IntValue divide(IntValue other)
+    public IntValue divide(IntValue value)
     {
-        return divide(other.m_value);
+        return divide(value.m_value);
     }
 
     public IntValue [] divideAndRemainder(int value)
     {
-        return new IntValue[] {of(m_value / value), of(m_value % value)};
+        IntValue [] result = new IntValue[2];
+
+        result[0] = divide(value);
+        result[1] = of(m_value % value);
+
+        return result;
     }
 
-    public IntValue [] divideAndRemainder(IntValue other)
+    public IntValue [] divideAndRemainder(IntValue value)
     {
-        return divideAndRemainder(other.m_value);
+        return divideAndRemainder(value.m_value);
     }
 
-    public IntValue increment()
+    public IntValue inc()
     {
         return add(1);
     }
 
-    public IntValue decrement()
+    public IntValue dec()
     {
         return subtract(1);
-    }
-
-    public int compareTo(IntValue other)
-    {
-        return m_value - other.m_value;
     }
 
     public String toString()
@@ -118,5 +119,4 @@ public final class IntValue {
         return m_value + "";
     }
 
-    //...
 }

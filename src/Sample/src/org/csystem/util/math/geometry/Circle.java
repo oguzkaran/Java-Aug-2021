@@ -1,47 +1,46 @@
-/*----------------------------------------------------------------------
-	FILE        : Circle.java
-	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 25.12.2021
+/*----------------------------------------------------------------
+	FILE		: Circle.java
+	AUTHOR		: Java-Nov-2021 Group
+	LAST UPDATE	: 08.05.2022
 
-	Circle class that represents synthetic Circle
+	Circle class that represents a Circle in geometry
 
-	Copyleft (c) 1993 by C and System Programmers Association (CSD)
+	Copyleft (c) 1993 C and System Programmers Association
 	All Rights Free
------------------------------------------------------------------------*/
+----------------------------------------------------------------*/
 package org.csystem.util.math.geometry;
 
-import static java.lang.Math.PI;
-import static java.lang.Math.abs;
-
 public class Circle {
-    private double m_r;
+    private double m_radius;
 
     public Circle()
     {
     }
 
-    public Circle(double r)
+    public Circle(double radius)
     {
-        setRadius(r);
+        setRadius(radius);
     }
 
     public double getRadius()
     {
-        return m_r;
+        return m_radius;
+    }
+
+    public void setRadius(double r)
+    {
+        m_radius = Math.abs(r);
     }
 
     public double getArea()
     {
-        return PI * m_r * m_r;
+        return Math.PI * m_radius * m_radius;
     }
 
     public double getCircumference()
     {
-        return 2 * PI * m_r;
+        return 2 * Math.PI * m_radius;
     }
 
-    public void setRadius(double radius)
-    {
-        m_r = abs(radius);
-    }
+    //...
 }

@@ -1,15 +1,15 @@
-/*----------------------------------------------------------------------
-	FILE        : DayOfWeek.java
-	AUTHOR      : Java-Aug-2021 Group
-	LAST UPDATE : 22.01.2022
+/*----------------------------------------------------------------
+	FILE		: DayOfWeek.java
+	AUTHOR		: Java-Nov-2021 Group
+	LAST UPDATE	: 22.05.2022
 
-	enum class for day of week
+	enum class for day of weeks
 
-	Copyleft (c) 1993 by C and System Programmers Association (CSD)
+	Copyleft (c) 1993 C and System Programmers Association
 	All Rights Free
------------------------------------------------------------------------*/
+----------------------------------------------------------------*/
 package org.csystem.util.datetime;
 
 public enum DayOfWeek {
-    SUN, MON, TUE, WED, THU, FRI, SAT
+	SUN, MON, TUE, WED, THU, FRI, SAT
 }

@@ -4,7 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="" />
+    <list default="true" id="6a057654-8f84-45fd-b229-b1658f5f67e3" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/IndeterminateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/LogarithmApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/MathResultException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/MathStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/MathUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/UndefinedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/CompanyApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/HumanResources.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/Manager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/ProjectWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/SalesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/Worker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/datetime/DateApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/game/ballfall/BallFallGameApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/lotto/NumericLottery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/lotto/NumericLotteryApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/parser/studentinfo/StudentInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/parser/studentinfo/StudentInfoParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/parser/studentinfo/StudentInfoParserApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/randomgenerator/RandomObjectArrayFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/randomgenerator/RandomObjectArrayGeneratorApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/sensor/Sensor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/sensor/StoreSensorsToArrayApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/game/ballfall/BallFall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/game/craps/Craps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/game/lotto/Lotto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/craps/CrapsSimulation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/craps/CrapsSimulationApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/exam/ExamSimulation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/exam/ExamSimulationApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/lotto/LottoProbabilitySimulation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/lotto/LottoProbabilitySimulationApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/array/ArrayUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/collection/CSDArrayList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/console/Console.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/Date.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DateTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DateTimeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DayOfWeek.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/Month.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/Time.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/Complex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/ComplexCommonUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/MutableComplex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/MutableFraction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/AnalyticalCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/MutablePoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/PointCommonUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/numeric/NumberUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/string/StringUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/wrapper/IntValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/wrapper/LongValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/collection/CSDArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/collection/CSDArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/math/MutableFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/math/MutableFraction.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +77,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -31,29 +96,29 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="22n82uBlylwuyXfenSkI6bexamn" />
+  <component name="ProjectId" id="27Yf5WehWpwJiyiwkT4ZmUi95l2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../doc/Examples.txt" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/oguzkaran/Dropbox/CSD/Kurslar/Java-Nov-2021/src/Sample&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Karans\Dropbox\CSD\Kurslar\Java-Aug-2021\src\Sample\src\org\csystem\application" />
-      <recent name="$PROJECT_DIR$/src" />
+      <recent name="C:\Users\Karans\Dropbox\CSD\Kurslar\Java-Nov-2021\src\Sample\src\org\csystem\util\math" />
+      <recent name="C:\Users\Karans\Dropbox\CSD\Kurslar\Java-Nov-2021\src\Sample\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.csystem.util.datetime" />
       <recent name="org.csystem.util.math" />
-      <recent name="org.csystem.application.dateapp" />
       <recent name="org.csystem.util.wrapper" />
+      <recent name="org.csystem.util.math.geometry" />
     </key>
   </component>
   <component name="RunManager">
@@ -79,22 +144,98 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7ca7e4b0-27e7-4566-9ee2-9f72e4114e55" name="Changes" comment="" />
-      <created>1640461789884</created>
+      <changelist id="6a057654-8f84-45fd-b229-b1658f5f67e3" name="Changes" comment="" />
+      <created>1649501763564</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1640461789884</updated>
-      <workItem from="1640461792251" duration="69000" />
-      <workItem from="1640462059965" duration="5244000" />
-      <workItem from="1640502377486" duration="816000" />
-      <workItem from="1640503237974" duration="6501000" />
-      <workItem from="1640546361323" duration="63000" />
-      <workItem from="1640585508625" duration="41000" />
+      <updated>1649501763564</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update">
+      <created>1657303987332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657303987332</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update">
+      <created>1657304028706</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657304028706</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update">
+      <created>1657705335933</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657705335933</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update">
+      <created>1657706762498</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657706762498</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update">
+      <created>1657833943140</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657833943140</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update">
+      <created>1657971229161</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657971229161</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update">
+      <created>1657977282627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657977282627</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update">
+      <created>1657977299822</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657977299822</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update">
+      <created>1658075904357</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658075904357</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update">
+      <created>1658868949995</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658868949995</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update">
+      <created>1659124856419</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659124856419</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update">
+      <created>1659561251437</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659561251437</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -106,5 +247,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
