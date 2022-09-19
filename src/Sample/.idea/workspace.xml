@@ -4,71 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a057654-8f84-45fd-b229-b1658f5f67e3" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/../../doc/Examples.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/Examples.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/IndeterminateException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/LogarithmApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/MathResultException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/MathStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/MathUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/UndefinedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/CompanyApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/HumanResources.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/Manager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/ProjectWorker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/SalesManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/company/Worker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/datetime/DateApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/game/ballfall/BallFallGameApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/lotto/NumericLottery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/lotto/NumericLotteryApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/parser/studentinfo/StudentInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/parser/studentinfo/StudentInfoParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/parser/studentinfo/StudentInfoParserApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/randomgenerator/RandomObjectArrayFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/randomgenerator/RandomObjectArrayGeneratorApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/sensor/Sensor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/app/sensor/StoreSensorsToArrayApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/game/ballfall/BallFall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/game/craps/Craps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/game/lotto/Lotto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/craps/CrapsSimulation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/craps/CrapsSimulationApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/exam/ExamSimulation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/exam/ExamSimulationApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/lotto/LottoProbabilitySimulation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/simulation/lotto/LottoProbabilitySimulationApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/array/ArrayUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/collection/CSDArrayList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/console/Console.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/Date.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DateTime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DateTimeUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/DayOfWeek.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/Month.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/datetime/Time.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/Complex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/ComplexCommonUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/MutableComplex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/MutableFraction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/AnalyticalCircle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Line.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/MutablePoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/math/geometry/PointCommonUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/numeric/NumberUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/string/StringUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/wrapper/IntValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sample/org/csystem/util/wrapper/LongValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/collection/CSDArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/collection/CSDArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/datetime/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/csystem/util/math/MutableFraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/csystem/util/math/MutableFraction.java" afterDir="false" />
-    </list>
+    <list default="true" id="6a057654-8f84-45fd-b229-b1658f5f67e3" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

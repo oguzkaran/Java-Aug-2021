@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------
 	FILE		: CSDArrayList.java
 	AUTHOR		: Java-Nov-2021 Group
-	LAST UPDATE	: 16.08.2022
+	LAST UPDATE	: 12.09.2022
 
 	CSDArrayList class that represents dynamic array
 
@@ -12,9 +12,9 @@ package org.csystem.util.collection;
 
 import java.util.Arrays;
 
-public class CSDArrayList {
+public class CSDArrayList<E> {
     private static final int DEFAULT_CAPACITY = 10;
-    private Object [] m_objs;
+    private E [] m_elems;
     private int m_index;
 
     private static void doWorkForIllegalArgumentException(String message)
@@ -42,62 +42,62 @@ public class CSDArrayList {
 
     private void changeCapacity(int capacity)
     {
-        m_objs = Arrays.copyOf(m_objs, capacity);
+        m_elems = Arrays.copyOf(m_elems, capacity);
     }
 
     public CSDArrayList()
     {
-        m_objs = new Object[DEFAULT_CAPACITY];
+        m_elems = (E[])new Object[DEFAULT_CAPACITY];
     }
 
     public CSDArrayList(int initialCapacity)
     {
         checkCapacity(initialCapacity);
-        m_objs = new Object[initialCapacity];
+        m_elems = (E [])new Object[initialCapacity];
     }
 
-    public boolean add(Object elem)
+    public boolean add(E elem)
     {
-        if (m_objs.length == m_index)
-            changeCapacity(m_objs.length == 0 ? 1 : m_objs.length * 2);
+        if (m_elems.length == m_index)
+            changeCapacity(m_elems.length == 0 ? 1 : m_elems.length * 2);
 
-        m_objs[m_index++] = elem;
+        m_elems[m_index++] = elem;
 
         return true;
     }
 
-    public void add(int index, Object elem)
+    public void add(int index, E elem)
     {
-        if (m_objs.length == m_index)
-            changeCapacity(m_objs.length == 0 ? 1 : m_objs.length * 2);
+        if (m_elems.length == m_index)
+            changeCapacity(m_elems.length == 0 ? 1 : m_elems.length * 2);
 
         //TODO:
     }
 
     public int capacity()
     {
-        return m_objs.length;
+        return m_elems.length;
     }
 
     public void clear()
     {
         for (int i = 0; i < m_index; ++i)
-            m_objs[i] = null;
+            m_elems[i] = null;
 
         m_index = 0;
     }
 
     public void ensureCapacity(int minCapacity)
     {
-        if (minCapacity > m_objs.length)
-            changeCapacity(Math.max(m_objs.length * 2, minCapacity));
+        if (minCapacity > m_elems.length)
+            changeCapacity(Math.max(m_elems.length * 2, minCapacity));
     }
 
-    public Object get(int index)
+    public E get(int index)
     {
         checkIndex(index);
 
-        return m_objs[index];
+        return m_elems[index];
     }
 
     public boolean isEmpty()
@@ -105,12 +105,12 @@ public class CSDArrayList {
         return m_index == 0;
     }
 
-    public Object set(int index, Object elem)
+    public E set(int index, E elem)
     {
         checkIndex(index);
-        Object old = m_objs[index];
+        E old = m_elems[index];
 
-        m_objs[index] = elem;
+        m_elems[index] = elem;
 
         return old;
     }
@@ -120,22 +120,22 @@ public class CSDArrayList {
         return m_index;
     }
 
-    public Object remove(int index)
+    public E remove(int index)
     {
         checkIndex(index);
-        Object old = m_objs[index];
+        E old = m_elems[index];
 
         //TODO:
 
 
-        m_objs[m_index--] = null; // Bu da yapılmazsa memory leak oluşabilir
+        m_elems[m_index--] = null; // Bu da yapılmazsa memory leak oluşabilir
 
         return old;
     }
 
     public void trimToSize()
     {
-        if (m_objs.length != m_index)
+        if (m_elems.length != m_index)
             changeCapacity(m_index);
     }
 
@@ -146,10 +146,9 @@ public class CSDArrayList {
         for (int i = 0; i < m_index; ++i) {
             if (str.length() != 1)
                 str += ", ";
-            str += m_objs[i];
+            str += m_elems[i];
         }
 
         return str + "]";
     }
-
 }
